@@ -1,79 +1,28 @@
-/* ========================================
-   CSS VARIABLES - Warna utama aplikasi
-   ======================================== */
-:root{
-  --primary:#1e88e5;    /* Warna biru utama */
-  --accent:#fbc02d;     /* Warna kuning aksen */
-  --bg:#ffffff;         /* Warna background */
-  --text:#1f2937;       /* Warna teks utama */
-  --blue:#0ea5e9;       /* Warna biru sekunder */
-  --yellow:#fde047      /* Warna kuning sekunder */
-}
-
-/* ========================================
-   RESET & BASE STYLES - Reset CSS dan styling dasar
-   ======================================== */
-*{box-sizing:border-box}
-html,body{
-  margin:0;padding:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
-  color:var(--text);
-  background:linear-gradient(180deg,#ffffff, #f8fbff);
-  scroll-behavior:smooth
-}
+:root{--primary:#1e88e5;--accent:#fbc02d;--bg:#ffffff;--text:#1f2937;--blue:#0ea5e9;--yellow:#fde047}
+*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Poppins;color:var(--text);background:linear-gradient(180deg,#ffffff, #f8fbff);scroll-behavior:smooth}
 a{text-decoration:none;color:var(--primary)}
-
-/* ========================================
-   LAYOUT COMPONENTS - Komponen layout utama
-   ======================================== */
 .container{max-width:1100px;margin:0 auto;padding:20px}
 .hero .container{padding:0 40px;transform:translateX(-76px)}
-
-/* ========================================
-   NAVBAR - Header navigasi
-   ======================================== */
-.navbar{
-  position:sticky;top:0;
-  background:rgba(255,255,255,.8);
-  -webkit-backdrop-filter:blur(8px);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid #eef;
-  z-index:50
-}
+.navbar{position:sticky;top:0;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid #eef;z-index:50}
 .navbar .inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
 .brand{display:flex;align-items:center;gap:12px;margin-left:24px}
 .brand img{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(0,0,0,.08))}
 .brand .name{font-weight:800;letter-spacing:.3px;color:#000000;font-size:20px}
 .nav-links{display:flex;gap:16px;align-items:center;margin-right:0;transform:translateX(-28px)}
-.nav-links a{padding:10px 14px;border-radius:10px;font-size:17px;color:#1449A5;transition:.15s transform,.15s background-color,.15s color}
+.nav-links a{padding:10px 14px;border-radius:10px;font-size:17px;color:#fdd835;transition:.15s transform,.15s background-color,.15s color}
 .nav-links a:focus{outline:none}
-.nav-links a:hover{background:#eef5ff}
+.nav-links a:hover{background:#fdd835}
 .nav-links a:active{transform:translateY(1px);background:var(--accent);color:#1f2937}
 .nav-links a:hover{background:#eef5ff}
-
-/* ========================================
-   BUTTONS - Styling tombol
-   ======================================== */
-.btn{
-  background:var(--primary);
-  color:#fff;
-  padding:10px 16px;
-  border-radius:12px;
-  box-shadow:0 10px 20px rgba(30,136,229,.25), inset 0 -2px 0 rgba(0,0,0,.1);
-  transition:.2s transform,.2s box-shadow
-}
+.btn{background:var(--primary);color:#fff;padding:10px 16px;border-radius:12px;box-shadow:0 10px 20px rgba(30,136,229,.25), inset 0 -2px 0 rgba(0,0,0,.1);transition:.2s transform,.2s box-shadow}
 .btn:hover{transform:translateY(-1px);box-shadow:0 14px 24px rgba(30,136,229,.3)}
-.btn-accent{background:#0079c0;color:#fff}
+.btn-accent{background:#fdd835;color:#fff}
 .btn-login{
-  background:#0079c0;
+  background:#e6c200;
   color:#fff;
   padding:12px 18px;
   font-size:16px;
 }
-
-/* ========================================
-   LOGIN FORM - Styling form login
-   ======================================== */
 .login-wrap{max-width:520px}
 .login-card{margin:48px auto;background:#fff;border:1px solid #eef;border-radius:18px;padding:28px 24px;box-shadow:0 18px 40px rgba(0,0,0,.08)}
 .login-title{margin:0 0 4px;color:#1449A5;font-size:28px;font-weight:800}
@@ -84,99 +33,18 @@ a{text-decoration:none;color:var(--primary)}
 .fade-in{animation:fadeIn .5s ease-out both}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .nav-links .btn-login{color:#fff !important}
-/* ========================================
-   HERO SECTION - Bagian utama homepage
-   ======================================== */
-.hero{background:#FBBF48;margin:0;border-radius:0;min-height:500px;padding:60px 0}
+.hero{background:url("../src/background.jpg") no-repeat center center;background-size: cover;align-items: center;display:flex;margin:0;position: relative;border-radius:0;min-height:500px;padding:60px 0}
 .hero-content{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;max-width:1000px;margin:0 auto}
-.hero-image{display:flex;justify-content:flex-end;align-items:center}
-.hero-image img{width:300px;height:300px;object-fit:cover;border-radius:50%;border:4px solid var(--accent);box-shadow:0 20px 40px rgba(0,0,0,.1);margin-right:40px}
-.hero-text{text-align:left;margin-left:-32px}
 
-/* ========================================
-   MOBILE RESPONSIVE - Styling untuk mobile
-   ======================================== */
 @media (max-width: 768px){
-  .container{padding:15px}
-  .navbar .inner{padding:10px 15px}
-  .brand{margin-left:0}
-  .brand img{width:48px;height:48px}
-  .brand .name{font-size:16px}
-  .nav-links{margin-right:0;transform:none}
-  .nav-links a{padding:8px 12px;font-size:14px}
-  
-  .hero .container{transform:none;padding:20px}
-  .hero-content{grid-template-columns:1fr;gap:20px;text-align:center}
-  .hero-text{margin-left:0}
-  .hero-text h1{font-size:28px;margin-bottom:12px}
-  .hero-text p{font-size:16px}
-  .hero-image{justify-content:center}
-  .hero-image img{width:200px;height:200px;margin-right:0}
-  
-  .login-wrap{max-width:100%;padding:0 15px}
-  .login-card{margin:20px auto;padding:20px}
-  .login-title{font-size:24px}
-  .login-subtitle{font-size:14px}
-  
-  .btn{padding:12px 16px;font-size:16px}
-  .btn-login{padding:12px 18px;font-size:16px}
-  
-  .form label{font-size:14px}
-  .form input, .form select, .form textarea{padding:12px;font-size:16px}
-  
-  .card{padding:15px;margin:15px 0}
-  .table{font-size:14px}
-  .table th, .table td{padding:8px 4px}
-  
-  .sidebar{width:100%;position:fixed;left:-100%;transition:left 0.3s}
-  .sidebar.show{left:0}
-  .content{margin-left:0;padding:15px}
-  
-  .topbar-inner{padding:10px 15px}
-  .topbar-title{font-size:16px}
-  .search-wrap{display:none}
-  
-  .page-head{padding:15px 0}
-  .page-title{font-size:20px}
-  .breadcrumbs{font-size:12px}
+  .hero .container{transform:translateX(-32px)}
+  .hero-text{margin-left:-16px}
 }
-
-@media (max-width: 480px){
-  .container{padding:10px}
-  .navbar .inner{padding:8px 10px}
-  .brand img{width:40px;height:40px}
-  .brand .name{font-size:14px}
-  .nav-links a{padding:6px 10px;font-size:12px}
-  
-  .hero{padding:40px 0}
-  .hero-text h1{font-size:24px}
-  .hero-text p{font-size:14px}
-  .hero-image img{width:150px;height:150px}
-  
-  .login-card{padding:15px}
-  .login-title{font-size:20px}
-  
-  .btn{padding:10px 14px;font-size:14px}
-  .form input, .form select, .form textarea{padding:10px;font-size:14px}
-  
-  .card{padding:10px}
-  .table{font-size:12px}
-  .table th, .table td{padding:6px 2px}
-  
-  .page-title{font-size:18px}
-}
-/* ========================================
-   HERO TEXT STYLING - Styling teks hero
-   ======================================== */
-.hero-text h1{font-size:36px;margin:0 0 16px;color:#000000;line-height:1.2}
-.hero-text p{font-size:18px;color:#000000;opacity:.95;line-height:1.6}
+.hero-text h1{font-size:36px;margin:0 0 16px;color:#fbc02d;line-height:1.2}
+.hero-text p{font-size:18px;color: #fff;;opacity:.95;line-height:1.6}
 .hero-text .flex{justify-content:flex-start}
 .hero h1{font-size:40px;margin:0 0 12px}
 .hero p{font-size:16px;opacity:.85}
-
-/* ========================================
-   CARD COMPONENTS - Komponen kartu
-   ======================================== */
 .card{background:#fff;border:1px solid #eef;border-radius:16px;padding:20px;box-shadow:0 12px 30px rgba(0,0,0,.06)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px}
@@ -185,26 +53,15 @@ a{text-decoration:none;color:var(--primary)}
 .card-feature .card-body{display:block}
 .card-feature h3{margin:0;color:#1449A5;font-weight:800;font-size:22px}
 .card-feature p{margin:8px 0 0;color:#1f2937;opacity:.9;line-height:1.8;font-size:16px}
-
-/* ========================================
-   SECTION STYLING - Styling section
-   ======================================== */
 .section h2{color:#1449A5;font-weight:800;font-size:32px;margin:0 0 12px}
 /* Khusus ukuran judul paket pembelajaran diperbesar lagi */
 #paket-labirin h2{font-size:36px}
 .section.container > p{line-height:1.8;margin-top:10px}
 .section{padding:40px 20px}
-.footer{padding:32px 20px;border-top:1px solid #eef;background:#fafcff}
-/* ========================================
-   FORM ELEMENTS - Elemen form
-   ======================================== */
+.footer{padding:32px 20px;border-top:1px solid #eef;background:#365788}
 .input, input, select, textarea{width:100%;padding:12px 14px;border:1px solid #dde6f1;border-radius:12px;background:#fff;outline:none}
 .input:focus, input:focus, select:focus, textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(30,136,229,.12)}
 .form{display:grid;gap:12px}
-
-/* ========================================
-   UI COMPONENTS - Komponen UI lainnya
-   ======================================== */
 .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--yellow);color:#1f2937;font-weight:600}
 .tag:empty{display:none}
 .card-3d{transform-style:preserve-3d;perspective:900px}
@@ -214,26 +71,16 @@ a{text-decoration:none;color:var(--primary)}
 .kpi .num{font-size:28px;font-weight:800}
 .alert{padding:12px 14px;border:1px solid #fee2; background:#fff7cc; border-radius:12px}
 .tag{padding:6px 10px;border:1px dashed #cbd5e1;border-radius:10px}
-
-/* ========================================
-   TABLE STYLING - Styling tabel
-   ======================================== */
 .table{width:100%;border-collapse:separate;border-spacing:0 8px}
 .table th,.table td{padding:10px 12px;background:#fff;border:1px solid #eef}
 .table th{background:#f8fafc;text-align:left}
-
-/* ========================================
-   UTILITY CLASSES - Kelas utilitas
-   ======================================== */
 .flex{display:flex;gap:12px;align-items:center}
 .right{margin-left:auto}
 .mt-16{margin-top:16px}
 .hidden{display:none}
 .card-icon{flex:0 0 56px;width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#fff7cc;border:2px solid #f6e08a;box-shadow:0 6px 16px rgba(0,0,0,.06);font-size:26px;margin-bottom:0;color:#1449A5}
 
-/* ========================================
-   COURSES SECTION - Styling paket pembelajaran
-   ======================================== */
+/* Courses section */
 .course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
 .course-card{position:relative;background:#fff;border:3px solid #FBBF48;border-radius:22px;padding:28px;box-shadow:12px 12px 0 #0d5dc0;transition:transform .2s ease, box-shadow .2s ease}
 .course-card:hover{transform:translateY(-6px);box-shadow:16px 16px 0 #0d5dc0}
@@ -253,9 +100,7 @@ a{text-decoration:none;color:var(--primary)}
   .course-grid{grid-template-columns:1fr}
 }
 
-/* ========================================
-   THERAPIST SECTION - Styling daftar terapis
-   ======================================== */
+/* Therapist section */
 .therapist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
 .therapist-card{display:flex;flex-direction:column;align-items:center;text-align:center}
 .therapist-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--accent);box-shadow:0 10px 20px rgba(0,0,0,.1);margin:8px 0 12px}
@@ -271,11 +116,9 @@ a{text-decoration:none;color:var(--primary)}
 .therapist-cta{display:flex;justify-content:center;margin-top:40px}
 .therapist-cta .btn{background:#0079c0;color:#fff;padding:12px 20px;border-radius:14px}
 
-/* ========================================
-   ABOUT SECTION - Styling tentang kami
-   ======================================== */
+/* About section */
 .about{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin-top:0}
-.about-text p{line-height:1.8;margin:0 0 12px}
+.about-text p{line-height:1.8;margin-left: 16px;}
 .about-images{display:grid;gap:16px;justify-items:end}
 .about-img{width:100%;max-width:460px;border-radius:16px;border:4px solid #eef;box-shadow:0 16px 40px rgba(0,0,0,.12);background:#fff;object-fit:cover}
 .about-img.small{max-width:460px;justify-self:end}
@@ -285,23 +128,200 @@ a{text-decoration:none;color:var(--primary)}
   .about-images{justify-items:center}
 }
 
-/* ========================================
-   TESTIMONIAL SECTION - Styling testimoni
-   ======================================== */
-.testimonial-wrap{position:relative}
-.testimonial-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 4px}
-.testimonial-card{flex:0 0 360px;background:#fff;border:1px solid #eef;border-radius:16px;padding:18px;box-shadow:0 10px 24px rgba(0,0,0,.06);scroll-snap-align:start}
-.testimonial-card .head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.testimonial-card .avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.testimonial-card .name{font-weight:700}
-.testimonial-card .stars{color:#f59e0b}
-.nav-btn{position:absolute;top:50%;transform:translateY(-50%);background:#0079c0;color:#fff;border:none;border-radius:999px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(0,0,0,.15);cursor:pointer}
-.nav-btn.prev{left:-4px}
-.nav-btn.next{right:-4px}
 
-/* ========================================
-   DASHBOARD LAYOUT - Layout dashboard terapis
-   ======================================== */
+/* ===== Section Style ===== */
+.testimonial-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Subtitle ===== */
+.testimonial-subtitle {
+  color: #fbc02d; /* Kuning gelap */
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ===== Title ===== */
+.testimonial-title {
+  color: #2c2c54;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+/* ===== Container ===== */
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* ===== Card Style ===== */
+.testimonial-card {
+  background: #fff9e6; /* Kuning pastel */
+  border-radius: 20px 60px 20px 20px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(251, 192, 45, 0.3); /* Bayangan kuning */
+}
+
+/* ===== Profile Section ===== */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #fdd835; /* Border kuning */
+  object-fit: cover;
+}
+.client-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2c2c54;
+  font-weight: 600;
+}
+
+.client-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #777;
+}
+
+/* ===== Divider Line ===== */
+.testimonial-card hr {
+  border: none;
+  border-top: 1px solid #fdd835; /* Garis kuning */
+  margin: 10px 0 15px;
+}
+
+/* ===== Testimonial Text ===== */
+.testimonial-text {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* ===== Slider Dots ===== */
+.slider-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.slider-dots .dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dots .dot.active {
+  background-color: #fdd835; /* Dot aktif kuning */
+}
+
+/* Section Container */
+.fasilitas-section {
+  background: #fff;
+  padding: 60px 20px;
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-header .subtitle {
+  color: #f7c600;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.section-header .title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c2c54;
+}
+
+.section-header .description {
+  font-size: 16px;
+  color: #555;
+  max-width: 650px;
+  margin: 10px auto 0;
+}
+
+/* Wrapper for Cards */
+.fasilitas-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Individual Card */
+.fasilitas-card {
+  background: #fff6e5;
+  padding: 25px 20px;
+  border-radius: 50px 50px 50px 20px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.fasilitas-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.fasilitas-card .icon img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.fasilitas-card .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f7c600;
+  margin-bottom: 8px;
+}
+
+.fasilitas-card .card-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.fasilitas-card .card-text {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ==== Terapis Yellow Layout (dashboard seperti contoh) ==== */
 .topbar{position:sticky;top:0;z-index:40}
 .topbar-yellow{background:#f6b73f;border-bottom:1px solid #eab34a}
 .topbar-inner{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;padding:12px 20px}
@@ -311,9 +331,6 @@ a{text-decoration:none;color:var(--primary)}
 .topbar-center{display:flex;align-items:center;gap:12px;justify-content:center}
 .topbar-right{display:flex;align-items:center;gap:12px;justify-content:flex-end;margin-right:20px}
 
-/* ========================================
-   APP SHELL - Layout utama aplikasi
-   ======================================== */
 .app-shell{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 80px)}
 .sidebar{background:#fff;border-right:1px solid #eaeaea;padding:12px;display:flex;flex-direction:column;transition:transform .25s ease}
 .sidebar.collapsed{transform:translateX(-290px)}
@@ -351,145 +368,3 @@ a{text-decoration:none;color:var(--primary)}
 .breadcrumbs{color:#6b7280}
 .bc-sep{margin:0 6px}
 
-/* Attendance Summary Styles */
-.attendance-summary {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  border: 2px solid #cbd5e1;
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.summary-header h2 {
-  margin: 0 0 20px 0;
-  color: #1e293b;
-  font-size: 24px;
-  font-weight: 800;
-}
-
-.summary-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.summary-left {
-  flex: 1;
-}
-
-.summary-total {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.summary-label {
-  font-size: 16px;
-  color: #64748b;
-  font-weight: 600;
-}
-
-.summary-count {
-  font-size: 32px;
-  font-weight: 800;
-  color: #1e293b;
-  line-height: 1;
-}
-
-.summary-right {
-  flex: 1;
-}
-
-.summary-stats {
-  display: flex;
-  gap: 24px;
-  justify-content: flex-end;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 12px 16px;
-  background: #fff;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  min-width: 80px;
-}
-
-.stat-number {
-  font-size: 24px;
-  font-weight: 800;
-  color: #1e293b;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 14px;
-  color: #64748b;
-  font-weight: 600;
-}
-
-/* Mobile responsive for attendance summary */
-@media (max-width: 768px) {
-  .attendance-summary {
-    padding: 16px;
-    margin-bottom: 16px;
-  }
-  
-  .summary-header h2 {
-    font-size: 20px;
-    margin-bottom: 16px;
-  }
-  
-  .summary-content {
-    flex-direction: column;
-    gap: 16px;
-    align-items: stretch;
-  }
-  
-  .summary-stats {
-    justify-content: center;
-    gap: 16px;
-  }
-  
-  .stat-item {
-    min-width: 70px;
-    padding: 10px 12px;
-  }
-  
-  .stat-number {
-    font-size: 20px;
-  }
-  
-  .stat-label {
-    font-size: 12px;
-  }
-  
-  .summary-count {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .summary-stats {
-    gap: 12px;
-  }
-  
-  .stat-item {
-    min-width: 60px;
-    padding: 8px 10px;
-  }
-  
-  .stat-number {
-    font-size: 18px;
-  }
-  
-  .stat-label {
-    font-size: 11px;
-  }
-}
