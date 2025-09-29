@@ -139,38 +139,74 @@ body {
   <h2>Masuk Akun</h2>
   <p>Gunakan username dan kata sandi Anda.</p>
 
-  <label for="username">Username</label>
-  <input type="text" id="username" placeholder="contoh: T001 / O001">
+  <form id="loginForm">
+    <label for="login">Username</label>
+    <input type="text" id="login" placeholder="contoh: T001 / O001" autocomplete="username" required>
 
-  <label for="password">Password</label>
-  <input type="password" id="password" placeholder="•••••••">
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="•••••••" autocomplete="current-password" required>
 
-  <button type="submit">Masuk</button>
+    <button id="btnLogin" type="submit">Masuk</button>
+    <div id="msg" style="display:none;margin-top:10px;color:#d00;font-weight:600"></div>
+  </form>
 
-  <a href="#" class="forgot-password">Lupa password?</a>
-</div>
+  <a id="forgotLink" href="#" class="forgot-password">Lupa password?</a>
+  </div>
 
 
   <script src="./js/app.js"></script>
   <script>
+    function showMsg(text){
+      const el = document.getElementById('msg');
+      if(!el) return;
+      el.textContent = text || '';
+      el.style.display = text ? 'block' : 'none';
+    }
+
     async function onSubmit(e){
-      e.preventDefault();
+      e?.preventDefault?.();
+      showMsg('');
       const login = document.getElementById('login').value.trim();
       const password = document.getElementById('password').value;
-      const res = await api('auth_login.php', {method:'POST', body: JSON.stringify({login, password})});
-      if(res.ok){
-        location.href = './dashboard.html';
-      }else{
-        showMsg('Login gagal. Periksa data Anda.');
+      if(!login || !password){
+        showMsg('Username dan password wajib diisi.');
+        return;
+      }
+      try{
+        const res = await api('auth_login.php', { method: 'POST', body: JSON.stringify({ login, password }) });
+        if(res && res.ok){
+          // Arahkan ke dashboard umum, halaman lain akan cek role via session
+          location.href = './dashboard.html';
+          return;
+        }
+        showMsg('Login gagal. Periksa username atau password.');
+      }catch(err){
+        showMsg('Terjadi kesalahan jaringan. Coba lagi.');
       }
     }
-    async function forgot(){
+
+    async function onForgot(e){
+      e?.preventDefault?.();
       const username = prompt('Masukkan username terdaftar (contoh: T001/O001):');
       if(!username) return;
-      const res = await api('password_reset.php', {method:'POST', body: JSON.stringify({username})});
-      if(res.ok){ showMsg('Instruksi reset terkirim ke email terdaftar.'); }
+      try{
+        const res = await api('password_reset.php', { method:'POST', body: JSON.stringify({ username: username.trim() }) });
+        if(res && res.ok){
+          showMsg('Instruksi reset terkirim ke email terdaftar.');
+        }else{
+          showMsg('Username tidak ditemukan atau gagal mengirim email.');
+        }
+      }catch(err){
+        showMsg('Tidak dapat mengirim permintaan reset saat ini.');
+      }
     }
-    function showMsg(t){ const m=document.getElementById('msg'); m.textContent=t; m.style.display='block'; }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('loginForm');
+      form?.addEventListener('submit', onSubmit);
+      document.getElementById('btnLogin')?.addEventListener('click', onSubmit);
+      document.getElementById('forgotLink')?.addEventListener('click', onForgot);
+    });
   </script>
 </body>
 </html>
