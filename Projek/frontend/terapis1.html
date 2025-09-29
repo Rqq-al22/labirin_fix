@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terapi Labirin</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #fdfdfd;
+      color: #333;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      background: url("../src/background.jpg") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Overlay transparan gelap */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    /* Teks di atas gambar */
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .breadcrumb {
+      font-size: 16px;
+    }
+
+    .breadcrumb a {
+      color: #ffd54f;
+    }
+
+
+    .btn {
+      padding: 15px 35px;
+      font-size: 18px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-primary {
+      background-color: #FFD700;
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      background-color: #e6c200;
+    }
+
+    .btn-secondary {
+      background-color: #FFEB7F;
+      color: #000;
+    }
+
+    .btn-secondary:hover {
+      background-color: #FFD700;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 40px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+/*** Footer Start ***/
+.footer {
+  background: linear-gradient(
+                rgba(255, 251, 234, 0.9), /* Warna putih kekuningan dengan transparansi */
+                rgba(255, 251, 234, 0.9)  /* Sama agar hasilnya rata */
+              ),
+              url('../src/footer.jpg'); /* Gambar latar belakang footer */
+  background-position: center;      /* Gambar terpusat */
+  background-repeat: no-repeat;     /* Tidak diulang */
+  background-size: cover;           /* Menutupi seluruh area footer */
+  padding: 50px 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+
+.footer h2 span {
+  color: #FFC107; /* kuning utama */
+}
+
+.footer .footer-col {
+  width: 25%;
+  float: left;
+  padding: 0 15px;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.newsletter-box {
+  background: #fff3cd; /* kuning lembut */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.newsletter-box h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.newsletter-box input {
+  padding: 10px;
+  border: none;
+  width: 70%;
+  border-radius: 5px;
+}
+
+.newsletter-box button {
+  padding: 10px 15px;
+  border: none;
+  background: #FFC107; /* tombol kuning */
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.time-box {
+  background: #fff3cd; /* kuning lembut */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.footer h4 {
+  color: #FFC107;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #FFC107;
+  display: inline-block;
+}
+
+.social-icons span {
+  font-size: 20px;
+  margin-right: 8px;
+  color: #FFC107;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 50%;
+  border: 2px dotted #FFC107;
+}
+
+.footer-bottom {
+  clear: both;
+  text-align: center;
+  padding: 20px;
+  background: #2d2d52;
+  color: #fff;
+  margin-top: 30px;
+}
+
+.footer-bottom a {
+  color: #FFC107;
+  text-decoration: none;
+}
+/*** Footer End ***/
+/* Responsif */
+    @media (max-width: 768px) {
+      .hero {
+        height: 250px;
+      }
+
+      .hero-text h1 {
+        font-size: 32px;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 14px;
+      }
+    }
+/* Therapist section */
+.terapis-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: #fff9e6;
+
+}
+.terapis-subtitle {
+  color: #fbc02d; /* Kuning gelap */
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.terapis-title {
+  color: #2c2c54;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.section-header .description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* Grid Terapis */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Kartu Terapis */
+.team-card {
+  background: #fff;
+  border: 2px solid #f4c542; /* Border kuning */
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 6px 6px 0px #0d47a1; /* Bayangan biru */
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 0px #0b3d91;
+}
+
+/* Gambar Terapis */
+.team-image {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f4c542;
+  margin: 0 auto 20px auto;
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nama Terapis */
+.team-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0d47a1; /* Biru gelap */
+  line-height: 1.4;
+}
+
+/* Tombol Lihat Semua */
+.team-button {
+  margin-top: 50px;
+}
+
+.btn-view-all {
+  display: inline-block;
+  background-color: #f4c542;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.btn-view-all:hover {
+  background-color: #e6b800;
+  color: #fff;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="inner">
+      <div class="brand">
+        <img src="../src/logo.png" alt="Labirin" />
+        <span class="name">Labirin Children Center</span>
+      </div>
+      <div class="nav-links">
+        <a href="./index.html">Beranda</a>
+        <a href="./terapis1.html">Terapis</a>
+        <a href="./index.html#layanan">Layanan</a>
+        <span data-user-name class="tag"></span>
+        <a class="btn btn-login" data-btn-login href="./login.html">Login</a>
+        <a class="btn btn-accent hidden" data-btn-logout href="#" onclick="fetch('../backend/auth_logout.php',{credentials:'include'}).then(()=>location.reload())">Logout</a>
+      </div>
+    </div>
+  </nav>
+<section class="hero">
+    <div class="hero-text">
+      <h1>Terapis</h1>
+      <div class="breadcrumb">
+        <a href="./index.html">Beranda</a> / <span>Terapis</span>
+      </div>
+    </div>
+  </section>
+   
+  <section class="terapis-section">
+  <h4 class="terapis-subtitle">Terapis</h4>
+  <h2 class="terapis-title">Tim Terapis Profesional Kami</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-image">
+          <img src="../src/dr.andi.png" alt="Dr. Andi Rizky Amelia">
+        </div>
+        <h5 class="team-name">Dr. Andi Rizky Amelia,<br>M.Psi., Psikolog</h5>
+      </div>
+      <div class="team-card">
+        <div class="team-image">
+          <img src="terapis-icon.png" alt="Terapis 2">
+        </div>
+        <h5 class="team-name">Terapis 2</h5>
+      </div>
+      <div class="team-card">
+        <div class="team-image">
+          <img src="terapis-icon.png" alt="Terapis 3">
+        </div>
+        <h5 class="team-name">Terapis 3</h5>
+      </div>
+      <div class="team-card">
+        <div class="team-image">
+          <img src="terapis-icon.png" alt="Terapis 3">
+        </div>
+        <h5 class="team-name">Terapis 4</h5>
+      </div>
+      <div class="team-card">
+        <div class="team-image">
+          <img src="terapis-icon.png" alt="Terapis 3">
+        </div>
+        <h5 class="team-name">Terapis 5</h5>
+        </div>
+        <div class="team-card">
+        <div class="team-image">
+          <img src="terapis-icon.png" alt="Terapis 3">
+        </div>
+        <h5 class="team-name">Terapis 6</h5>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <footer class="footer">
+  <div class="container">
+    <div class="row">
+      <!-- Left Section -->
+      <div class="footer-col">
+        <h2><span>Labirin</span>Children Center</h2>
+        <p>
+           Kami hadir untuk mendampingi tumbuh kembang anak Anda dengan layanan terapi yang profesional dan penuh kasih sayang.
+        </p>
+        <div class="newsletter-box">
+          <h4>Newsletter</h4>
+          <form>
+            <input type="email" placeholder="Your email" />
+            <button type="submit">SignUp</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="footer-col">
+        <div class="time-box">
+          <p>Monday: 8am to 5pm</p>
+          <p>Tuesday: 8am to 5pm</p>
+          <p>Wednesday: 8am to 5pm</p>
+          <p>Thursday: 8am to 5pm</p>
+          <p>Friday: 8am to 5pm</p>
+          <p>Saturday: 8am to 5pm</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="footer-col">
+        <h4>LOCATION</h4>
+        <p>Jl. Syech Yusuf No.19, Mandonga, Kota Kendari, Sulawesi Tenggara</p>
+        <p>(+62) 853-9442-4185</p>
+        <p>exampleemail@gmail.com</p>
+        <p>26/7 Hours Service</p>
+
+        <div class="social-icons">
+          <span>●</span>
+          <span>●</span>
+          <span>●</span>
+          <span>●</span>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="footer-col">
+        <h4>OUR GALLARY</h4>
+        <div class="gallery">
+          <img src="img1.jpg" alt="gallery1" />
+          <img src="img2.jpg" alt="gallery2" />
+          <img src="img3.jpg" alt="gallery3" />
+          <img src="img4.jpg" alt="gallery4" />
+          <img src="img5.jpg" alt="gallery5" />
+          <img src="img6.jpg" alt="gallery6" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Labirin Children Kendari</p>
+  </div>
+</footer>
+  <script src="./js/app.js"></script>
+  <script>
+    getSession().then(r=>setLoggedUI(r.user))
+  </script>
+</body>
+</html>
