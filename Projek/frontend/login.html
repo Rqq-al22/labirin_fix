@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- ========================================
+       HEAD - Meta tags dan link CSS
+       ======================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Labirin Children</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <!-- ========================================
+       NAVBAR - Header navigasi
+       ======================================== -->
+  <nav class="navbar">
+    <div class="inner">
+      <div class="brand">
+        <img src="../src/logo.png" alt="Labirin" />
+        <div class="name">Labirin Children Center</div>
+      </div>
+      <div class="nav-links">
+        <a class="btn" href="./login.html">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       BACKGROUND - Gambar latar belakang login
+       ======================================== -->
+  <!-- Background login: ganti path gambar di atribut style di bawah (src/...) -->
+  <div class="login-backdrop" style="--login-bg: url('../src/home-services-banner.webp')"></div>
+
+  <!-- ========================================
+       LOGIN FORM - Form login utama
+       ======================================== -->
+  <main class="container login-wrap">
+    <section class="login-card card-3d fade-in">
+      <h1 class="login-title">Masuk Akun</h1>
+      <p class="login-subtitle">Gunakan username dan kata sandi Anda.</p>
+      <form class="form" onsubmit="onSubmit(event)">
+        <!-- Input username -->
+        <label>Username
+          <input id="login" required placeholder="contoh: T001 / O001" />
+        </label>
+        <!-- Input password -->
+        <label>Password
+          <input id="password" type="password" required placeholder="••••••" />
+        </label>
+        <!-- Tombol submit -->
+        <button class="btn btn-accent" type="submit">Masuk</button>
+        <!-- Link lupa password -->
+        <div class="login-meta">
+          <a class="link" href="#" onclick="forgot()">Lupa password?</a>
+        </div>
+      </form>
+      <!-- Area pesan error/sukses -->
+      <div id="msg" class="alert" style="display:none"></div>
+    </section>
+  </main>
+
+  <script src="./js/app.js"></script>
+  <script>
+    /* ========================================
+       LOGIN FUNCTIONS - Fungsi untuk form login
+       ======================================== */
+    
+    // Fungsi submit form login
+    async function onSubmit(e){
+      e.preventDefault();
+      const login = document.getElementById('login').value.trim();
+      const password = document.getElementById('password').value;
+      
+      // Kirim data login ke backend
+      const res = await api('auth_login.php', {method:'POST', body: JSON.stringify({login, password})});
+      
+      if(res.ok){
+        // Jika login berhasil, redirect ke dashboard
+        location.href = './dashboard.html';
+      }else{
+        // Jika gagal, tampilkan pesan error
+        showMsg('Login gagal. Periksa data Anda.');
+      }
+    }
+    
+    // Fungsi lupa password
+    async function forgot(){
+      const username = prompt('Masukkan username terdaftar (contoh: T001/O001):');
+      if(!username) return;
+      
+      showMsg('Mengirim email reset password...');
+      
+      try {
+        // Kirim request reset password ke backend
+        const res = await api('password_reset.php', {method:'POST', body: JSON.stringify({username})});
+        if(res.ok){
+          showMsg('✅ Email reset password telah dikirim! Silakan cek inbox email Anda.');
+        } else {
+          showMsg('❌ Gagal mengirim email. ' + (res.error || 'Silakan coba lagi.'));
+        }
+      } catch(error) {
+        showMsg('❌ Error: ' + error.message);
+      }
+    }
+    
+    // Fungsi untuk menampilkan pesan
+    function showMsg(t){ 
+      const m=document.getElementById('msg'); 
+      m.textContent=t; 
+      m.style.display='block'; 
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- ========================================
+       HEAD - Meta tags dan link CSS
+       ======================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labirin Children Kendari - Homepage</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <!-- ========================================
+       NAVBAR - Header navigasi utama
+       ======================================== -->
+  <nav class="navbar">
+    <div class="inner">
+      <!-- Logo dan nama brand -->
+      <div class="brand">
+        <img src="../src/logo.png" alt="Labirin" />
+        <span class="name">Labirin Children Center</span>
+      </div>
+      <!-- Menu navigasi dan tombol login/logout -->
+      <div class="nav-links">
+        <a href="./index.html">Homepage</a>
+        <a href="#paket-labirin">Paket Belajar</a>
+        <span data-user-name class="tag"></span> <!-- Nama user yang login -->
+        <a class="btn btn-login" data-btn-login href="./login.html">Login</a>
+        <a class="btn btn-accent hidden" data-btn-logout href="#" onclick="fetch('../backend/auth_logout.php',{credentials:'include'}).then(()=>location.reload())">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       HERO SECTION - Bagian utama dengan gambar dan teks
+       ======================================== -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <!-- Gambar utama klinik -->
+        <div class="hero-image">
+          <img src="../src/foto.png" alt="Klinik Tumbuh Kembang" />
+        </div>
+        <!-- Teks utama dan CTA button -->
+        <div class="hero-text">
+          <h1>Klinik Tumbuh Kembang & Center Terapi Anak</h1>
+          <p>Selamat datang di Labirin Children Center Kendari. Kami hadir untuk mendampingi tumbuh kembang anak Anda dengan layanan terapi yang profesional dan penuh kasih sayang.</p>
+          <div class="flex mt-16">
+            <!-- Link WhatsApp untuk konsultasi -->
+            <a class="btn btn-accent" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20layanan%20terapi%20anak">Hubungi CS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================
+       WHY CHOOSE US - Mengapa memilih kami
+       ======================================== -->
+  <section class="section container" id="paket-belajar">
+    <h2>Kenapa kami adalah pilihan yang tepat?</h2>
+    <p>Labirin Children Center Kendari adalah klinik tumbuh kembang dan center terapi anak yang telah berdedikasi dalam mendukung perkembangan optimal anak-anak sejak tahun 2020. Kami dengan penuh semangat menjalankan misi kami untuk memberikan layanan terapi yang berkualitas tinggi kepada anak-anak dengan kebutuhan khusus, siap membantu mewujudkan potensi terbaik anak Anda.</p>
+    
+    <!-- Grid fitur utama -->
+    <div class="grid-2">
+      <!-- Card metode belajar -->
+      <div class="card card-feature">
+        <img class="card-icon-img" src="../src/images-3-removebg-preview.png" alt="Ikon Metode" />
+        <div class="card-body">
+          <h3>Metode Belajar Terbaik</h3>
+          <p>Kami menyusun metode pembelajaran yang menyenangkan dan efektif, disesuaikan dengan kebutuhan individual setiap anak. Pendekatan terapi yang kami gunakan telah terbukti membantu anak mencapai milestone perkembangan yang optimal.</p>
+        </div>
+      </div>
+      <!-- Card terapis -->
+      <div class="card card-feature">
+        <img class="card-icon-img" src="../src/016-doctor.png" alt="Ikon Mentor/Terapis" />
+        <div class="card-body">
+          <h3>Mentor/Terapis Terbaik</h3>
+          <p>Tim terapis kami terdiri dari profesional berpengalaman yang telah menangani ribuan anak dengan berbagai kebutuhan khusus. Mereka berdedikasi penuh untuk memberikan pendampingan terbaik bagi tumbuh kembang anak Anda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PAKET PEMBELAJARAN - Paket terapi yang tersedia
+       ======================================== -->
+  <section class="section container" id="paket-labirin">
+    <h2>Paket Pembelajaran Labirin Children Center</h2>
+    <p>Berikut paket pembelajaran yang ada di labirin children center :</p>
+    
+    <!-- Grid paket pembelajaran -->
+    <div class="course-grid">
+      <!-- Paket Wicara -->
+      <article class="course-card card-3d">
+        <div class="course-header">
+          <img class="badge-icon-img" src="../src/images-3-removebg-preview.png" alt="Ikon Paket" />
+          <h3>PAKET WICARA</h3>
+        </div>
+        <p>Terapi wicara untuk membantu perkembangan kemampuan berbicara anak</p>
+        <div class="course-note"></div>
+        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20WICARA" class="btn btn-primary course-btn" target="_blank" rel="noopener">JOIN</a>
+      </article>
+
+      <!-- Paket Okupasi -->
+      <article class="course-card card-3d">
+        <div class="course-header">
+          <img class="badge-icon-img" src="../src/images-3-removebg-preview.png" alt="Ikon Paket" />
+          <h3>PAKET OKUPASI</h3>
+        </div>
+        <p>Terapi okupasi untuk meningkatkan kemampuan motorik dan kognitif anak</p>
+        <div class="course-note"></div>
+        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20OKUPASI" class="btn btn-primary course-btn" target="_blank" rel="noopener">JOIN</a>
+      </article>
+
+      <!-- Paket lainnya -->
+      <article class="course-card card-3d">
+        <div class="course-header">
+          <img class="badge-icon-img" src="../src/images-3-removebg-preview.png" alt="Ikon Paket" />
+          <h3>PAKET LAINNYA</h3>
+        </div>
+        <p>Paket terapi lainnya sesuai kebutuhan anak</p>
+        <div class="course-note">Hubungi untuk informasi lebih lanjut</div>
+        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20konsultasi%20paket%20terapi" class="btn btn-primary course-btn" target="_blank" rel="noopener">JOIN</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================================
+       DAFTAR TERAPIS - Tim terapis profesional
+       ======================================== -->
+  <section class="section container" id="terapis">
+    <h2>Daftar Terapis</h2>
+    <p>Berikut adalah daftar terapis terpercaya kami untuk buah hati anda :</p>
+    
+    <!-- Grid daftar terapis -->
+    <div class="therapist-grid">
+      <!-- Terapis utama -->
+      <article class="course-card therapist-card">
+        <img class="therapist-photo" src="../src/dr.andi.png" alt="Terapis" />
+        <h3 class="therapist-name">Dr. ANDI RIZKY AMELIA, M.Psi., Psikolog</h3>
+      </article>
+      <!-- Terapis lainnya -->
+      <article class="course-card therapist-card">
+        <img class="therapist-photo" src="../src/016-doctor.png" alt="Terapis" />
+        <h3 class="therapist-name">Terapis 2</h3>
+      </article>
+      <article class="course-card therapist-card">
+        <img class="therapist-photo" src="../src/016-doctor.png" alt="Terapis" />
+        <h3 class="therapist-name">Terapis 3</h3>
+      </article>
+      <article class="course-card therapist-card">
+        <img class="therapist-photo" src="../src/016-doctor.png" alt="Terapis" />
+        <h3 class="therapist-name">Terapis 4</h3>
+      </article>
+      <article class="course-card therapist-card">
+        <img class="therapist-photo" src="../src/016-doctor.png" alt="Terapis" />
+        <h3 class="therapist-name">Terapis 5</h3>
+      </article>
+      <article class="course-card therapist-card">
+        <img class="therapist-photo" src="../src/016-doctor.png" alt="Terapis" />
+        <h3 class="therapist-name">Terapis 6</h3>
+      </article>
+      <article class="course-card therapist-card">
+        <img class="therapist-photo" src="../src/016-doctor.png" alt="Terapis" />
+        <h3 class="therapist-name">Terapis 7</h3>
+      </article>
+      <article class="course-card therapist-card">
+        <img class="therapist-photo" src="../src/016-doctor.png" alt="Terapis" />
+        <h3 class="therapist-name">Terapis 8</h3>
+      </article>
+      <article class="course-card therapist-card">
+        <img class="therapist-photo" src="../src/016-doctor.png" alt="Terapis" />
+        <h3 class="therapist-name">Terapis 9</h3>
+      </article>
+    </div>
+    
+    <!-- CTA untuk melihat semua terapis -->
+    <div class="therapist-cta">
+      <a href="#" class="btn btn-accent">Lihat Semua Terapis</a>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TENTANG KAMI - Sejarah dan visi klinik
+       ======================================== -->
+  <section class="section container" id="tentang-kami">
+    <h2>Tentang Kami</h2>
+    <div class="about">
+      <!-- Teks tentang klinik -->
+      <div class="about-text">
+        <p>Labirin Children Center berdiri sejak tahun 2020 dengan tujuan membantu keluarga dengan anak yang mengalami hambatan atau gangguan tumbuh kembang secara terpadu dengan melibatkan tim Dokter Spesialis Anak, Psikiater Anak, Psikolog, dan para Terapis berpengalaman dengan sertifikat dalam hingga luar negeri.</p>
+        <p>Kami berkomitmen untuk memberikan layanan terapi yang berkualitas tinggi dengan pendekatan yang holistik dan personal untuk setiap anak. Tim kami terdiri dari profesional yang berpengalaman dan berdedikasi penuh untuk mendukung perkembangan optimal anak-anak.</p>
+        <p>Dengan metode terapi yang telah terbukti efektif dan fasilitas yang memadai, kami siap membantu mewujudkan potensi terbaik anak Anda. Setiap program terapi disesuaikan dengan kebutuhan individual dan perkembangan anak.</p>
+        <p>Hingga saat ini, Labirin Children Center telah melayani ratusan anak dengan berbagai kebutuhan khusus dan terus berkomitmen untuk memberikan layanan terbaik dalam mendukung tumbuh kembang anak.</p>
+      </div>
+      <!-- Gambar tentang klinik -->
+      <div class="about-images">
+        <img src="../src/foto.png" alt="Terapi Anak" class="about-img" />
+        <img src="../src/foto.png" alt="Terapis" class="about-img small" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       TESTIMONI - Ulasan dari pasien
+       ======================================== -->
+  <section class="section container" id="testimoni">
+    <h2>Testimoni</h2>
+    <p>Lihat ungkapan pasien kami setelah mendapatkan layanan terbaik</p>
+    
+    <!-- Slider testimoni -->
+    <div class="testimonial-wrap">
+      <!-- Tombol navigasi -->
+      <button class="nav-btn prev" aria-label="Sebelumnya">‹</button>
+      
+      <!-- Track testimoni -->
+      <div class="testimonial-track" data-testimonial-track>
+        <!-- Testimoni 1 -->
+        <article class="testimonial-card">
+          <div class="head">
+            <img src="../src/images-3.png" alt="Avatar" class="avatar" />
+            <div>
+              <div class="name">Have Tomven</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <p>"Sangat membantu perkembangan motorik anak saya…"</p>
+        </article>
+        
+        <!-- Testimoni 2 -->
+        <article class="testimonial-card">
+          <div class="head">
+            <img src="../src/images-3.png" alt="Avatar" class="avatar" />
+            <div>
+              <div class="name">Arna Wati</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <p>"Terapisnya handal dan komunikatif, kebersihan terjaga, adminnya ramah."</p>
+        </article>
+        
+        <!-- Testimoni 3 -->
+        <article class="testimonial-card">
+          <div class="head">
+            <img src="../src/images-3.png" alt="Avatar" class="avatar" />
+            <div>
+              <div class="name">Wahyu Titis Kholifah</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <p>"Pelayanannya memuaskan, terapis profesional. Recommended!"</p>
+        </article>
+        
+        <!-- Testimoni 4 -->
+        <article class="testimonial-card">
+          <div class="head">
+            <img src="../src/images-3.png" alt="Avatar" class="avatar" />
+            <div>
+              <div class="name">Bunda Mega</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <p>"Anak jadi lebih percaya diri, terima kasih tim Labirin."</p>
+        </article>
+      </div>
+      
+      <!-- Tombol navigasi -->
+      <button class="nav-btn next" aria-label="Berikutnya">›</button>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER - Footer website
+       ======================================== -->
+  <footer class="footer">
+    <div class="container">© 2025 Labirin Children Kendari</div>
+  </footer>
+  
+  <!-- ========================================
+       JAVASCRIPT - Script untuk interaksi
+       ======================================== -->
+  <script src="./js/app.js"></script>
+  <script>
+    // Cek session dan update UI login
+    getSession().then(r=>setLoggedUI(r.user))
+  </script>
+</body>
+</html>
