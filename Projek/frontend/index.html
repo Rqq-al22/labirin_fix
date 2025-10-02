@@ -132,14 +132,13 @@
 /*** Footer Start ***/
 .footer {
   background: linear-gradient(
-                rgba(255, 251, 234, 0.9), /* Warna putih kekuningan dengan transparansi */
-                rgba(255, 251, 234, 0.9)  /* Sama agar hasilnya rata */
-              ),
-              url('../src/footer.jpg'); /* Gambar latar belakang footer */
-  background-position: center;      /* Gambar terpusat */
-  background-repeat: no-repeat;     /* Tidak diulang */
-  background-size: cover;           /* Menutupi seluruh area footer */
-  padding: 50px 0;
+                rgba(255, 251, 234, 0.9), 
+                rgba(255, 251, 234, 0.9)  
+              ),url('../src/footer.jpg'); 
+  background-position: center;     
+  background-repeat: no-repeat;     
+  background-size: cover;           
+  padding: 40px 0;
   font-family: Arial, sans-serif;
   color: #333;
 }
@@ -205,22 +204,10 @@
   color: #FFC107;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 50%;
-  border: 2px dotted #FFC107;
-}
-
 .footer-bottom {
   clear: both;
   text-align: center;
-  padding: 20px;
+  padding: 40px;
   background: #2d2d52;
   color: #fff;
   margin-top: 30px;
@@ -228,434 +215,132 @@
 
 .footer-bottom a {
   color: #FFC107;
-  text-decoration: none;
-}
-
+  text-decoration: none;}
 .about-us {
 background: linear-gradient(
-                rgba(255, 251, 234, 0.9), /* Warna putih kekuningan dengan transparansi */
-                rgba(255, 251, 234, 0.9)  /* Sama agar hasilnya rata */
-              ),
-              url('../src/footer.jpg'); /* Gambar latar belakang footer */
-  background-position: center;      /* Gambar terpusat */
-  background-repeat: no-repeat;     /* Tidak diulang */
-  background-size: cover;           /* Menutupi seluruh area footer */
+                rgba(255, 251, 234, 0.9), 
+                rgba(255, 251, 234, 0.9) 
+              ),url('../src/footer.jpg'); 
+  background-position: center;      
+  background-repeat: no-repeat;     
+  background-size: cover;         
   padding: 50px 0;
   font-family: Arial, sans-serif;
   color: #333;}
-
-.about-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.about-img img {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.about-text .subtitle {
-  color: #f4c542; /* Kuning gelap seperti what-we-do */
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.about-text .title {
-  color: #2c2c54; /* Sama dengan what-we-do untuk konsistensi */
-  font-size: 36px; /* Sama dengan title di what-we-do */
-  font-weight: 800;
-  margin-bottom: 40px;
-  line-height: 1.3;
-}
-
-
-.about-text p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.about-list {
-  display: flex;
-  gap: 40px;
-  margin-bottom: 25px;
-}
-
-.about-list ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about-list li {
-  margin-bottom: 10px;
-  color: #333;
-  font-size: 15px;
-  position: relative;
-  padding-left: 20px;
-}
-
-.about-list li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #f4c542; /* kuning cerah */
-}
-.btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #f4c542; /* tombol kuning */
-  color: #000;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.btn:hover {
-  background: #e6b800; /* kuning lebih gelap saat hover */
-  color: #fff;
-}
-.services {
-  padding: 80px 0;
-  background: #fffbea;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #fbc02d;
-  margin-bottom: 10px;
-}
-
-.section-subtitle {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-.service-cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.service-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  flex: 1 1 300px;
-  max-width: 350px;
-  transition: all 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
-
-.service-card .icon img {
-  width: 60px;
-  margin-bottom: 15px;
-}
-.service-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #fbc02d;
-  margin-bottom: 15px;
-}
-.service-card p {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 20px;
-}
-.btn-yellow {
-  display: inline-block;
-  padding: 10px 22px;
-  background: #fbc02d;
-  color: #fff;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.btn-yellow:hover {
-  background: #f9a825;
-}
-/* Bagian Section */
-.what-we-do {
-  text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(to bottom, #fff7cc, #fff9e6); /* Background kuning lembut */
-}
-
-/* Judul */
-.what-we-do .subtitle {
-  color: #f4c542; /* Kuning gelap */
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.what-we-do .title {
-  color: #2c2c54; /* Teks biru gelap agar kontras */
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 40px;
-  line-height: 1.3;
-}
-
+.about-content {display: flex;align-items: center;justify-content: space-between;gap: 40px;}
+.about-img img {width: 100%;max-width: 420px;border-radius: 15px;box-shadow: 0 10px 25px rgba(0,0,0,0.15);}
+.about-text .subtitle {color: #f4c542; /* Kuning gelap seperti what-we-do */font-size: 18px;font-weight: bold;margin-bottom: 10px;}
+.about-text .title {color: #2c2c54; /* Sama dengan what-we-do untuk konsistensi */font-size: 36px; /* Sama dengan title di what-we-do */font-weight: 800;margin-bottom: 40px;line-height: 1.3;}
+.about-text p {font-size: 16px;color: #555;margin-bottom: 20px;}
+.about-list {display: flex;gap: 40px;margin-bottom: 25px;}
+.about-list ul {list-style: none;padding: 0;}
+.about-list li {margin-bottom: 10px;color: #333;font-size: 15px;position: relative;padding-left: 20px;}
+.about-list li::before {content: "✔";position: absolute;left: 0;color: #f4c542; /* kuning cerah */}
+.btn {display: inline-block;padding: 12px 25px;background: #f4c542; /* tombol kuning */color: #000;border-radius: 30px;text-decoration: none;font-weight: bold;transition: 0.3s;}
+.btn:hover {background: #e6b800; /* kuning lebih gelap saat hover */color: #fff;}
+.services {padding: 80px 0;background: #fffbea;text-align: center;}
+.section-title {font-size: 32px;font-weight: 700;color: #fbc02d;margin-bottom: 10px;}
+.section-subtitle {font-size: 16px;color: #555;margin-bottom: 40px;}
+.service-cards {display: flex;justify-content: center;gap: 30px;flex-wrap: wrap;}
+.service-card {background: #fff;padding: 25px;border-radius: 15px;box-shadow: 0 5px 15px rgba(0,0,0,0.1);flex: 1 1 300px;max-width: 350px;transition: all 0.3s ease;}
+.service-card:hover {transform: translateY(-10px);box-shadow: 0 12px 25px rgba(0,0,0,0.15);}
+.service-card .icon img {width: 60px;margin-bottom: 15px;}
+.service-card h3 {font-size: 20px;font-weight: 700;color: #fbc02d;margin-bottom: 15px;}
+.service-card p {font-size: 15px;color: #555;margin-bottom: 20px;}
+.btn-yellow {display: inline-block;padding: 10px 22px;background: #fbc02d;color: #fff;border-radius: 25px;text-decoration: none;font-weight: bold;transition: 0.3s;}
+.btn-yellow:hover {background: #f9a825;}
+.what-we-do {text-align: center;padding: 50px 20px;background: linear-gradient(to bottom, #fff7cc, #fff9e6); /* Background kuning lembut */}
+.what-we-do .subtitle {color: #f4c542; /* Kuning gelap */font-size: 18px;font-weight: bold;margin-bottom: 10px;}
+.what-we-do .title {color: #2c2c54; /* Teks biru gelap agar kontras */font-size: 36px;font-weight: 800;margin-bottom: 40px;line-height: 1.3;}
 /* Container untuk cards */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
+.cards-container {display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 20px;max-width: 1100px;margin: 0 auto;}
 /* Card Style */
-.card {
-  background: white;
-  border: 2px solid #fdd835; /* Border kuning */
-  border-radius: 20px 60px 20px 20px;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(253, 216, 53, 0.4); /* Bayangan kuning */
-}
-
+.card {background: white;border: 2px solid #fdd835; /* Border kuning */border-radius: 20px 60px 20px 20px;padding: 20px;box-shadow: 0 5px 15px rgba(0,0,0,0.05);transition: all 0.3s ease;text-align: left;}
+.card:hover {transform: translateY(-5px);box-shadow: 0 10px 25px rgba(253, 216, 53, 0.4); /* Bayangan kuning */}
 /* Card Heading */
-.card h3 {
-  color: #f4b400; /* Judul kuning gelap */
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
+.card h3 {color: #f4b400; /* Judul kuning gelap */font-size: 20px;margin-bottom: 10px;font-weight: 600;}
 /* Card Text */
-.card p {
+.card .short-text {
   color: #666;
   font-size: 14px;
-  margin-bottom: 20px;
   line-height: 1.6;
-}
-
-/* Button */
-.read-more {
-  background: #fdd835; /* Tombol kuning */
-  color: #2c2c54;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 14px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.read-more:hover {
-  background: #fbc02d; /* Kuning lebih gelap saat hover */
-  color: #fff;
-}
-/* ===== Section Styling ===== */
-.facilities-section {
-  text-align: center;
-  padding: 60px 20px;
-  background: #fff;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ===== Subtitle ===== */
-.facilities-subtitle {
-  color: #fbc02d; /* Kuning gelap */
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-/* ===== Title ===== */
-.facilities-title {
-  color: #2c2c54;
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 50px;
-}
-/* ===== Facilities Grid ===== */
-.facilities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* ===== Facility Card ===== */
-.facility-card {
-  background: #fff5d9; /* Soft Yellow Accent */
-  border: 1px solid #fcecc3;
-  border-radius: 15px;
-  padding: 30px 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.facility-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-.facility-icon {
-  width: 60px;
-  height: 60px;
   margin-bottom: 15px;
-}
-
-.facility-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #f4b400; /* Golden Yellow */
-  margin-bottom: 5px;
-}
-
-/* ===== Subtitle di dalam card ===== */
-.facility-subtitle {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #777;
-  margin-bottom: 15px;
-}
-
-.facility-text {
-  font-size: 0.95rem;
-  color: #444;
-  line-height: 1.6;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .section-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .facility-card {
-    padding: 25px 15px;
-  }
-}
-/* Section Tim Terapis */
-.terapis-section {
-  text-align: center;
-  padding: 50px 20px;
-  background: #fff9e6;
-
-}
-.terapis-subtitle {
-  color: #fbc02d; /* Kuning gelap */
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.terapis-title {
-  color: #2c2c54;
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 50px;
-}
-
-.section-header .description {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 50px;
-}
-
-/* Grid Terapis */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Kartu Terapis */
-.team-card {
-  background: #fff;
-  border: 2px solid #f4c542; /* Border kuning */
-  border-radius: 15px;
-  padding: 30px 20px;
-  box-shadow: 6px 6px 0px #0d47a1; /* Bayangan biru */
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 8px 8px 0px #0b3d91;
-}
-
-/* Gambar Terapis */
-.team-image {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* Batasi 3 baris */
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  border: 3px solid #f4c542;
-  margin: 0 auto 20px auto;
+  text-overflow: ellipsis;
 }
+/* Button */.read-more {background: #fdd835; color: #2c2c54;border: none;padding: 10px 20px;border-radius: 10px;font-size: 14px;cursor: pointer;font-weight: bold;transition: background 0.3s ease, color 0.3s ease;}
+.read-more:hover {background: #fbc02d;color: #fff;}
+.modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      overflow-y: auto;
+    }
 
-.team-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .modal-content {background: #fff;margin: 5% auto;padding: 30px;border-radius: 20px;max-width: 700px;box-shadow: 0 10px 25px rgba(0,0,0,0.3);animation: fadeIn 0.3s ease;position: relative; }
+    .modal-content h2 {margin-top: 0;color: #2c2c54;}
+    .modal-content p {color: #555;line-height: 1.6;}
 
-/* Nama Terapis */
-.team-name {
-  font-size: 18px;
-  font-weight: 700;
-  color: #0d47a1; /* Biru gelap */
-  line-height: 1.4;
-}
+    .close {position: absolute; top: 15px; right: 20px;font-size: 28px;font-weight: bold;color: #333;cursor: pointer;}
+.close:hover { color: red; }
+.custom-list { list-style: none;       margin: 10px 0 20px 0;padding-left: 0;}
+.custom-list li {position: relative;padding-left: 25px;  margin-bottom: 8px;color: #444;line-height: 1.6;}
+.custom-list li::before {
+  content: "✔";         color: #f4c542;       font-weight: bold;position: absolute;left: 0;top: 0;}
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}to {opacity: 1; transform: translateY(0);}}
+    .card-footer {margin-top: auto;text-align: left;}
+.fasilitas-section {background: #fff; padding: 60px 20px;text-align: center;}
+.fasilitas-subtitle {color: #fbc02d; font-size: 18px;font-weight: 600;margin-bottom: 10px;}
+.fasilitas-title {color: #2c2c54;font-size: 36px;font-weight: 800;margin-bottom: 50px;}
+.section-description {font-size: 16px;color: #555;max-width: 700px;margin: 0 auto 40px;line-height: 1.6;}
+.fasilitas-wrapper {display: grid;grid-template-columns: repeat(4, 1fr);gap: 25px;justify-items: center;}/* Card Styling */.fasilitas-card {background: #fff6e5;padding: 25px 20px;border-radius: 50px 50px 50px 20px;max-width: 280px;text-align: center;box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);transition: 0.3s ease;}
+.fasilitas-card:hover {transform: translateY(-5px);box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);}
+.fasilitas-card .icon img {width: 60px;height: 60px;margin-bottom: 15px;}
+.fasilitas-card .card-title {font-size: 18px;font-weight: 700;color: #f7c600;margin-bottom: 12px;}
+.fasilitas-card .card-text {font-size: 14px;color: #444;line-height: 1.6;}
+/* Responsif - tablet */
+@media (max-width: 992px) {
+  .fasilitas-wrapper {grid-template-columns: repeat(2, 1fr);}}
+/* Responsif - mobile */
+@media (max-width: 576px) {
+  .fasilitas-wrapper {grid-template-columns: 1fr;}}
 
-/* Tombol Lihat Semua */
-.team-button {
-  margin-top: 50px;
-}
-
-.btn-view-all {
-  display: inline-block;
-  background-color: #f4c542;
-  color: #000;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  transition: 0.3s ease;
-}
-
-.btn-view-all:hover {
-  background-color: #e6b800;
-  color: #fff;
-}
+/* Section Tim Terapis */
+.terapis-section {text-align: center;padding: 50px 20px;background:linear-gradient(to bottom, #FFF9E6, #FFE97F);}
+.terapis-subtitle {color: #fbc02d; /* Kuning gelap */font-size: 18px;font-weight: 600;margin-bottom: 10px;}
+.terapis-title {color: #2c2c54;font-size: 36px;font-weight: 800;margin-bottom: 50px;}
+.team-role {font-size: 14px;color: #666;margin-top: 5px;font-style: italic;}
+.section-header .description {font-size: 16px;color: #555;margin-bottom: 50px;}
+/* Grid Terapis */.team-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));gap: 30px;justify-content: center;max-width: 1000px;margin: 0 auto;}
+/* Kartu Terapis */.team-card {background: #fff;border: 2px solid #f4c542; /* Border kuning */border-radius: 15px;padding: 30px 20px;box-shadow: 6px 6px 0px #0d47a1; /* Bayangan biru */transition: all 0.3s ease;text-align: center;}
+.team-card:hover {transform: translateY(-5px);box-shadow: 8px 8px 0px #0b3d91;}
+/* Gambar Terapis */.team-image {width: 110px;height: 110px;border-radius: 50%;overflow: hidden;border: 3px solid #f4c542;margin: 0 auto 20px auto;}
+.team-image img {width: 100%;height: 100%;object-fit: cover;}
+/* Nama Terapis */.team-name {font-size: 18px;font-weight: 700;color: #0d47a1; /* Biru gelap */line-height: 1.4;}
+/* Tombol Lihat Semua */.team-button {margin-top: 50px;}
+.btn-view-all {display: inline-block;background-color: #f4c542;color: #000;padding: 12px 30px;border-radius: 25px;font-size: 16px;font-weight: 600;text-decoration: none;box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);transition: 0.3s ease;}
+.btn-view-all:hover {background-color: #e6b800;color: #fff;}
+.gangguan-section {text-align: center;padding: 50px 20px;background:linear-gradient(to bottom, #FFF9E6);}
+.gangguan-subtitle {color: #fbc02d; /* Kuning gelap */font-size: 18px;font-weight: 600;margin-bottom: 10px;}
+.gangguan-title {color: #2c2c54;font-size: 36px;font-weight: 800;margin-bottom: 50px;}
+.gangguan-role {font-size: 14px;color: #666;margin-top: 5px;font-style: italic;}
+.section-header .description {font-size: 16px;color: #555;margin-bottom: 50px;}
+/* Grid Terapis */.team-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));gap: 30px;justify-content: center;max-width: 1000px;margin: 0 auto;}
+/* Kartu Terapis */.team-card {background: #fff;border: 2px solid #f4c542; /* Border kuning */border-radius: 15px;padding: 30px 20px;box-shadow: 6px 6px 0px #0d47a1; /* Bayangan biru */transition: all 0.3s ease;text-align: center;}
+.team-card:hover {transform: translateY(-5px);box-shadow: 8px 8px 0px #0b3d91;}
+/* Gambar Terapis */.team-image {width: 110px;height: 110px;border-radius: 50%;overflow: hidden;border: 3px solid #f4c542;margin: 0 auto 20px auto;}
+.team-image img {width: 100%;height: 100%;object-fit: cover;}
+/* Nama Terapis */.team-name {font-size: 18px;font-weight: 700;color: #0d47a1; /* Biru gelap */line-height: 1.4;}
+/* Tombol Lihat Semua */.team-button {margin-top: 50px;}
+.btn-view-all {display: inline-block;background-color: #f4c542;color: #000;padding: 12px 30px;border-radius: 25px;font-size: 16px;font-weight: 600;text-decoration: none;box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);transition: 0.3s ease;}
+.btn-view-all:hover {background-color: #e6b800;color: #fff;}
   </style>
 
 </head>
@@ -669,7 +354,7 @@ background: linear-gradient(
       <div class="nav-links">
         <a href="./index.html">Beranda</a>
         <a href="./terapis1.html">Terapis</a>
-        <a href="./index.html#layanan">Layanan</a>
+        <a href="./galeri.html">Galeri</a>
         <span data-user-name class="tag"></span>
         <a class="btn btn-login" data-btn-login href="./login.html">Login</a>
         <a class="btn btn-accent hidden" data-btn-logout href="#" onclick="fetch('../backend/auth_logout.php',{credentials:'include'}).then(()=>location.reload())">Logout</a>
@@ -689,12 +374,9 @@ background: linear-gradient(
  <section class="about-us">
   <div class="container">
     <div class="about-content">
-      <!-- Gambar / Video di kiri -->
       <div class="about-img">
-         <img class="tentang-kami" src="../src/gambaranak.png" alt="Labirin Children Center" />
+         <img class="tentang-kami" src="../src/anak4.jpg" alt="Labirin Children Center" />
       </div>
-
-      <!-- Teks di kanan -->
       <div class="about-text">
         <h4 class="subtitle">About Us</h4>
         <h2 class="title">Labirin Children Center<br>Membangun Masa Depan Cerah Anak</h2>
@@ -707,12 +389,10 @@ background: linear-gradient(
           <ul>
             <li>Asesmen tumbuh kembang</li>
             <li>Terapi anak</li>
-            <li>Pendidikan inklusi ABK</li>
           </ul>
           <ul>
             <li>PAUD Inklusi sejak 2021</li>
-            <li>Belajar bersama anak tipikal</li>
-            <li>Meningkatkan kemampuan akademik & sosial</li>
+            <li>Layanan Terapi Dirumah</li>
           </ul>
         </div>
       </div>
@@ -726,35 +406,210 @@ background: linear-gradient(
 
   <div class="cards-container">
     <div class="card">
-      <h3>Terapi Perilaku (ABA/Vb-ABA)</h3>
-      <p>Terapi berbasis perilaku yang efektif untuk anak dengan autisme atau gangguan perilaku, 
-          fokus pada keterampilan sosial, komunikasi, dan adaptasi sehari-hari melalui pendekatan positif.
-        </p>
-    <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+      <h3>Layanan Psikologi</h3>
+       <p>
+       Layanan asesmen dan konseling untuk memahami kebutuhan anak, mendukung tumbuh kembang, serta membantu perencanaan pendidikan dan karier.</p>
+    <div class="card-footer">
+    <button class="read-more" onclick="openModal('modal4')">Selengkapnya</button>
+  </div>
     </div>
 
-    <div class="card">
-      <h3>Sensori Integrasi</h3>
-      <p> Program terapi untuk membantu anak mengintegrasikan input sensorik (sentuhan, gerak, suara), 
-          meningkatkan koordinasi, perhatian, dan kemandirian bagi anak dengan kesulitan sensorik.
+     <div class="card">
+      <h3>Terapi Wicara</h3>
+      <p>
+     Terapi untuk membantu anak meningkatkan kemampuan berbicara, berkomunikasi, serta memperbaiki fungsi makan dan menelan.
         </p>
-     <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+        <button class="read-more" onclick="openModal('modal2')">Selengkapnya</button>
     </div>
 
-    <div class="card">
-      <h3>Auditory Verbal Therapy (AVT)</h3>
-      <p> <p>
-          Terapi untuk anak dengan gangguan pendengaran atau keterlambatan bicara, 
-          menggunakan pendekatan auditory-verbal agar anak berkembang dalam mendengar, berbicara, dan berbahasa.
+ <div class="card">
+      <h3>Terapi Okupasi</h3>
+     <p>Mendukung perkembangan motorik, kognitif, dan keterampilan sehari-hari anak agar lebih mandiri dan percaya diri.</p>
+        <button class="read-more" onclick="openModal('modal5')">Selengkapnya</button>
+    </div>
+
+  <div class="card">
+      <h3>Fisioterapi Anak</h3>
+      <p>Terapi yang membantu memperkuat otot, memperbaiki postur, serta meningkatkan kemampuan gerak dan koordinasi anak.
         </p>
-        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+         <button class="read-more" onclick="openModal('modal3')">Selengkapnya</button>
     </div>
 
     <div class="card">
       <h3>Remedial Akademik</h3>
-      Layanan bantuan belajar individual untuk anak dengan kesulitan akademik, termasuk disleksia atau keterlambatan belajar, dengan metode interaktif untuk meningkatkan prestasi sekolah dan kepercayaan diri.
+     Program pendampingan belajar yang membantu anak dalam membaca, menulis, berhitung, serta mengatasi kesulitan belajar.
         </p>
-        <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+         <button class="read-more" onclick="openModal('modal8')">Selengkapnya</button>
+    </div>
+  
+    <div class="card">
+      <h3>Terapi Perilaku (ABA/VB-ABA)</h3>
+      <p>Program terapi yang membantu anak memahami, mengelola, dan membentuk perilaku positif agar lebih adaptif dalam kehidupan sehari-hari.</p>
+    <button class="read-more" onclick="openModal('modal1')">Selengkapnya</button>
+    </div>
+  
+     <div class="card">
+      <h3>Sensori Integrasi</h3>
+      <p> Layanan yang memberikan stimulasi pada sistem sensorik anak untuk mendukung perkembangan gerak, emosi, serta keterampilan sosialnya.
+        </p>
+      <button class="read-more" onclick="openModal('modal6')">Selengkapnya</button>
+    </div>
+  
+  <div class="card">
+      <h3>Auditory Verbal Therapy (AVT)</h3>
+      <p> Terapi mendengarkan tanpa isyarat visual, untuk meminimalkan perbedaan bahasa anak dengan gangguan pendengaran.
+        </p>
+        <button class="read-more" onclick="openModal('modal7')">Selengkapnya</button>
+    </div>
+    
+  </div>
+</section>
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>Terapi Perilaku</h2>
+      <p>
+        Program terapi dengan pendekatan untuk memahami dan mengubah perilaku dan kemampuan bahasa sehingga akan lebih adaptif di segala situasi.</p>
+      <p>Dengan pendekatan Anteseden-Perilaku-Konsekuensi (ABC) untuk menargetkan dan meningkatkan perilaku/kemampuan bahasa tertentu yang di inginkan.
+      </p>
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+    </div>
+  </div>
+<div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>Terapi Wicara</h2>
+      <p>
+        Membantu Meningkatkan Kemampuan Komunikasi secara Optimal. Intervensi terapi wicara meliputi pelayanan untuk meningkatkan fungsi komunikasi (bahasa, bicara, suara, irama/kelancaran), dan makan / menelan.
+
+      </p>
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+    </div>
+  </div>
+<div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2>Fisioterapi Anak</h2>
+      <p>
+      Labirin Children Center menyediakan layanan fisioterapi anak yang dirancang khusus untuk membantu anak-anak mengatasi berbagai tantangan fisik dan motorik. 
+      Fisioterapi ini bertujuan untuk:
+      </p>
+      <ul class="custom-list">
+    <li>Memperkuat otot dan meningkatkan rentang gerak sendi</li>
+    <li>Mendukung keseimbangan, koordinasi, dan kontrol postur.</li>
+    <li>Mengatasi ketidakseimbangan dan kelemahan otot</li>
+    <li>Meningkatkan kesehatan secara keseluruhan melalui gerakan yang terarah.</li>
+  </ul>
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+    </div>
+  </div>
+<div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <h2>Layanan Psikologi</h2>
+      <p>
+       Kami menyediakan layanan psikotes untuk anak dan remaja yang bertujuan melakukan evaluasi psikologis komprehensif guna mengidentifikasi kebutuhan, potensi, dan tantangan dalam berbagai aspek perkembangan dan belajar. Selain itu, kami juga melakukan asesmen perkembangan atau screening untuk memantau tumbuh kembang anak secara menyeluruh, mendeteksi gangguan atau keterlambatan sejak dini, serta menentukan intervensi yang tepat dan personal.  </p>
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+    </div>
+  </div>
+<div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span>
+      <h2>Terapi Okupasi</h2>
+      <p>
+       Terapi ini menekankan pada pengembangan keterampilan motorik halus dan kasar, koordinasi, serta kemampuan kognitif dan sosial. Dengan mempertimbangkan seluruh aspek kehidupan anak untuk meningkatkan partisipasi dan performa dalam berbagai aktivitas. </p>
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+    </div>
+  </div>
+<div id="modal6" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal6')">&times;</span>
+      <h2>Sensori Integrasi</h2>
+      <p>
+    Metode sensorik terpadu (integrated sensory approach) adalah rangsangan terhadap sistem sensotik anak. 
+    8 sistem sensorik meliputi :
+  </p>
+      <ul class="custom-list">
+    <li>Penglihatan (visual)</li>
+    <li>Pengecap (gustatori)</li>
+    <li>Sentuhan (taktil)</li>
+    <li>Pendengaran (auditori)</li>
+    <li>Penciuman (olfaktori)</li>
+    <li>Vestibular (keseimbangan)</li>
+    <li>Proprioseptif (gerakan)</li>
+    <li>Interoseptif (internal)</li>
+  </ul>
+  <p>
+    Gangguan sensori integrasi dapat memengaruhi berbagai aspek perkembangan anak, 
+    termasuk perkembangan fisik, emosional, dan sosial.
+  </p>
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+    </div>
+  </div>
+<div id="modal7" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal7')">&times;</span>
+      <h2>Auditory Verbal Therapy (AVT)</h2>
+      <p>
+      Terapi auditori verbal (AVT) adalah intervensi rehabilitasi khusus yang berfokus pada peningkatan keterampilan mendengarkan sambil menghindari isyarat visual untuk berkomunikasi. 
+      Tujuan utamanya adalah meminimalkan perbedaan kemampuan bicara dan bahasa antara anak-anak dengan gangguan pendengaran dan teman sebayanya yang tidak mengalami gangguan pendengaran.</p>
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+    </div>
+  </div>
+<div id="modal8" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal8')">&times;</span>
+      <h2>Remedial Akademik</h2>
+      <p>
+      Memberikan bimbingan belajar individual untuk membantu anak mengejar ketertinggalan dalam pembelajaran. 
+      Seperti membaca, menulis dan membantu anak dengan tugas-tugas numerik. atau anak dengan gangguan Belajar Spesifik (Disabilitas Belajar):Disleksia,Disgrafia,Diskalkulia Dispraksia.</p>
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-yellow">Hubungi Kami</a>
+    </div>
+  </div>
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(m => {
+        if (event.target === m) m.style.display = "none";
+      });
+    }
+  </script>
+
+<section class="gangguan-section">
+  <h4 class="gangguan-subtitle">Gangguan</h4>
+  <h2 class="gangguan-title">Jenis Gangguan yang Kami Tangani</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <h5 class="team-name">ASD<br>(Autism Spectrum Disorder)</h5>
+      </div>
+      <div class="team-card">
+        <h5 class="team-name">Sensory Processing Disorder</h5>
+      </div>
+      <div class="team-card">
+        <h5 class="team-name">Learning Disorder (Gangguan Belajar Spesifik)</h5> 
+      </div>
+      <div class="team-card">
+        <h5 class="team-name">ADHD/ADD</h5> 
+      </div>
+      <div class="team-card">
+        <h5 class="team-name">Speech Delay</h5>
+      </div>
+      <div class="team-card">
+        <h5 class="team-name">Down Syndrom</h5>
+      </div>
+      <div class="team-card">
+        <h5 class="team-name">Cerebral Palsy</h5>
+      </div>
+      <div class="team-card">
+        <h5 class="team-name">Gangguan Pendengaran</h5>
+      </div>
     </div>
   </div>
 </section>
@@ -765,9 +620,10 @@ background: linear-gradient(
     <div class="team-grid">
       <div class="team-card">
         <div class="team-image">
-          <img src="../src/dr.andi.png" alt="Dr. Andi Rizky Amelia">
+          <img src="../src/dr.Andi.jpg" alt="Dr. Andi Rizky Amelia">
         </div>
         <h5 class="team-name">Dr. Andi Rizky Amelia,<br>M.Psi., Psikolog</h5>
+        <p class="team-role">Terapis Okupasi</p>
       </div>
       <div class="team-card">
         <div class="team-image">
@@ -788,44 +644,48 @@ background: linear-gradient(
   </div>
 </section>
 
-<section class="facilities-section">
-  <h4 class="facilities-subtitle">Fasilitas</h4>
-  <h2 class="facilities-title">Fasilitas untuk Anak Anda</h2>
+<section class="fasilitas-section">
+  <div class="container">
+    <p class="fasilitas-subtitle">Fasilitas</p>
+    <h2 class="fasilitas-title">Layanan yang Kami Tawarkan</h2>
     <div class="fasilitas-wrapper">
       <div class="fasilitas-card">
         <div class="icon">
-          <img src="../src/ahliterapi.png"  alt="Psikolog">
+          <img src="../src/016-doctor.png" alt="Psikolog">
         </div>
         <h3 class="card-title">Disupervisi oleh Psikolog</h3>
-        <p class="card-subtitle">Pendampingan Profesional</p>
         <p class="card-text">
           Setiap sesi terapi dan pembelajaran diawasi langsung oleh psikolog berlisensi
           untuk memastikan pendekatan yang tepat dan efektif bagi perkembangan anak.
         </p>
       </div>
-
-      <!-- Card 2 -->
       <div class="fasilitas-card">
         <div class="icon">
           <img src="../src/cctv.png" alt="CCTV">
         </div>
-        <h3 class="card-title">Dilengkapi CCTV</h3>
-        <p class="card-subtitle">Keamanan & Privasi</p>
+        <h3 class="card-title">Monitoring</h3>
         <p class="card-text">
           Seluruh area klinik dan ruang terapi dipasang CCTV untuk keamanan dan privasi,
           memungkinkan orang tua memantau sesi secara real-time sambil menjaga kerahasiaan data.
         </p>
       </div>
-
-      <!-- Card 3 -->
       <div class="fasilitas-card">
         <div class="icon">
           <img src="../src/1anak.jpg" alt="Terapis">
         </div>
         <h3 class="card-title">1 Anak 1 Terapis + Ruangan Pribadi</h3>
-        <p class="card-subtitle">Pendekatan Personal</p>
         <p class="card-text">
           Menekankan pendekatan personal, kenyamanan anak, dan fokus pada perkembangan individu.
+        </p>
+      </div>
+      <div class="fasilitas-card">
+        <div class="icon">
+          <img src="../src/homeService.png"  alt="Home Service">
+        </div>
+        <h3 class="card-title">Home Service</h3>
+        <p class="card-text">
+          Home Service adalah layanan terapi yang dilakukan langsung di rumah. 
+          Layanan ini memudahkan orang tua yang memiliki keterbatasan waktu atau kondisi tertentu.
         </p>
       </div>
     </div>
@@ -833,15 +693,9 @@ background: linear-gradient(
 </section>
 
   <section class="testimonial-section">
-  <!-- Subtitle -->
   <h4 class="testimonial-subtitle">Testimoni</h4>
-
-  <!-- Title -->
-  <h2 class="testimonial-title">Pendapat Orang Tua Tentang Kami</h2>
-
-  <!-- Testimonial Cards Container -->
+  <h2 class="testimonial-title">Apa Kata Orang Tua?</h2>
   <div class="testimonial-container">
-    <!-- Card 1 -->
     <div class="testimonial-card">
       <div class="profile">
         <img src="https://via.placeholder.com/80" alt="Client Photo">
@@ -856,8 +710,6 @@ background: linear-gradient(
         standard dummy text ever since the 1500s.
       </p>
     </div>
-
-    <!-- Card 2 -->
     <div class="testimonial-card">
       <div class="profile">
         <img src="https://via.placeholder.com/80" alt="Client Photo">
@@ -872,8 +724,6 @@ background: linear-gradient(
         standard dummy text ever since the 1500s.
       </p>
     </div>
-
-    <!-- Card 3 -->
     <div class="testimonial-card">
       <div class="profile">
         <img src="https://via.placeholder.com/80" alt="Client Photo">
@@ -898,38 +748,23 @@ background: linear-gradient(
   </div>
 </section>
 
-
-         <footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="row">
-      <!-- Left Section -->
       <div class="footer-col">
         <h2><span>Labirin</span>Children Center</h2>
         <p>
-           Kami hadir untuk mendampingi tumbuh kembang anak Anda dengan layanan terapi yang profesional dan penuh kasih sayang.
-        </p>
-        <div class="newsletter-box">
-          <h4>Newsletter</h4>
-          <form>
-            <input type="email" placeholder="Your email" />
-            <button type="submit">SignUp</button>
-          </form>
-        </div>
+           Kami hadir untuk mendampingi tumbuh kembang anak Anda dengan layanan terapi yang profesional dan penuh kasih sayang.</p>
       </div>
 
-      <!-- Middle Section -->
       <div class="footer-col">
         <div class="time-box">
-          <p>Monday: 8am to 5pm</p>
-          <p>Tuesday: 8am to 5pm</p>
-          <p>Wednesday: 8am to 5pm</p>
-          <p>Thursday: 8am to 5pm</p>
-          <p>Friday: 8am to 5pm</p>
-          <p>Saturday: 8am to 5pm</p>
-          <p>Sunday: Closed</p>
+           <h4>JADWAL KLINIK</h4>
+          <p>Senin-Sabtu</p>
+          <p>09:00-16:00 (Pagi)</p>
+          <p>16:00-22:00 (Sore-Malam)</p>
         </div>
       </div>
-
       <!-- Right Section -->
       <div class="footer-col">
         <h4>LOCATION</h4>
@@ -937,6 +772,9 @@ background: linear-gradient(
         <p>(+62) 853-9442-4185</p>
         <p>exampleemail@gmail.com</p>
         <p>26/7 Hours Service</p>
+        <div class="team-button">
+      <a href="https://maps.app.goo.gl/FMCgarPsnDEpG2Dd6" class="btn-view-all">Lihat Lokasi</a>
+    </div>
 
         <div class="social-icons">
           <span>●</span>
@@ -945,23 +783,19 @@ background: linear-gradient(
           <span>●</span>
         </div>
       </div>
-
-      <!-- Gallery -->
-      <div class="footer-col">
-        <h4>OUR GALLARY</h4>
-        <div class="gallery">
-          <img src="img1.jpg" alt="gallery1" />
-          <img src="img2.jpg" alt="gallery2" />
-          <img src="img3.jpg" alt="gallery3" />
-          <img src="img4.jpg" alt="gallery4" />
-          <img src="img5.jpg" alt="gallery5" />
-          <img src="img6.jpg" alt="gallery6" />
+    <div class="footer-col">
+           <h4>KERJA SAMA</h4>
+          <p>Labirin Children Center membuka kesempatan bagi Anda yang ingin 
+    bekerja sama untuk mendirikan cabang Labirin Children Center di luar 
+    Kota Kendari.</p>
+    <div class="team-button">
+      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-view-all">Hubungi Kami</a>
+    </div>
         </div>
       </div>
-    </div>
-  </div>
+ </div>
   <div class="footer-bottom">
-    <p>© 2025 Labirin Children Kendari</p>
+    <p>© 2025 Labirin Children Center Kendari</p>
   </div>
 </footer>
   <script src="./js/app.js"></script>
