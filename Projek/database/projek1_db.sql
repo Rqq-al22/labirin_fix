@@ -158,3 +158,30 @@ CREATE TABLE laporan (
 INSERT INTO laporan (anak_id, terapis_id, pertemuan_ke, judul, file_path) VALUES
 (1, 1, 1, 'Laporan Pertemuan 1 - Ayu', 'uploads/laporan/ayu_pertemuan1.pdf'),
 (2, 2, 1, 'Laporan Pertemuan 1 - Bima', 'uploads/laporan/bima_pertemuan1.pdf');
+
+
+-- =====================================================
+-- TABEL TESTIMONI - Data testimoni dari pengguna
+-- =====================================================
+-- Tabel ini menyimpan testimoni yang diberikan oleh pengguna/pasien
+CREATE TABLE testimoni (
+    testimoni_id INT AUTO_INCREMENT PRIMARY KEY,     -- ID unik testimoni
+    nama VARCHAR(100) NOT NULL,                       -- Nama pemberi testimoni
+    rating TINYINT NOT NULL CHECK (rating >= 1 AND rating <= 5), -- Rating 1-5 bintang
+    caption TEXT NOT NULL,                            -- Isi testimoni
+    status ENUM('pending','approved','rejected') DEFAULT 'pending', -- Status moderasi
+    ip_address VARCHAR(45),                           -- IP address untuk tracking
+    user_agent TEXT,                                  -- User agent untuk tracking
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,   -- Waktu pembuatan
+    approved_at TIMESTAMP NULL,                       -- Waktu approval
+    approved_by INT NULL,                             -- ID admin yang approve
+    FOREIGN KEY (approved_by) REFERENCES users(user_id) ON DELETE SET NULL
+);
+
+-- Contoh data testimoni awal (approved)
+INSERT INTO testimoni (nama, rating, caption, status, approved_at) VALUES
+('Have Tomven', 5, 'Sangat membantu perkembangan motorik anak saya. Terapisnya profesional dan sabar dalam menangani anak.', 'approved', NOW()),
+('Arna Wati', 5, 'Terapisnya handal dan komunikatif, kebersihan terjaga, adminnya ramah.', 'approved', NOW()),
+('Wahyu Titis Kholifah', 5, 'Pelayanannya memuaskan, terapis profesional. Recommended!', 'approved', NOW()),
+('Ibu Sarah', 4, 'Fasilitas lengkap dan terapis berpengalaman. Anak saya menunjukkan kemajuan yang signifikan.', 'approved', NOW()),
+('Pak Andi', 5, 'Layanan terbaik di Kendari untuk terapi anak. Sangat recommended untuk orang tua yang mencari solusi untuk anak berkebutuhan khusus.', 'approved', NOW());
