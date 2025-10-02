@@ -1,3 +1,36 @@
+/* Rekap tabel hadir */
+.attendance-summary .summary-total {
+  min-width: 120px;
+}
+.attendance-summary .summary-label {
+  font-size: 18px;
+  color: #64748b;
+}
+.attendance-summary .summary-count {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.attendance-summary .summary-stats {
+  display: flex;
+  gap: 18px;
+}
+.attendance-summary .stat-item {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 18px 24px;
+  min-width: 90px;
+  text-align: center;
+  box-shadow: 0 2px 8px #e0e7ef;
+}
+.attendance-summary .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.attendance-summary .stat-label {
+  font-size: 1rem;
+  color: #64748b;
+}
 :root{--primary:#1e88e5;--accent:#fbc02d;--bg:#ffffff;--text:#1f2937;--blue:#0ea5e9;--yellow:#fde047}
 *{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Poppins;color:var(--text);background:linear-gradient(180deg,#ffffff, #f8fbff);scroll-behavior:smooth}
 a{text-decoration:none;color:var(--primary)}
