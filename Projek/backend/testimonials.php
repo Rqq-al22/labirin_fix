@@ -53,7 +53,6 @@ function get_approved_testimonials(PDO $pdo): array {
         FROM testimoni 
         WHERE status = "approved" 
         ORDER BY created_at DESC 
-        LIMIT 20
     ');
     $stmt->execute();
     return $stmt->fetchAll();
