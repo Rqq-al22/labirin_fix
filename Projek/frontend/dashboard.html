@@ -56,19 +56,19 @@
       </div>
       <!-- Menu navigasi - tampil berbeda untuk terapis dan orangtua -->
       <nav class="sidebar-nav">
-        <a class="side-item active" href="./dashboard.html">Dashboard</a>
-        <!-- Menu untuk terapis -->
-        <a class="side-item" data-role="terapis" href="./evaluasi.html">Laporan Terapi</a>
-        <a class="side-item" data-role="terapis" href="./absensi.html">Absen</a>
-        <a class="side-item" href="./children.html" data-role="terapis">Daftar Anak</a>
-        <a class="side-item" href="./jadwal.html" data-role="terapis">Jadwal</a>
-        <!-- Menu untuk orangtua -->
-        <a class="side-item" data-role="orangtua" href="./evaluasi.html">Laporan Terapi</a>
-        <a class="side-item" data-role="orangtua" href="./absensi.html">Absen</a>
-        <a class="side-item" href="./jadwal.html" data-role="orangtua">Kelas</a>
-        <a class="side-item" href="./paket.html" data-role="orangtua">Paket Belajar</a>
-        <!-- Menu logout untuk semua role -->
-        <a class="side-item" href="#" onclick="logout()">Logout</a>
+  <a class="side-item active" href="./dashboard.html">Dashboard</a>
+  <!-- Menu untuk terapis -->
+  <a class="side-item" data-role="terapis" href="./evaluasi.html">Laporan Terapi</a>
+  <a class="side-item" data-role="terapis" href="./absensi.html">Absen</a>
+  <a class="side-item" href="./children.html" data-role="terapis">Daftar Anak</a>
+  <a class="side-item" href="./jadwal.html" data-role="terapis">Jadwal</a>
+  <!-- Menu untuk orangtua -->
+  <a class="side-item" data-role="orangtua" href="./evaluasi.html">Laporan Terapi</a>
+  <a class="side-item" data-role="orangtua" href="./absensi.html">Absen</a>
+  <a class="side-item" href="./jadwal.html" data-role="orangtua">Kelas</a>
+  <a class="side-item" data-role="orangtua" href="https://wa.me/6285394424185" target="_blank">Pengaduan</a>
+  <!-- Menu logout untuk semua role -->
+  <a class="side-item" href="#" onclick="logout()">Logout</a>
       </nav>
     </aside>
     
@@ -111,8 +111,8 @@
       
       // Set avatar berdasarkan role user
       const av = document.getElementById('avatar');
-      if (user.role === 'terapis') av.style.backgroundImage = "url('../src/images-3-removebg-preview.png')";
-      else av.style.backgroundImage = "url('../src/images-4-removebg-preview.png')";
+      if (user.role === 'terapis') av.style.backgroundImage = "url('../src/profil_terapis.jpeg')";
+      else av.style.backgroundImage = "url('../src/profil_terapis.jpeg')";
       
       // Set breadcrumb role
       const bc = document.querySelector('.bc-role');
