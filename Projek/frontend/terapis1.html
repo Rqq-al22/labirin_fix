@@ -183,7 +183,36 @@
 .footer-bottom a {
   color: #FFC107;
   text-decoration: none;
+}  /* Tablet: 2 kolom */
+@media (max-width: 992px) {
+  .footer .footer-col {
+    width: 50%;     /* 2 kolom */
+    float: none;    /* matikan float biar nggak aneh */
+    display: inline-block;
+    vertical-align: top;
+  }
 }
+
+/* HP: 1 kolom */
+@media (max-width: 576px) {
+  .footer .footer-col {
+    width: 100%;   /* full 1 kolom */
+    float: none;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .newsletter-box input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .newsletter-box button {
+    width: 100%;
+  }
+}
+
 /*** Footer End ***/
 /* Responsif */
     @media (max-width: 768px) {
@@ -204,7 +233,7 @@
 .terapis-section {
   text-align: center;
   padding: 50px 20px;
-  background: #fff;
+  background: #fff9e6;
 
 }
 .terapis-subtitle {
@@ -297,6 +326,83 @@
 .btn-view-all:hover {
   background-color: #e6b800;
   color: #fff;
+}/* ========== RESPONSIVE TERAPIS SECTION ========== */
+/* Tablet */
+@media (max-width: 992px) {
+  .terapis-section {
+    padding: 40px 15px;
+  }
+
+  .terapis-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .terapis-subtitle {
+    font-size: 16px;
+  }
+
+  .section-header .description {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .team-grid {
+    gap: 20px;
+  }
+
+  .team-card {
+    padding: 20px 15px;
+  }
+
+  .team-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .team-name {
+    font-size: 16px;
+  }
+
+  .btn-view-all {
+    font-size: 14px;
+    padding: 10px 25px;
+  }
+}
+/* HP */
+@media (max-width: 576px) {
+  .terapis-section {
+    padding: 30px 10px;
+  }
+  .terapis-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .terapis-subtitle {
+    font-size: 15px;
+  }
+  .section-header .description {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .team-grid {
+    grid-template-columns: 1fr; /* jadi 1 kolom */
+    gap: 15px;
+  }
+  .team-card {
+    padding: 15px 10px;
+  }
+  .team-image {
+    width: 90px;
+    height: 90px;
+  }
+  .team-name {
+    font-size: 15px;
+  }
+  .btn-view-all {
+    font-size: 13px;
+    padding: 8px 20px;
+  }
 }
     </style>
 </head>
@@ -332,39 +438,59 @@
     <div class="team-grid">
       <div class="team-card">
         <div class="team-image">
-          <img src="../src/dr.andi.png" alt="Dr. Andi Rizky Amelia">
+          <img src="../src/dr.Andi.jpg" alt="Dr. Andi Rizky Amelia">
         </div>
-        <h5 class="team-name">Dr. Andi Rizky Amelia,<br>M.Psi., Psikolog</h5>
+        <h5 class="team-name">Andi Rizky Amelia,<br>M.Psi., Psikolog</h5>
+        <p class="team-role">Psikolog/Founder Labirin Children Center</p>
       </div>
       <div class="team-card">
         <div class="team-image">
-          <img src="terapis-icon.png" alt="Terapis 2">
+          <img src="../src/Terapis1.jpg" alt="Terapis 1">
         </div>
-        <h5 class="team-name">Terapis 2</h5>
+        <h5 class="team-name">Nurul Ilma Akmaliyah </h5>
+         <p class="team-role">Terapis Perilaku</p>
       </div>
       <div class="team-card">
         <div class="team-image">
-          <img src="terapis-icon.png" alt="Terapis 3">
+          <img src="../src/Terapis2.jpg" alt="Terapis 2">
         </div>
-        <h5 class="team-name">Terapis 3</h5>
+        <h5 class="team-name">Elda Dwipa Yanti</h5>
+           <p class="team-role">Terapis Sensori Integrasi</p>
       </div>
       <div class="team-card">
         <div class="team-image">
-          <img src="terapis-icon.png" alt="Terapis 3">
+          <img src="../src/terapis3.jpg" alt="Terapis 3">
         </div>
-        <h5 class="team-name">Terapis 4</h5>
+        <h5 class="team-name">Laode Ahmad Zulfikar</h5>
+           <p class="team-role">Terapis Perilaku</p>
       </div>
       <div class="team-card">
         <div class="team-image">
-          <img src="terapis-icon.png" alt="Terapis 3">
+          <img src="../src/terapis4.jpg" alt="Terapis 4">
         </div>
-        <h5 class="team-name">Terapis 5</h5>
+        <h5 class="team-name">Hamsidar</h5>
+           <p class="team-role">Terapis Perilaku</p>
         </div>
         <div class="team-card">
         <div class="team-image">
-          <img src="terapis-icon.png" alt="Terapis 3">
+          <img src="../src/terapis5.jpg" alt="Terapis 5">
         </div>
-        <h5 class="team-name">Terapis 6</h5>
+       <h5 class="team-name">Annisa Febiyanti</h5>
+           <p class="team-role">Terapis Perilaku</p>
+      </div>
+      <div class="team-card">
+        <div class="team-image">
+          <img src="../src/terapis6.jpg" alt="Terapis 6">
+        </div>
+       <h5 class="team-name">Chacha Rahayu</h5>
+           <p class="team-role">Terapis Wicara</p>
+      </div>
+      <div class="team-card">
+        <div class="team-image">
+          <img src="../src/terapis7.jpg" alt="Terapis 7">
+        </div>
+       <h5 class="team-name">Riang Armita</h5>
+           <p class="team-role">Staff Administrasi</p>
       </div>
       </div>
     </div>
@@ -402,7 +528,6 @@
       <a href="https://maps.app.goo.gl/FMCgarPsnDEpG2Dd6" class="btn-view-all">Lihat Lokasi</a>
     </div>
 
-
         <div class="social-icons">
           <span>●</span>
           <span>●</span>
@@ -416,7 +541,7 @@
     bekerja sama untuk mendirikan cabang Labirin Children Center di luar 
     Kota Kendari.</p>
     <div class="team-button">
-      <a href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20join%20paket%20IPDN" class="btn-view-all">Hubungi Kami</a>
+      <a href="https://wa.me/6285343643812" class="btn-view-all">Hubungi Kami</a>
     </div>
         </div>
       </div>
@@ -431,4 +556,3 @@
   </script>
 </body>
 </html>
-
