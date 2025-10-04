@@ -8,6 +8,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard - Labirin Children</title>
   <link rel="stylesheet" href="./css/style.css" />
+  <style>  /* ==============================
+   RESPONSIVE LAYOUT
+   ============================== */
+
+/* Tablet (≤992px) */
+@media (max-width: 992px) {
+  /* Topbar */
+  .topbar-inner {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .search-wrap {
+    flex: 1;
+    order: 3;
+    width: 100%;
+  }
+  .topbar-title {
+    font-size: 16px;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+  }
+
+  /* Content */
+  .content {
+    padding: 15px;
+  }
+
+  /* Table */
+  table, .table {
+    font-size: 14px;
+  }
+  table th, table td,
+  .table th, .table td {
+    padding: 8px;
+  }
+}
+
+/* HP (≤768px) */
+@media (max-width: 768px) {
+  /* Sidebar as drawer */
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    bottom: 0;
+    width: 240px;
+    background: #fffbea;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* Topbar */
+  .topbar-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hamburger {
+    display: inline-block;
+    font-size: 22px;
+    margin-left: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .search-wrap {
+    display: none; /* hide di HP untuk hemat ruang */
+  }
+
+  /* Page Head */
+  .page-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .page-title {
+    font-size: 20px;
+  }
+  .breadcrumbs {
+    font-size: 13px;
+  }
+
+  /* Card */
+  .card {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  .card h1, .card h2 {
+    font-size: 18px;
+  }
+
+  /* Table - scroll horizontal */
+  table, .table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  table th, table td,
+  .table th, .table td {
+    font-size: 13px;
+    padding: 6px;
+  }
+}
+
+/* HP kecil (≤480px) */
+@media (max-width: 480px) {
+  .topbar-title {
+    display: none; /* sembunyikan judul untuk hemat ruang */
+  }
+  .icon-btn {
+    font-size: 18px;
+  }
+  .btn, button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+  .card p {
+    font-size: 14px;
+  }
+}
+</style>
 </head>
 <body>
   <!-- ========================================
