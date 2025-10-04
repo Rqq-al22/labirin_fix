@@ -362,18 +362,28 @@ a{text-decoration:none;color:var(--primary)}
 /* ==== Terapis Yellow Layout (dashboard seperti contoh) ==== */
 .topbar{position:sticky;top:0;z-index:40}
 .topbar-yellow{background:#f6b73f;border-bottom:1px solid #eab34a}
-.topbar-inner{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;padding:12px 20px}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 32px 12px 32px;}
 .topbar-left{display:flex;align-items:center;gap:12px}
 .topbar-logo{width:56px;height:56px;object-fit:contain}
 .topbar-title{font-weight:800;color:#1f2937}
 .topbar-center{display:flex;align-items:center;gap:12px;justify-content:center}
-.topbar-right{display:flex;align-items:center;gap:12px;justify-content:flex-end;margin-right:20px}
+.topbar-right{display:flex;align-items:center;gap:12px;justify-content:flex-end;}
 
 .app-shell{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 80px)}
 .sidebar{background:#fff;border-right:1px solid #eaeaea;padding:12px;display:flex;flex-direction:column;transition:transform .25s ease}
 .sidebar.collapsed{transform:translateX(-290px)}
 .sidebar-profile{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 8px}
-.avatar{width:72px;height:72px;border-radius:50%;background:#e5e7eb center/cover no-repeat;border:2px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.05)}
+.avatar{width:72px;height:72px;border-radius:50%;background:#e5e7eb center/cover no-repeat;border:2px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.05);background-repeat:no-repeat;background-position:center center !important;background-size:150% !important}
+
+/* Fallback background image so avatar shows even before JS sets inline style */
+.sidebar-profile .avatar,
+.card .avatar,
+.profile .avatar {
+  background-position: center center !important;
+  background-size: 150% !important;
+  background-repeat: no-repeat;
+  background-image: url('../src/profil_terapis.jpeg') !important;
+}
 .sidebar-name{font-weight:700}
 .sidebar-nav{display:flex;flex-direction:column;gap:8px;margin-top:8px}
 .side-item{display:block;padding:10px 12px;border:1px solid #ddd;border-radius:8px;color:#111827;background:#fff}
