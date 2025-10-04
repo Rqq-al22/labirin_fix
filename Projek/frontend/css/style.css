@@ -1,3 +1,8 @@
+/* Khusus menu Pengaduan sidebar (link WhatsApp) */
+a.side-item[href^="https://wa.me/"] {
+  color: #111827 !important; /* Ganti warna di sini sesuai keinginan */
+  font-weight: 600;
+}
 /* Rekap tabel hadir */
 .attendance-summary .summary-total {
   min-width: 120px;
