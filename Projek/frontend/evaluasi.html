@@ -47,7 +47,7 @@
         <a class="side-item" href="./children.html" data-role="terapis">Daftar Anak</a>
         <a class="side-item" href="./jadwal.html" data-role="terapis">Jadwal</a>
         <a class="side-item" href="./jadwal.html" data-role="orangtua">Kelas</a>
-        <a class="side-item" href="./paket.html" data-role="orangtua">Paket Belajar</a>
+  <a class="side-item" data-role="orangtua" href="https://wa.me/6285394424185" target="_blank">Pengaduan</a>
         <a class="side-item" href="#" onclick="logout()">Logout</a>
       </nav>
     </aside>
@@ -91,10 +91,10 @@
           document.getElementById('childIdWrap').style.display='none';
         }
       }
-      // avatar based on role
-      const av = document.getElementById('avatar');
-      if (gUser.role === 'terapis') av.style.backgroundImage = "url('../src/images-3-removebg-preview.png')"; 
-      else av.style.backgroundImage = "url('../src/images-4-removebg-preview.png')";
+  // avatar based on role
+  const av = document.getElementById('avatar');
+  if (gUser.role === 'terapis') av.style.backgroundImage = "url('../src/profil_terapis.jpeg')";
+  else av.style.backgroundImage = "url('../src/profile_ortu.png')";
       const bc = document.querySelector('.bc-role');
       if (bc) bc.textContent = (gUser.role === 'terapis') ? 'Terapis' : 'Orang Tua';
       // toggle sidebar
