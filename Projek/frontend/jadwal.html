@@ -46,7 +46,7 @@
         <a class="side-item" href="./children.html" data-role="terapis">Daftar Anak</a>
         <a class="side-item active" href="./jadwal.html" data-role="terapis">Jadwal</a>
         <a class="side-item active" href="./jadwal.html" data-role="orangtua">Kelas</a>
-        <a class="side-item" href="./paket.html" data-role="orangtua">Paket Belajar</a>
+  <a class="side-item" data-role="orangtua" href="https://wa.me/6285394424185" target="_blank">Pengaduan</a>
         <a class="side-item" href="#" onclick="logout()">Logout</a>
       </nav>
     </aside>
@@ -62,9 +62,15 @@
         <label>Hari <input id="day_of_week" placeholder="Senin" /></label>
         <label>Mulai <input id="time_start" type="time" value="09:00" /></label>
         <label>Selesai <input id="time_end" type="time" value="10:00" /></label>
-        <label>Ruang <input id="room" /></label>
+        <label>Sesi
+          <select id="sesi" required>
+            <option value="Pagi">Pagi</option>
+            <option value="Siang">Siang</option>
+            <option value="Sore">Sore</option>
+          </select>
+        </label>
         <label>Catatan <input id="notes" /></label>
-        <button class="btn" type="submit">Simpan</button>
+  <button class="btn" type="submit">Simpan</button>
       </form>
     </div>
 
@@ -73,7 +79,7 @@
     <div class="card">
       <h2 id="tblTitle">Jadwal Saat Ini</h2>
       <table class="table" id="tbl">
-        <thead id="tblHead"><tr><th>Hari</th><th>Waktu</th><th>Ruang</th><th>Catatan</th></tr></thead>
+        <thead id="tblHead"><tr><th>Hari</th><th>Waktu</th><th>Sesi</th><th>Catatan</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -94,10 +100,9 @@
           document.getElementById('childIdWrap').style.display='none';
         }
       }
-      const av = document.getElementById('avatar');
-      // Default avatar based on role
-      if (gUser.role === 'terapis') av.style.backgroundImage = "url('../src/images-3-removebg-preview.png')"; 
-      else av.style.backgroundImage = "url('../src/images-4-removebg-preview.png')";
+  const av = document.getElementById('avatar');
+  if (gUser.role === 'terapis') av.style.backgroundImage = "url('../src/profil_terapis.jpeg')";
+  else av.style.backgroundImage = "url('../src/profile_ortu.png')";
       const bc = document.querySelector('.bc-role');
       if (bc) bc.textContent = (gUser.role === 'terapis') ? 'Terapis' : 'Orang Tua';
       document.getElementById('btnToggle').addEventListener('click', ()=> document.getElementById('sidebar').classList.toggle('collapsed'));
@@ -129,9 +134,9 @@
       items.forEach((it, idx)=>{
         const tr=document.createElement('tr');
         if (gUser?.role === 'orangtua') {
-          tr.innerHTML = `<td>${it.day_of_week||''}</td><td>${(it.time_start||'').toString().slice(0,5)}</td><td>${it.room||''}</td><td>${idx+1}</td>`;
+          tr.innerHTML = `<td>${it.day_of_week||''}</td><td>${(it.time_start||'').toString().slice(0,5)}</td><td>${it.sesi||''}</td><td>${idx+1}</td>`;
         } else {
-          tr.innerHTML = `<td>${it.day_of_week}</td><td>${it.time_start} - ${it.time_end}</td><td>${it.room||''}</td><td>${it.notes||''}</td>`;
+          tr.innerHTML = `<td>${it.day_of_week}</td><td>${it.time_start} - ${it.time_end}</td><td>${it.sesi||''}</td><td>${it.notes||''}</td>`;
         }
         tb.appendChild(tr);
       });
@@ -143,7 +148,7 @@
         day_of_week: document.getElementById('day_of_week').value || 'Senin',
         time_start: document.getElementById('time_start').value,
         time_end: document.getElementById('time_end').value,
-        room: document.getElementById('room').value,
+        sesi: document.getElementById('sesi').value,
         notes: document.getElementById('notes').value,
       };
       const r = await api('schedules.php',{method:'POST', body: JSON.stringify(payload)});
