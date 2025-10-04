@@ -38,7 +38,7 @@
         <a class="side-item" data-role="orangtua" href="./evaluasi.html">Laporan Terapi</a>
         <a class="side-item" data-role="orangtua" href="./absensi.html">Absen</a>
         <a class="side-item" data-role="orangtua" href="./jadwal.html">Kelas</a>
-        <a class="side-item" data-role="orangtua" href="./paket.html">Paket Belajar</a>
+  <a class="side-item" data-role="orangtua" href="https://wa.me/6285394424185" target="_blank">Pengaduan</a>
         <a class="side-item" href="#" onclick="logout()">Logout</a>
       </nav>
     </aside>
@@ -58,7 +58,12 @@
     async function ensure(){
       const user = await requireLoginAndRole();
       const av = document.getElementById('avatar');
-      av.style.backgroundImage = user.role === 'terapis' ? "url('../src/images-3-removebg-preview.png')" : "url('../src/images-4-removebg-preview.png')";
+      // Terapis pakai 1 gambar, orangtua pakai 1 gambar (bisa diganti di src/)
+      if (user.role === 'terapis') {
+        av.style.backgroundImage = "url('../src/profil_terapis.jpeg')";
+      } else {
+        av.style.backgroundImage = "url('../src/profile_ortu.png')";
+      }
       const bc = document.querySelector('.bc-role');
       if (bc) bc.textContent = (user.role === 'terapis') ? 'Terapis' : 'Orang Tua';
       document.getElementById('btnToggle').addEventListener('click', ()=> document.getElementById('sidebar').classList.toggle('collapsed'));
@@ -73,9 +78,12 @@
         anak.innerHTML = `
           <div style="background:#0b65c2;color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:12px">Data Anak</div>
           <div class="flex">
-            <div class="avatar" style="width:96px;height:96px;background:#e5e7eb"></div>
+            <div class="avatar" style="width:96px;height:96px;background:#e5e7eb;background-image:url('../src/profile_child.png');background-size:cover"></div>
             <div>
               <div><b>${child.name||'-'}</b></div>
+              <div class="tag">Tanggal Lahir: ${child.tanggal_lahir||'-'}</div>
+              <div class="tag">Jenis Kelamin: ${child.jenis_kelamin === 'L' ? 'Laki-laki' : (child.jenis_kelamin === 'P' ? 'Perempuan' : '-')}</div>
+              <div class="tag">Paket: ${child.nama_paket||'-'} (${child.jumlah_pertemuan ? child.jumlah_pertemuan+'x' : ''} ${child.bulan||''} ${child.tahun||''})</div>
               <div class="tag">Jumlah Sesi: ${stats.jumlah_sesi||0}</div>
               <div class="tag">Terapis: ${ther.map(t=> (t.nama_lengkap||t.username)).join(', ')||'-'}</div>
             </div>
@@ -85,7 +93,9 @@
         ortu.innerHTML = `
           <div style="background:#0b65c2;color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:12px">Data Orang Tua</div>
           <div><b>${r.user?.nama_lengkap||r.user?.username||'-'}</b></div>
-          <div class="tag">Email: ${r.user?.email||'-'}</div>`;
+          <div class="tag">Email: ${r.user?.email||'-'}</div>
+          <div class="tag">Alamat: ${r.user?.alamat||'-'}</div>
+          <div class="tag">No. Telp: ${r.user?.no_telp||'-'}</div>`;
       } else {
         const ortu = document.getElementById('cardOrtu');
         ortu.style.display = 'block';
