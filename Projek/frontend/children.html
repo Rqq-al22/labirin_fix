@@ -73,7 +73,7 @@
     async function ensure(){
       const user = await requireLoginAndRole('terapis');
       const av = document.getElementById('avatar');
-      av.style.backgroundImage = "url('../src/images-3-removebg-preview.png')";
+      av.style.backgroundImage = "url('../src/profil_terapis.jpeg')";
       document.getElementById('btnToggle').addEventListener('click', ()=> document.getElementById('sidebar').classList.toggle('collapsed'));
       const r = await api('therapist_children.php');
       const list = document.getElementById('list');
