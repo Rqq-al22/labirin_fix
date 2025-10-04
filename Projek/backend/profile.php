@@ -12,7 +12,10 @@ if (is_parent_role($user)) {
     $therapists = [];
     $stats = ['jumlah_sesi'=>0];
     if ($childId) {
-        $stmt = $pdo->prepare('SELECT a.anak_id AS id, a.nama_anak AS name, a.tanggal_lahir, a.keterangan FROM anak a WHERE a.anak_id = ? LIMIT 1');
+        $stmt = $pdo->prepare('SELECT a.anak_id AS id, a.nama_anak AS name, a.tanggal_lahir, a.jenis_kelamin, a.keterangan, a.paket_id, p.nama_paket, p.jumlah_pertemuan, p.bulan, p.tahun
+            FROM anak a
+            LEFT JOIN paket_belajar p ON a.paket_id = p.paket_id
+            WHERE a.anak_id = ? LIMIT 1');
         $stmt->execute([$childId]);
         $child = $stmt->fetch() ?: null;
 
@@ -42,6 +45,8 @@ if (is_parent_role($user)) {
             'username' => $user['username'] ?? '',
             'email' => $user['email'] ?? '',
             'role' => $user['role'] ?? 'orangtua',
+            'alamat' => $user['alamat'] ?? '',
+            'no_telp' => $user['no_telp'] ?? '',
         ],
         'child' => $child,
         'therapists' => $therapists,
