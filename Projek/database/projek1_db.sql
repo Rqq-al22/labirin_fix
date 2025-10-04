@@ -195,3 +195,7 @@ ALTER TABLE anak ADD COLUMN paket_id INT NULL AFTER jenis_kelamin;
 
 -- Tambahkan foreign key untuk paket_id jika ingin relasi ke paket_belajar
 ALTER TABLE anak ADD CONSTRAINT fk_paket_id FOREIGN KEY (paket_id) REFERENCES paket_belajar(paket_id) ON DELETE SET NULL;
+
+-- Ubah kolom sesi pada tabel jadwal menjadi ENUM agar hanya bisa memilih 'Pagi', 'Siang', atau 'Sore'
+ALTER TABLE jadwal MODIFY COLUMN sesi ENUM('Pagi','Siang','Sore') NOT NULL;
+
