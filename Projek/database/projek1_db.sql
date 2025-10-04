@@ -185,3 +185,13 @@ INSERT INTO testimoni (nama, rating, caption, status, approved_at) VALUES
 ('Wahyu Titis Kholifah', 5, 'Pelayanannya memuaskan, terapis profesional. Recommended!', 'approved', NOW()),
 ('Ibu Sarah', 4, 'Fasilitas lengkap dan terapis berpengalaman. Anak saya menunjukkan kemajuan yang signifikan.', 'approved', NOW()),
 ('Pak Andi', 5, 'Layanan terbaik di Kendari untuk terapi anak. Sangat recommended untuk orang tua yang mencari solusi untuk anak berkebutuhan khusus.', 'approved', NOW());
+
+-- ALTER TABLE untuk menambah kolom baru pada users dan anak
+ALTER TABLE users ADD COLUMN alamat VARCHAR(255) NULL AFTER nama_lengkap;
+ALTER TABLE users ADD COLUMN no_telp VARCHAR(30) NULL AFTER alamat;
+
+ALTER TABLE anak ADD COLUMN jenis_kelamin ENUM('L','P') NULL AFTER tanggal_lahir;
+ALTER TABLE anak ADD COLUMN paket_id INT NULL AFTER jenis_kelamin;
+
+-- Tambahkan foreign key untuk paket_id jika ingin relasi ke paket_belajar
+ALTER TABLE anak ADD CONSTRAINT fk_paket_id FOREIGN KEY (paket_id) REFERENCES paket_belajar(paket_id) ON DELETE SET NULL;
