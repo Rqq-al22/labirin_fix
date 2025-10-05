@@ -60,9 +60,9 @@
       const av = document.getElementById('avatar');
       // Terapis pakai 1 gambar, orangtua pakai 1 gambar (bisa diganti di src/)
       if (user.role === 'terapis') {
-        av.style.backgroundImage = "url('../src/profil_terapis.jpeg')";
+        av.style.backgroundImage = "url('../src/profil_terapis.jpg')";
       } else {
-        av.style.backgroundImage = "url('../src/profile_ortu.png')";
+        av.style.backgroundImage = "url('../src/profil_ortu.png')";
       }
       const bc = document.querySelector('.bc-role');
       if (bc) bc.textContent = (user.role === 'terapis') ? 'Terapis' : 'Orang Tua';
