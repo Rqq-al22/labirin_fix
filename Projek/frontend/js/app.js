@@ -210,3 +210,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
     el.addEventListener('click', ()=> goto('./index.html'));
   });
 });
+
+
+const hamburger = document.getElementById("hamburger-btn");
+const navLinks = document.querySelector(".nav-links");
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+  });
+}
