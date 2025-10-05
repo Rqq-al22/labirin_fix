@@ -729,3 +729,58 @@ a{text-decoration:none;color:var(--primary)}
   }
 }
 
+/* ✅ FIX NAVBAR MOBILE — tampilan selalu rapi di semua ukuran HP */
+@media (max-width: 768px) {
+  .navbar .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 18px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    overflow: visible;
+  }
+
+  .brand img {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .brand span {
+    font-size: 15.5px;
+    font-weight: 700;
+    white-space: nowrap;        /* biar gak kepotong */
+    overflow: visible;
+  }
+
+  /* Tombol hamburger */
+  .hamburger {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    font-size: 30px;
+    border-radius: 14px;
+    background: #fff;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Posisi tetap di kanan tengah */
+  .hamburger {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
