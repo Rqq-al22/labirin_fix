@@ -423,3 +423,309 @@ a{text-decoration:none;color:var(--primary)}
 .table th,.table td{padding:10px 12px;background:#fff;border:1px solid #eef}
 .table th{background:#f8fafc;text-align:left}
 
+
+
+
+/* Membuat tulisan Labirin Children Center di navbar jadi tebal */
+.brand span {
+  font-weight: 700; /* atau 800 kalau mau lebih bold */
+  color: #000; /* pastikan warnanya tetap jelas */
+  letter-spacing: 0.2px; /* opsional, biar lebih rapih */
+}
+
+/* === SAMA UNTUK SEMUA HALAMAN === */
+.navbar .brand span {
+  font-family: "Poppins", sans-serif; /* pastikan pakai font yang sama di semua halaman */
+  font-weight: 700; /* tebal seperti di halaman login */
+  font-size: 20px;
+  color: #000;
+  line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .navbar .brand span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+}
+/* ======== BRAND (LOGO + NAMA) ======== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  width: 48px;
+  height: 48px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  line-height: 1.1;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+}
+
+.brand-text span {
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.center-text {
+  font-size: 16px;
+  color: #fbc02d;
+}
+
+/* ==== HAMBURGER ICON ==== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 120;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fbc02d;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ======== MOBILE VIEW ======== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* sedikit lebih besar */
+    height: 48px; /* proporsional seperti tombol di iOS */
+    background: #fff;
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+    font-size: 26px; /* ukuran simbol ☰ lebih besar */
+    line-height: 1;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+
+  /* Saat aktif (jadi ✕) */
+  .hamburger.active {
+    font-size: 30px; /* agar X tetap pas di tengah */
+    color: #fbc02d;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 65%; /* garis agak panjang */
+    height: 4px;
+    background: #fbc02d;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Efek animasi jadi X */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  .brand-text span {
+    font-size: 15px;
+  }
+
+  .center-text {
+    font-size: 14px;
+  }
+
+  /* NAV LINKS - SIDE MENU */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 85%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 25px;
+    transition: left 0.3s ease;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 110;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  /* HEADER DI DALAM MENU */
+  .menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+
+  .menu-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-title {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+  }
+
+  .menu-title span {
+    font-size: 16px;
+    color: #000;
+  }
+
+  .menu-title .center-text {
+    color: #fbc02d;
+  }
+
+  /* MENU LINK */
+  .nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  /* LOGIN BUTTON */
+  .btn {
+    background: #fbc02d;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    width: fit-content;
+  }
+}
+
+/* ==== SEMBUNYIKAN DI DESKTOP ==== */
+.menu-header {
+  display: none;
+}
+
+/* ==== TAMPILKAN HANYA SAAT MOBILE DAN MENU AKTIF ==== */
+@media (max-width: 768px) {
+  /* Default sembunyikan */
+  .menu-header {
+    display: none;
+  }
+
+  /* Saat menu hamburger ditekan (nav-links aktif), tampilkan */
+  .nav-links.active .menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+
+  .menu-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-title {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .menu-title span {
+    font-size: 16px;
+    color: #000;
+  }
+
+  .menu-title .center-text {
+    color: #fbc02d;
+  }
+}
+
+
+
+
+/* ==== ANIMASI FADE-IN UNTUK MENU MOBILE ==== */
+
+/* Efek muncul lembut */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Saat menu aktif, animasi muncul untuk header dan link */
+@media (max-width: 768px) {
+  .nav-links.active .menu-header,
+  .nav-links.active a,
+  .nav-links.active .btn {
+    animation: fadeInUp 1s ease forwards;
+}
+
+  /* Supaya tiap item muncul bergantian sedikit (efek berurutan) */
+  .nav-links.active .menu-header {
+    animation-delay: 0.05s;
+  }
+  .nav-links.active a:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .nav-links.active a:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+  .nav-links.active a:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+  .nav-links.active .btn {
+    animation-delay: 0.25s;
+  }
+}
+
