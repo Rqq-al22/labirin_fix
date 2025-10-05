@@ -740,6 +740,8 @@ background: linear-gradient(
   padding: 40px 20px;
   align-items: stretch;
   cursor: grab;
+  transition: transform 0.5s ease;
+  will-change: transform;
 }
 
 .testimonials-carousel:active {
@@ -1221,9 +1223,18 @@ background: linear-gradient(
     <div class="inner">
       <div class="brand">
         <img src="../src/logo.png" alt="Labirin" />
-        <span class="name">Labirin Children Center</span>
+        <span>Labirin Children Center</span>
+        <button class="hamburger" id="hamburger-btn"> ☰ </button>
+
       </div>
       <div class="nav-links">
+        <div class="menu-header">
+          <img src="../src/logo.png" alt="Logo" class="menu-logo">
+          <div class="menu-title">
+            <span>Labirin Children</span>
+            <span class="center-text">Center</span>
+          </div>
+        </div>
         <a href="./index.html">Beranda</a>
         <a href="./terapis1.html">Terapis</a>
         <a href="./galeri.html">Galeri</a>
@@ -1832,30 +1843,40 @@ background: linear-gradient(
       return stars;
     }
     
-    // Update carousel position with smooth scrolling
     function updateCarouselPosition() {
-      const carousel = document.getElementById('testimonialsCarousel');
-      if (!carousel) return;
-      
-      const cardWidth = 380 + 30; // card width + gap
-      const translateX = -currentTestimonialIndex * cardWidth;
-      
-      // Smooth transition (disable during drag)
-      if (!isDragging) {
-        carousel.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-      }
-      carousel.style.transform = `translateX(${translateX}px)`;
-      
-      // Update button states
-      const prevBtn = document.querySelector('.prev-btn');
-      const nextBtn = document.querySelector('.next-btn');
-      
-      if (prevBtn) prevBtn.disabled = currentTestimonialIndex === 0;
-      if (nextBtn) nextBtn.disabled = currentTestimonialIndex >= Math.max(0, testimonials.length - 3);
-      
-      // Update pagination dots
-      updatePaginationDots();
-    }
+  const carousel = document.getElementById('testimonialsCarousel');
+  if (!carousel) return;
+
+  const isMobile = window.innerWidth <= 768;
+  const perView = isMobile ? 1 : 3;
+
+  // Ambil lebar card aktual (termasuk gap antar card)
+  const card = carousel.querySelector('.testimonial-card');
+  const cardWidth = card ? card.getBoundingClientRect().width + 20 : 320;
+
+  // ✅ Hitung total halaman (berapa kali bisa geser)
+  const maxIndex = Math.max(0, testimonials.length - perView);
+
+  // Pastikan index dalam batas aman
+  currentTestimonialIndex = Math.min(currentTestimonialIndex, maxIndex);
+  currentTestimonialIndex = Math.max(currentTestimonialIndex, 0);
+
+  // Geser posisi
+  const translateX = -currentTestimonialIndex * cardWidth;
+  if (!isDragging) {
+    carousel.style.transition = 'transform 0.5s ease';
+  }
+  carousel.style.transform = `translateX(${translateX}px)`;
+
+  // Tombol navigasi
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  if (prevBtn) prevBtn.disabled = currentTestimonialIndex === 0;
+  if (nextBtn) nextBtn.disabled = currentTestimonialIndex >= maxIndex;
+
+  updatePaginationDots();
+}
+
     
     // Generate pagination dots
     function generatePaginationDots() {
@@ -1890,19 +1911,23 @@ background: linear-gradient(
     }
     
     // Carousel navigation
-    function prevTestimonial() {
-      if (currentTestimonialIndex > 0) {
-        currentTestimonialIndex--;
-        updateCarouselPosition();
-      }
-    }
-    
     function nextTestimonial() {
-      if (currentTestimonialIndex < testimonials.length - 3) {
-        currentTestimonialIndex++;
-        updateCarouselPosition();
-      }
-    }
+  const isMobile = window.innerWidth <= 768;
+  const perView = isMobile ? 1 : 3;
+  const maxIndex = Math.max(0, testimonials.length - perView);
+
+  if (currentTestimonialIndex < maxIndex) {
+    currentTestimonialIndex++;
+    updateCarouselPosition();
+  }
+}
+
+function prevTestimonial() {
+  if (currentTestimonialIndex > 0) {
+    currentTestimonialIndex--;
+    updateCarouselPosition();
+  }
+}
     
     // Setup drag/swipe events
     function setupDragEvents() {
