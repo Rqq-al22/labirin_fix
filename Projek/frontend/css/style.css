@@ -784,3 +784,43 @@ a{text-decoration:none;color:var(--primary)}
     transform: translateY(-50%);
   }
 }
+
+
+/* === Penyesuaian posisi brand khusus untuk HP kecil === */
+@media (max-width: 440px) {
+  .navbar .brand {
+    margin-left: 10px; /* geser seluruh logo + teks sedikit ke kiri */
+  }
+
+  .navbar .brand img {
+    width: 42px; /* sedikit lebih kecil agar proporsional */
+    height: 42px;
+  }
+
+  .navbar .brand span {
+    font-size: 15px; /* sedikit kecil agar tidak bertabrakan */
+  }
+
+  /* tombol beranda tetap di kanan, beri jarak agar tidak terlalu rapat */
+  .header .btn-beranda {
+    margin-right: 8px;
+  }
+}
+
+
+
+/* === KHUSUS MOBILE: Pisahkan 'Center' ke baris baru (tanpa duplikat) === */
+@media (max-width: 768px) {
+  .navbar .brand span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    white-space: normal !important;
+  }
+
+  /* Hapus penambahan teks otomatis */
+  .navbar .brand span::after {
+    content: none !important;
+  }
+}
+
