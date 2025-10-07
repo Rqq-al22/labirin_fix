@@ -99,6 +99,8 @@
       } else {
         const ortu = document.getElementById('cardOrtu');
         ortu.style.display = 'block';
+        const u = r.user || {};
+        const dob = u.tanggal_lahir ? (new Date(u.tanggal_lahir)).toLocaleDateString('id-ID') : '-';
         ortu.innerHTML = `
           <div style="background:#0b65c2;color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:12px">Profil Terapis</div>
          <div><b>${u.nama_lengkap||u.username||'-'}</b></div>
