@@ -199,3 +199,79 @@ ALTER TABLE anak ADD CONSTRAINT fk_paket_id FOREIGN KEY (paket_id) REFERENCES pa
 -- Ubah kolom sesi pada tabel jadwal menjadi ENUM agar hanya bisa memilih 'Pagi', 'Siang', atau 'Sore'
 ALTER TABLE jadwal MODIFY COLUMN sesi ENUM('Pagi','Siang','Sore') NOT NULL;
 
+-- Migration: Add therapist-related fields to users table
+-- Date: 2025-10-07
+-- This script adds the following columns if they do not already exist:
+--   alamat (VARCHAR), no_telp (VARCHAR), tanggal_lahir (DATE), no_atepi (VARCHAR)
+-- It also shows sample UPDATE statements to populate existing therapist accounts.
+
+DROP PROCEDURE IF EXISTS add_user_columns;
+DELIMITER $$
+CREATE PROCEDURE add_user_columns()
+BEGIN
+  -- alamat
+  IF NOT EXISTS(
+    SELECT * FROM information_schema.COLUMNS
+    WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'users' AND COLUMN_NAME = 'alamat'
+  ) THEN
+    ALTER TABLE `users` ADD COLUMN `alamat` VARCHAR(255) NULL;
+  END IF;
+
+  -- no_telp
+  IF NOT EXISTS(
+    SELECT * FROM information_schema.COLUMNS
+    WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'users' AND COLUMN_NAME = 'no_telp'
+  ) THEN
+    ALTER TABLE `users` ADD COLUMN `no_telp` VARCHAR(50) NULL;
+  END IF;
+
+  -- tanggal_lahir
+  IF NOT EXISTS(
+    SELECT * FROM information_schema.COLUMNS
+    WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'users' AND COLUMN_NAME = 'tanggal_lahir'
+  ) THEN
+    ALTER TABLE `users` ADD COLUMN `tanggal_lahir` DATE NULL;
+  END IF;
+
+  -- no_atepi
+  IF NOT EXISTS(
+    SELECT * FROM information_schema.COLUMNS
+    WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'users' AND COLUMN_NAME = 'no_atepi'
+  ) THEN
+    ALTER TABLE `users` ADD COLUMN `no_atepi` VARCHAR(50) NULL;
+  END IF;
+END$$
+DELIMITER ;
+
+-- Call the procedure to perform conditional ALTERs
+CALL add_user_columns();
+
+-- Drop the procedure after running (keeps DB clean)
+DROP PROCEDURE IF EXISTS add_user_columns;
+
+-- OPTIONAL: populate sample data for example therapists (adjust usernames as needed)
+-- Update T001 and T002 examples (only run if you want sample data)
+UPDATE `users` SET
+  `alamat` = 'Jl. Contoh No.1',
+  `no_telp` = '081234567890',
+  `tanggal_lahir` = '1990-03-12',
+  `no_atepi` = 'ATEPI-0001'
+WHERE `username` = 'T001';
+
+UPDATE `users` SET
+  `alamat` = 'Jl. Contoh No.2',
+  `no_telp` = '081298765432',
+  `tanggal_lahir` = '1992-07-22',
+  `no_atepi` = 'ATEPI-0002'
+WHERE `username` = 'T002';
+
+-- Quick checks: display therapist accounts (run after migration)
+-- SELECT user_id, username, nama_lengkap, email, alamat, no_telp, tanggal_lahir, no_atepi FROM users WHERE role = 'terapis';
+
+-- Fallback: if your MySQL user doesn't have privileges to create procedures, run these simple ALTERs manually instead:
+-- ALTER TABLE users ADD COLUMN alamat VARCHAR(255) NULL;
+-- ALTER TABLE users ADD COLUMN no_telp VARCHAR(50) NULL;
+-- ALTER TABLE users ADD COLUMN tanggal_lahir DATE NULL;
+-- ALTER TABLE users ADD COLUMN no_atepi VARCHAR(50) NULL;
+
+
