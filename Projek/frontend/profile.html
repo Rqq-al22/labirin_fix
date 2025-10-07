@@ -101,7 +101,12 @@
         ortu.style.display = 'block';
         ortu.innerHTML = `
           <div style="background:#0b65c2;color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:12px">Profil Terapis</div>
-          <div><b>${r.user?.nama_lengkap||r.user?.username||'-'}</b></div>
+         <div><b>${u.nama_lengkap||u.username||'-'}</b></div>
+          <div class="tag">No. ATEPI: ${u.no_atepi||'-'}</div>
+          <div class="tag">Tanggal Lahir: ${dob}</div>
+          <div class="tag">Email: ${u.email||'-'}</div>
+          <div class="tag">No. Telp: ${u.no_telp||'-'}</div>
+          <div class="tag">Alamat: ${u.alamat||'-'}</div>
           <div class="tag">Menangani Anak: ${r.handled_children||0}</div>`;
       }
     }
