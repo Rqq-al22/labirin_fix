@@ -43,8 +43,8 @@ if ($method === 'GET') {
             json_response(200, ['ok' => true, 'items' => [], 'summary' => ['total' => 20, 'hadir' => 0, 'izin' => 0, 'tidak_hadir' => 0]]);
         }
         
-        // Get attendance history
-        $stmt = $pdo->prepare('SELECT absensi_id as id, status, catatan as note, tanggal as created_at FROM absensi WHERE anak_id = ? ORDER BY tanggal DESC LIMIT 200');
+        // Get attendance history (include child id/name so UI can show which child)
+        $stmt = $pdo->prepare('SELECT absensi_id as id, anak_id as child_id, status, catatan as note, tanggal as created_at, (SELECT nama_anak FROM anak WHERE anak_id = absensi.anak_id LIMIT 1) as child_name FROM absensi WHERE anak_id = ? ORDER BY tanggal DESC LIMIT 200');
         $stmt->execute([$childId]);
         $items = $stmt->fetchAll();
         
