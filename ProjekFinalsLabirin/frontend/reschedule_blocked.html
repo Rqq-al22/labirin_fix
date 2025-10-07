@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reschedule Diblokir - Labirin Children</title>
+  <link rel="stylesheet" href="./css/mobile.css"/>
+</head>
+<body>
+  <header class="topbar topbar-yellow">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <img class="topbar-logo" src="../src/logo.png" alt="Labirin" />
+        <span class="topbar-title">Labirin Children Center</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" style="max-width:760px">
+    <div class="card" style="margin:24px auto">
+      <h1>Reschedule Diblokir</h1>
+      <p>Maaf, hak reschedule untuk bulan ini tidak tersedia karena total ketidakhadiran anak telah mencapai ketentuan maksimum.</p>
+      <div class="alert" id="detail">Detail: —</div>
+      <div class="flex mt-16">
+        <a class="btn" href="./dashboard.html">Kembali ke Dashboard</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/mobile.js"></script>
+  <script>
+    (async function(){
+      const r = await api('reschedule_status.php');
+      const d = document.getElementById('detail');
+      if(r && r.ok){
+        d.textContent = `Total ketidakhadiran bulan ini: ${r.count}. Periode ${r.range?.start} s/d ${r.range?.end}.`;
+      }
+    })();
+  </script>
+</body>
+</html>
+
+

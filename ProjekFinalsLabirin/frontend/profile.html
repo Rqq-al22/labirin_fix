@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil - Labirin Children</title>
+  <link rel="stylesheet" href="./css/mobile.css" />
+</head>
+<body>
+  <header class="topbar topbar-yellow">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <img class="topbar-logo" src="../src/logo.png" alt="Labirin" />
+        <span class="topbar-title">Labirin Children Center</span>
+        <div class="search-wrap">
+          <input class="search" id="search" placeholder="Type for search..." />
+          <div class="search-results" id="searchResults" style="display:none"></div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn" id="btnBell" aria-label="notifications">🔔</button>
+        <a class="icon-btn" id="btnProfile" aria-label="profile" href="./profile.html">👤</a>
+        <button class="hamburger" id="btnToggle" aria-label="toggle menu">☰</button>
+        <div class="dropdown" id="notifPanel" style="display:none">
+          <div class="dropdown-title">Notifikasi</div>
+          <div class="dropdown-body" id="notifBody">
+            <div class="dropdown-item">Tidak ada notifikasi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-profile">
+        <div class="avatar" id="avatar"></div>
+        <div class="sidebar-name" data-user-name>—</div>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="side-item" href="./dashboard.html">Dashboard</a>
+        <a class="side-item" data-role="terapis" href="./evaluasi.html">Laporan Terapi</a>
+        <a class="side-item" data-role="orangtua" href="./evaluasi.html">Laporan Terapi</a>
+        <a class="side-item" data-role="terapis" href="./absensi.html">Absen</a>
+        <a class="side-item" data-role="orangtua" href="./absensi.html">Absen</a>
+        <a class="side-item" href="./children.html" data-role="terapis">Daftar Anak</a>
+        <a class="side-item" href="./jadwal.html" data-role="terapis">Jadwal</a>
+        <a class="side-item" href="./jadwal.html" data-role="orangtua">Kelas</a>
+        <a class="side-item active" data-role="orangtua" href="https://wa.me/6285394424185" target="_blank">Pengaduan</a>
+        <a class="side-item" href="#" onclick="logout()">Logout</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <div class="page-head">
+        <div class="page-title" id="pageTitle">Profil</div>
+        <div class="breadcrumbs"><span class="bc-home">🏠</span> <span class="bc-sep">›</span> <span class="bc-role">—</span> <span class="bc-sep">›</span> <span class="bc-current" id="bcCurrent">Profil</span></div>
+      </div>
+
+      <div id="cardAnak" class="card" style="display:none"></div>
+      <div id="cardOrtu" class="card" style="display:none"></div>
+    </main>
+  </div>
+
+  <script src="./js/mobile.js"></script>
+  <script>
+    async function ensure(){
+      const user = await requireLoginAndRole();
+      const av = document.getElementById('avatar');
+      // Terapis pakai 1 gambar, orangtua pakai 1 gambar (bisa diganti di src/)
+      if (user.role === 'terapis') {
+        av.style.backgroundImage = "url('../src/profil_terapis.jpg')";
+      } else {
+        av.style.backgroundImage = "url('../src/profil_ortu.png')";
+      }
+      const bc = document.querySelector('.bc-role');
+      if (bc) bc.textContent = (user.role === 'terapis') ? 'Terapis' : 'Orang Tua';
+      
+      // Inisialisasi sidebar
+      initializeSidebar();
+
+      const r = await api('profile.php');
+      if (user.role === 'orangtua') {
+        const child = r.child || {};
+        const ther = (r.therapists||[]);
+        const stats = r.stats||{};
+        const anak = document.getElementById('cardAnak');
+        anak.style.display = 'block';
+        anak.innerHTML = `
+          <div style="background:#0b65c2;color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:12px">Data Anak</div>
+          <div class="flex">
+            <div class="avatar" style="width:96px;height:96px;background:#e5e7eb;background-image:url('../src/profile_child.png');background-size:cover"></div>
+            <div>
+              <div><b>${child.name||'-'}</b></div>
+              <div class="tag">Tanggal Lahir: ${child.tanggal_lahir||'-'}</div>
+              <div class="tag">Jenis Kelamin: ${child.jenis_kelamin === 'L' ? 'Laki-laki' : (child.jenis_kelamin === 'P' ? 'Perempuan' : '-')}</div>
+              <div class="tag">Paket: ${child.nama_paket||'-'} (${child.jumlah_pertemuan ? child.jumlah_pertemuan+'x' : ''} ${child.bulan||''} ${child.tahun||''})</div>
+              <div class="tag">Jumlah Sesi: ${stats.jumlah_sesi||0}</div>
+              <div class="tag">Terapis: ${ther.map(t=> (t.nama_lengkap||t.username)).join(', ')||'-'}</div>
+            </div>
+          </div>`;
+        const ortu = document.getElementById('cardOrtu');
+        ortu.style.display = 'block';
+        ortu.innerHTML = `
+          <div style="background:#0b65c2;color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:12px">Data Orang Tua</div>
+          <div><b>${r.user?.nama_lengkap||r.user?.username||'-'}</b></div>
+          <div class="tag">Email: ${r.user?.email||'-'}</div>
+          <div class="tag">Alamat: ${r.user?.alamat||'-'}</div>
+          <div class="tag">No. Telp: ${r.user?.no_telp||'-'}</div>`;
+      } else {
+        const u = r.user || {};
+        const dob = u.tanggal_lahir ? new Date(u.tanggal_lahir).toLocaleDateString('id-ID') : '-';
+        const ortu = document.getElementById('cardOrtu');
+        ortu.style.display = 'block';
+        ortu.innerHTML = `
+          <div style="background:#0b65c2;color:#fff;padding:10px 12px;border-radius:8px;margin-bottom:12px">Profil Terapis</div>
+          <div><b>${u.nama_lengkap||u.username||'-'}</b></div>
+          <div class="tag">No. ATEPI: ${u.no_atepi||'-'}</div>
+          <div class="tag">Tanggal Lahir: ${dob}</div>
+          <div class="tag">Email: ${u.email||'-'}</div>
+          <div class="tag">No. Telp: ${u.no_telp||'-'}</div>
+          <div class="tag">Alamat: ${u.alamat||'-'}</div>
+          <div class="tag">Menangani Anak: ${r.handled_children||0}</div>`;
+      }
+    }
+    function logout(){ fetch('../backend/auth_logout.php',{credentials:'include'}).then(()=>location.href='./index.html'); }
+    ensure();
+  </script>
+</body>
+</html>

@@ -1,0 +1,826 @@
+/* Khusus menu Pengaduan sidebar (link WhatsApp) */
+a.side-item[href^="https://wa.me/"] {
+  color: #111827 !important; /* Ganti warna di sini sesuai keinginan */
+  font-weight: 600;
+}
+/* Rekap tabel hadir */
+.attendance-summary .summary-total {
+  min-width: 120px;
+}
+.attendance-summary .summary-label {
+  font-size: 18px;
+  color: #64748b;
+}
+.attendance-summary .summary-count {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.attendance-summary .summary-stats {
+  display: flex;
+  gap: 18px;
+}
+.attendance-summary .stat-item {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 18px 24px;
+  min-width: 90px;
+  text-align: center;
+  box-shadow: 0 2px 8px #e0e7ef;
+}
+.attendance-summary .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.attendance-summary .stat-label {
+  font-size: 1rem;
+  color: #64748b;
+}
+:root{--primary:#1e88e5;--accent:#fbc02d;--bg:#ffffff;--text:#1f2937;--blue:#0ea5e9;--yellow:#fde047}
+*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Poppins;color:var(--text);background:linear-gradient(180deg,#ffffff, #f8fbff);scroll-behavior:smooth}
+a{text-decoration:none;color:var(--primary)}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.hero .container{padding:0 40px;transform:translateX(-76px)}
+.navbar{position:sticky;top:0;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid #eef;z-index:50}
+.navbar .inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.brand{display:flex;align-items:center;gap:12px;margin-left:24px}
+.brand img{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(0,0,0,.08))}
+.brand .name{font-weight:800;letter-spacing:.3px;color:#000000;font-size:20px}
+.nav-links{display:flex;gap:16px;align-items:center;margin-right:0;transform:translateX(-28px)}
+.nav-links a{padding:10px 14px;border-radius:10px;font-size:17px;color:#fdd835;transition:.15s transform,.15s background-color,.15s color}
+.nav-links a:focus{outline:none}
+.nav-links a:hover{background:#fdd835}
+.nav-links a:active{transform:translateY(1px);background:var(--accent);color:#1f2937}
+.nav-links a:hover{background:#eef5ff}
+.btn{background:var(--primary);color:#fff;padding:10px 16px;border-radius:12px;box-shadow:0 10px 20px rgba(30,136,229,.25), inset 0 -2px 0 rgba(0,0,0,.1);transition:.2s transform,.2s box-shadow}
+.btn:hover{transform:translateY(-1px);box-shadow:0 14px 24px rgba(30,136,229,.3)}
+.btn-accent{background:#fdd835;color:#fff}
+.btn-login{
+  background:#e6c200;
+  color:#fff;
+  padding:12px 18px;
+  font-size:16px;
+}
+.login-wrap{max-width:520px}
+.login-card{margin:48px auto;background:#fff;border:1px solid #eef;border-radius:18px;padding:28px 24px;box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.login-title{margin:0 0 4px;color:#1449A5;font-size:28px;font-weight:800}
+.login-subtitle{margin:0 0 18px;color:#334155;opacity:.9}
+.login-meta{display:flex;gap:12px;align-items:center;margin-top:8px}
+.login-meta .link{color:#1449A5}
+.login-backdrop{position:fixed;inset:0;z-index:-1;background:#f6fbff url(var(--login-bg)) center/cover no-repeat;filter:blur(2px) saturate(1.05)}
+.fade-in{animation:fadeIn .5s ease-out both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.nav-links .btn-login{color:#fff !important}
+.hero{background:url("../src/background.jpg") no-repeat center center;background-size: cover;align-items: center;display:flex;margin:0;position: relative;border-radius:0;min-height:500px;padding:60px 0}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;max-width:1000px;margin:0 auto}
+
+@media (max-width: 768px){
+  .hero .container{transform:translateX(-32px)}
+  .hero-text{margin-left:-16px}
+}
+.hero-text h1{font-size:36px;margin:0 0 16px;color:#fbc02d;line-height:1.2}
+.hero-text p{font-size:18px;color: #fff;;opacity:.95;line-height:1.6}
+.hero-text .flex{justify-content:flex-start}
+.hero h1{font-size:40px;margin:0 0 12px}
+.hero p{font-size:16px;opacity:.85}
+.card{background:#fff;border:1px solid #eef;border-radius:16px;padding:20px;box-shadow:0 12px 30px rgba(0,0,0,.06)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px}
+.grid-2 .card{display:flex;gap:18px;align-items:flex-start;padding:24px;border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.05)}
+.card-feature .card-icon-img{flex:0 0 56px;width:56px;height:56px;border-radius:14px;object-fit:contain;padding:0;background:none;border:none;box-shadow:none}
+.card-feature .card-body{display:block}
+.card-feature h3{margin:0;color:#1449A5;font-weight:800;font-size:22px}
+.card-feature p{margin:8px 0 0;color:#1f2937;opacity:.9;line-height:1.8;font-size:16px}
+.section h2{color:#1449A5;font-weight:800;font-size:32px;margin:0 0 12px}
+/* Khusus ukuran judul paket pembelajaran diperbesar lagi */
+#paket-labirin h2{font-size:36px}
+.section.container > p{line-height:1.8;margin-top:10px}
+.section{padding:40px 20px}
+.footer{padding:32px 20px;border-top:1px solid #eef;background:#365788}
+.input, input, select, textarea{width:100%;padding:12px 14px;border:1px solid #dde6f1;border-radius:12px;background:#fff;outline:none}
+.input:focus, input:focus, select:focus, textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(30,136,229,.12)}
+.form{display:grid;gap:12px}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--yellow);color:#1f2937;font-weight:600}
+.tag:empty{display:none}
+.card-3d{transform-style:preserve-3d;perspective:900px}
+.card-3d:hover{transform:rotateX(1deg) rotateY(-1deg);transition:.25s}
+.avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.kpi{display:flex;gap:12px;align-items:center}
+.kpi .num{font-size:28px;font-weight:800}
+.alert{padding:12px 14px;border:1px solid #fee2; background:#fff7cc; border-radius:12px}
+.tag{padding:6px 10px;border:1px dashed #cbd5e1;border-radius:10px}
+.table{width:100%;border-collapse:separate;border-spacing:0 8px}
+.table th,.table td{padding:10px 12px;background:#fff;border:1px solid #eef}
+.table th{background:#f8fafc;text-align:left}
+.flex{display:flex;gap:12px;align-items:center}
+.right{margin-left:auto}
+.mt-16{margin-top:16px}
+.hidden{display:none}
+.card-icon{flex:0 0 56px;width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#fff7cc;border:2px solid #f6e08a;box-shadow:0 6px 16px rgba(0,0,0,.06);font-size:26px;margin-bottom:0;color:#1449A5}
+
+/* Courses section */
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+.course-card{position:relative;background:#fff;border:3px solid #FBBF48;border-radius:22px;padding:28px;box-shadow:12px 12px 0 #0d5dc0;transition:transform .2s ease, box-shadow .2s ease}
+.course-card:hover{transform:translateY(-6px);box-shadow:16px 16px 0 #0d5dc0}
+.course-card:active{transform:translateY(-2px);box-shadow:10px 10px 0 #0b4aa0}
+.course-header{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.badge-icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;background:#fff7cc;border:2px solid #f6e08a;box-shadow:0 6px 16px rgba(0,0,0,.06);font-weight:800;color:#1449A5}
+.badge-icon-img{flex:0 0 56px;width:56px;height:56px;border-radius:14px;object-fit:contain;padding:0;background:none;border:none;box-shadow:none}
+.course-card h3{margin:0;color:#1449A5;font-size:22px}
+.course-card p{color:#1f2937;opacity:.9;line-height:1.7}
+.course-note{font-size:13px;color:#707a8a;margin:8px 0 16px}
+.course-btn{display:block;text-align:center;margin:18px auto 0;width:72%;padding:16px 0;border-radius:16px;background:#0079c0;color:#fff;font-weight:800;font-size:20px}
+
+@media (max-width: 980px){
+  .course-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 640px){
+  .course-grid{grid-template-columns:1fr}
+}
+
+/* Therapist section */
+.therapist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+.therapist-card{display:flex;flex-direction:column;align-items:center;text-align:center}
+.therapist-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--accent);box-shadow:0 10px 20px rgba(0,0,0,.1);margin:8px 0 12px}
+.therapist-name{margin:0;color:#1449A5;font-size:20px}
+
+@media (max-width: 980px){
+  .therapist-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 640px){
+  .therapist-grid{grid-template-columns:1fr}
+}
+
+.therapist-cta{display:flex;justify-content:center;margin-top:40px}
+.therapist-cta .btn{background:#0079c0;color:#fff;padding:12px 20px;border-radius:14px}
+
+/* About section */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin-top:0}
+.about-text p{line-height:1.8;margin-left: 16px;}
+.about-images{display:grid;gap:16px;justify-items:end}
+.about-img{width:100%;max-width:460px;border-radius:16px;border:4px solid #eef;box-shadow:0 16px 40px rgba(0,0,0,.12);background:#fff;object-fit:cover}
+.about-img.small{max-width:460px;justify-self:end}
+
+@media (max-width: 900px){
+  .about{grid-template-columns:1fr}
+  .about-images{justify-items:center}
+}
+
+
+/* ===== Section Style ===== */
+.testimonial-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Subtitle ===== */
+.testimonial-subtitle {
+  color: #fbc02d; /* Kuning gelap */
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ===== Title ===== */
+.testimonial-title {
+  color: #2c2c54;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+/* ===== Container ===== */
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* ===== Card Style ===== */
+.testimonial-card {
+  background: #fff9e6; /* Kuning pastel */
+  border-radius: 20px 60px 20px 20px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(251, 192, 45, 0.3); /* Bayangan kuning */
+}
+
+/* ===== Profile Section ===== */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #fdd835; /* Border kuning */
+  object-fit: cover;
+}
+.client-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2c2c54;
+  font-weight: 600;
+}
+
+.client-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #777;
+}
+
+/* ===== Divider Line ===== */
+.testimonial-card hr {
+  border: none;
+  border-top: 1px solid #fdd835; /* Garis kuning */
+  margin: 10px 0 15px;
+}
+
+/* ===== Testimonial Text ===== */
+.testimonial-text {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* ===== Slider Dots ===== */
+.slider-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.slider-dots .dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dots .dot.active {
+  background-color: #fdd835; /* Dot aktif kuning */
+}
+
+/* Section Container */
+.fasilitas-section {
+  background: #fff;
+  padding: 60px 20px;
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-header .subtitle {
+  color: #f7c600;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.section-header .title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c2c54;
+}
+
+.section-header .description {
+  font-size: 16px;
+  color: #555;
+  max-width: 650px;
+  margin: 10px auto 0;
+}
+
+/* Wrapper for Cards */
+.fasilitas-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Individual Card */
+.fasilitas-card {
+  background: #fff6e5;
+  padding: 25px 20px;
+  border-radius: 50px 50px 50px 20px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.fasilitas-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.fasilitas-card .icon img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.fasilitas-card .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f7c600;
+  margin-bottom: 8px;
+}
+
+.fasilitas-card .card-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.fasilitas-card .card-text {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ==== Terapis Yellow Layout (dashboard seperti contoh) ==== */
+.topbar{position:sticky;top:0;z-index:40}
+.topbar-yellow{background:#f6b73f;border-bottom:1px solid #eab34a}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 32px 12px 32px;}
+.topbar-left{display:flex;align-items:center;gap:12px}
+.topbar-logo{width:56px;height:56px;object-fit:contain}
+.topbar-title{font-weight:800;color:#1f2937}
+.topbar-center{display:flex;align-items:center;gap:12px;justify-content:center}
+.topbar-right{display:flex;align-items:center;gap:12px;justify-content:flex-end;}
+
+.app-shell{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 80px)}
+.sidebar{background:#fff;border-right:1px solid #eaeaea;padding:12px;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar.collapsed{transform:translateX(-290px)}
+.sidebar-profile{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 8px}
+.avatar{width:72px;height:72px;border-radius:50%;background:#e5e7eb center/cover no-repeat;border:2px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.05);background-repeat:no-repeat;background-position:center center !important;background-size:150% !important}
+
+/* Fallback background image so avatar shows even before JS sets inline style */
+.sidebar-profile .avatar,
+.card .avatar,
+.profile .avatar {
+  background-position: center center !important;
+  background-size: 150% !important;
+  background-repeat: no-repeat;
+  background-image: url('../src/profil_terapis.jpeg') !important;
+}
+.sidebar-name{font-weight:700}
+.sidebar-nav{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.side-item{display:block;padding:10px 12px;border:1px solid #ddd;border-radius:8px;color:#111827;background:#fff}
+.side-item.active,.side-item:hover{background:#eaf2ff;border-color:#cfe0ff}
+.content{padding:20px}
+.welcome.card{background:#fff;border:1px solid #eee;border-radius:16px;padding:18px;box-shadow:0 10px 24px rgba(0,0,0,.06)}
+
+.hamburger{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:6px 10px;font-size:18px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.search{border:1px solid #ddd;border-radius:999px;padding:8px 14px;width:200px;transition:width .2s ease}
+.search.expanded{width:360px}
+.icon-btn{background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+
+/* Search results, dropdown notif, breadcrumbs, page title */
+.search-wrap{position:relative}
+.search-results{position:absolute;left:0;top:36px;min-width:300px;max-width:420px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:8px;box-shadow:0 10px 24px rgba(0,0,0,.1)}
+.result-item{display:block;padding:8px 10px;border-radius:8px;color:#0b65c2}
+.result-item:hover{background:#f1f5ff}
+.result-empty{padding:8px 10px;color:#64748b}
+.loader{width:22px;height:22px;border:3px solid #e5e7eb;border-top-color:#0b65c2;border-radius:50%;animation:spin .7s linear infinite;margin:6px auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.dropdown{position:absolute;right:20px;top:64px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;min-width:280px;box-shadow:0 14px 28px rgba(0,0,0,.12)}
+.dropdown-title{font-weight:700;padding:10px 12px;border-bottom:1px solid #eef}
+.dropdown-body{max-height:300px;overflow:auto}
+.dropdown-item{padding:10px 12px;border-bottom:1px solid #f1f5f9}
+.dropdown-item:last-child{border-bottom:none}
+
+.page-head{display:flex;flex-direction:column;gap:4px;margin:12px 0 16px}
+.page-title{font-weight:800;font-size:28px;color:#111827}
+.breadcrumbs{color:#6b7280}
+.bc-sep{margin:0 6px}
+
+/* ========================================
+   TABLE STYLING - Styling tabel
+   ======================================== */
+.table{width:100%;border-collapse:separate;border-spacing:0 8px}
+.table th,.table td{padding:10px 12px;background:#fff;border:1px solid #eef}
+.table th{background:#f8fafc;text-align:left}
+
+
+
+
+/* Membuat tulisan Labirin Children Center di navbar jadi tebal */
+.brand span {
+  font-weight: 700; /* atau 800 kalau mau lebih bold */
+  color: #000; /* pastikan warnanya tetap jelas */
+  letter-spacing: 0.2px; /* opsional, biar lebih rapih */
+}
+
+/* === SAMA UNTUK SEMUA HALAMAN === */
+.navbar .brand span {
+  font-family: "Poppins", sans-serif; /* pastikan pakai font yang sama di semua halaman */
+  font-weight: 700; /* tebal seperti di halaman login */
+  font-size: 20px;
+  color: #000;
+  line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .navbar .brand span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+}
+/* ======== BRAND (LOGO + NAMA) ======== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  width: 48px;
+  height: 48px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  line-height: 1.1;
+  font-family: 'Arial', sans-serif;
+  color: #000;
+}
+
+.brand-text span {
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.center-text {
+  font-size: 16px;
+  color: #fbc02d;
+}
+
+/* ==== HAMBURGER ICON ==== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 120;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fbc02d;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ======== MOBILE VIEW ======== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; /* sedikit lebih besar */
+    height: 48px; /* proporsional seperti tombol di iOS */
+    background: #fff;
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+    font-size: 26px; /* ukuran simbol ☰ lebih besar */
+    line-height: 1;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+
+  /* Saat aktif (jadi ✕) */
+  .hamburger.active {
+    font-size: 30px; /* agar X tetap pas di tengah */
+    color: #fbc02d;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 65%; /* garis agak panjang */
+    height: 4px;
+    background: #fbc02d;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Efek animasi jadi X */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  .brand-text span {
+    font-size: 15px;
+  }
+
+  .center-text {
+    font-size: 14px;
+  }
+
+  /* NAV LINKS - SIDE MENU */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 85%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 25px;
+    transition: left 0.3s ease;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 110;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  /* HEADER DI DALAM MENU */
+  .menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+
+  .menu-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-title {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+  }
+
+  .menu-title span {
+    font-size: 16px;
+    color: #000;
+  }
+
+  .menu-title .center-text {
+    color: #fbc02d;
+  }
+
+  /* MENU LINK */
+  .nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  /* LOGIN BUTTON */
+  .btn {
+    background: #fbc02d;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    width: fit-content;
+  }
+}
+
+/* ==== SEMBUNYIKAN DI DESKTOP ==== */
+.menu-header {
+  display: none;
+}
+
+/* ==== TAMPILKAN HANYA SAAT MOBILE DAN MENU AKTIF ==== */
+@media (max-width: 768px) {
+  /* Default sembunyikan */
+  .menu-header {
+    display: none;
+  }
+
+  /* Saat menu hamburger ditekan (nav-links aktif), tampilkan */
+  .nav-links.active .menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+
+  .menu-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-title {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .menu-title span {
+    font-size: 16px;
+    color: #000;
+  }
+
+  .menu-title .center-text {
+    color: #fbc02d;
+  }
+}
+
+
+
+
+/* ==== ANIMASI FADE-IN UNTUK MENU MOBILE ==== */
+
+/* Efek muncul lembut */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Saat menu aktif, animasi muncul untuk header dan link */
+@media (max-width: 768px) {
+  .nav-links.active .menu-header,
+  .nav-links.active a,
+  .nav-links.active .btn {
+    animation: fadeInUp 1s ease forwards;
+}
+
+  /* Supaya tiap item muncul bergantian sedikit (efek berurutan) */
+  .nav-links.active .menu-header {
+    animation-delay: 0.05s;
+  }
+  .nav-links.active a:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .nav-links.active a:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+  .nav-links.active a:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+  .nav-links.active .btn {
+    animation-delay: 0.25s;
+  }
+}
+
+/* ✅ FIX NAVBAR MOBILE — tampilan selalu rapi di semua ukuran HP */
+@media (max-width: 768px) {
+  .navbar .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 18px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    overflow: visible;
+  }
+
+  .brand img {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+  }
+
+  .brand span {
+    font-size: 15.5px;
+    font-weight: 700;
+    white-space: nowrap;        /* biar gak kepotong */
+    overflow: visible;
+  }
+
+  /* Tombol hamburger */
+  .hamburger {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    font-size: 30px;
+    border-radius: 14px;
+    background: #fff;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Posisi tetap di kanan tengah */
+  .hamburger {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+
+/* === Penyesuaian posisi brand khusus untuk HP kecil === */
+@media (max-width: 440px) {
+  .navbar .brand {
+    margin-left: 10px; /* geser seluruh logo + teks sedikit ke kiri */
+  }
+
+  .navbar .brand img {
+    width: 42px; /* sedikit lebih kecil agar proporsional */
+    height: 42px;
+  }
+
+  .navbar .brand span {
+    font-size: 15px; /* sedikit kecil agar tidak bertabrakan */
+  }
+
+  /* tombol beranda tetap di kanan, beri jarak agar tidak terlalu rapat */
+  .header .btn-beranda {
+    margin-right: 8px;
+  }
+}
+
+
+
+/* === KHUSUS MOBILE: Pisahkan 'Center' ke baris baru (tanpa duplikat) === */
+@media (max-width: 768px) {
+  .navbar .brand span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    white-space: normal !important;
+  }
+
+  /* Hapus penambahan teks otomatis */
+  .navbar .brand span::after {
+    content: none !important;
+  }
+}
+

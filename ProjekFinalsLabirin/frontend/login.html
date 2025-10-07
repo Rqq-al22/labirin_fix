@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Labirin Children</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    /* Style umum untuk halaman */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #f9fbff, #ffffff); /* gradasi lembut seperti beranda */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container Form Login */
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: left;
+}
+
+/* Judul Utama (Masuk Akun) */
+.login-container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color:  #FFD633; 
+  margin-bottom: 10px;
+}
+
+/* Subjudul atau deskripsi */
+.login-container p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Label input */
+.login-container label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Input field */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  transition: 0.3s ease;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+  border-color: #004aad;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 74, 173, 0.3);
+}
+
+/* Tombol login */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffd633; /* Kuning seperti tombol di beranda */
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 3px 0 #b89b00;
+}
+
+.login-container button:hover {
+  background-color: #ffcc00;
+}
+
+/* Link Lupa Password */
+.login-container .forgot-password {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #004aad;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.login-container .forgot-password:hover {
+  text-decoration: underline;
+}
+.header .btn-beranda {
+  background-color: #FFD633; /* Background kuning */
+  color: #fff; /* Teks putih */
+  font-weight: bold; /* Bold */
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header .btn-beranda:hover {
+  background-color: #ffcc00;
+}
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="inner">
+      <div class="brand">
+        <img src="../src/logo.png" alt="Labirin" />
+        <span>Labirin Children Center</span>
+      </div>
+      <div class="header">
+        <a href="./index.html" class="btn-beranda">Beranda</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Background login: ganti path gambar di atribut style di bawah (src/...) -->
+  <div class="login-container">
+  <h2>Masuk Akun</h2>
+  <p>Gunakan username dan kata sandi Anda.</p>
+
+  <form id="loginForm">
+    <label for="login">Username</label>
+    <input type="text" id="login" placeholder="contoh: T001 / O001" autocomplete="username" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="•••••••" autocomplete="current-password" required>
+
+    <button id="btnLogin" type="submit">Masuk</button>
+    <div id="msg" style="display:none;margin-top:10px;color:#d00;font-weight:600"></div>
+  </form>
+
+  <a id="forgotLink" href="#" class="forgot-password">Lupa password?</a>
+  </div>
+
+
+  <script src="./js/app.js"></script>
+  <script>
+    function showMsg(text){
+      const el = document.getElementById('msg');
+      if(!el) return;
+      el.textContent = text || '';
+      el.style.display = text ? 'block' : 'none';
+    }
+
+    async function onSubmit(e){
+      e?.preventDefault?.();
+      showMsg('');
+      const login = document.getElementById('login').value.trim();
+      const password = document.getElementById('password').value;
+      if(!login || !password){
+        showMsg('Username dan password wajib diisi.');
+        return;
+      }
+      try{
+        const res = await api('auth_login.php', { method: 'POST', body: JSON.stringify({ login, password }) });
+        if(res && res.ok){
+          // Arahkan ke dashboard umum, halaman lain akan cek role via session
+          location.href = './dashboard.html';
+          return;
+        }
+        showMsg('Login gagal. Periksa username atau password.');
+      }catch(err){
+        showMsg('Terjadi kesalahan jaringan. Coba lagi.');
+      }
+    }
+
+    async function onForgot(e){
+      e?.preventDefault?.();
+      const username = prompt('Masukkan username terdaftar (contoh: T001/O001):');
+      if(!username) return;
+      try{
+        const res = await api('password_reset.php', { method:'POST', body: JSON.stringify({ username: username.trim() }) });
+        if(res && res.ok){
+          showMsg('Instruksi reset terkirim ke email terdaftar.');
+        }else{
+          showMsg('Username tidak ditemukan atau gagal mengirim email.');
+        }
+      }catch(err){
+        showMsg('Tidak dapat mengirim permintaan reset saat ini.');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('loginForm');
+      form?.addEventListener('submit', onSubmit);
+      document.getElementById('btnLogin')?.addEventListener('click', onSubmit);
+      document.getElementById('forgotLink')?.addEventListener('click', onForgot);
+    });
+  </script>
+</body>
+</html>

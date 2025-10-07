@@ -1,0 +1,1868 @@
+/* Khusus menu Pengaduan sidebar (link WhatsApp) */
+a.side-item[href^="https://wa.me/"] {
+  color: #111827 !important; /* Ganti warna di sini sesuai keinginan */
+  font-weight: 600;
+}
+/* Rekap tabel hadir */
+.attendance-summary .summary-total {
+  min-width: 120px;
+}
+.attendance-summary .summary-label {
+  font-size: 18px;
+  color: #64748b;
+}
+.attendance-summary .summary-count {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.attendance-summary .summary-stats {
+  display: flex;
+  gap: 18px;
+}
+.attendance-summary .stat-item {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 18px 24px;
+  min-width: 90px;
+  text-align: center;
+  box-shadow: 0 2px 8px #e0e7ef;
+}
+.attendance-summary .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.attendance-summary .stat-label {
+  font-size: 1rem;
+  color: #64748b;
+}
+:root{--primary:#1e88e5;--accent:#fbc02d;--bg:#ffffff;--text:#1f2937;--blue:#0ea5e9;--yellow:#fde047}
+*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Poppins;color:var(--text);background:linear-gradient(180deg,#ffffff, #f8fbff);scroll-behavior:smooth}
+a{text-decoration:none;color:var(--primary)}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.hero .container{padding:0 40px;transform:translateX(-76px)}
+.navbar{position:sticky;top:0;background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid #eef;z-index:50}
+.navbar .inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.brand{display:flex;align-items:center;gap:12px;margin-left:24px}
+.brand img{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(0,0,0,.08))}
+.brand .name{font-weight:800;letter-spacing:.3px;color:#000000;font-size:20px}
+.nav-links{display:flex;gap:16px;align-items:center;margin-right:0;transform:translateX(-28px)}
+.nav-links a{padding:10px 14px;border-radius:10px;font-size:17px;color:#fdd835;transition:.15s transform,.15s background-color,.15s color}
+.nav-links a:focus{outline:none}
+.nav-links a:hover{background:#fdd835}
+.nav-links a:active{transform:translateY(1px);background:var(--accent);color:#1f2937}
+.nav-links a:hover{background:#eef5ff}
+.btn{background:var(--primary);color:#fff;padding:10px 16px;border-radius:12px;box-shadow:0 10px 20px rgba(30,136,229,.25), inset 0 -2px 0 rgba(0,0,0,.1);transition:.2s transform,.2s box-shadow}
+.btn:hover{transform:translateY(-1px);box-shadow:0 14px 24px rgba(30,136,229,.3)}
+.btn-accent{background:#fdd835;color:#fff}
+.btn-login{
+  background:#e6c200;
+  color:#fff;
+  padding:12px 18px;
+  font-size:16px;
+}
+.login-wrap{max-width:520px}
+.login-card{margin:48px auto;background:#fff;border:1px solid #eef;border-radius:18px;padding:28px 24px;box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.login-title{margin:0 0 4px;color:#1449A5;font-size:28px;font-weight:800}
+.login-subtitle{margin:0 0 18px;color:#334155;opacity:.9}
+.login-meta{display:flex;gap:12px;align-items:center;margin-top:8px}
+.login-meta .link{color:#1449A5}
+.login-backdrop{position:fixed;inset:0;z-index:-1;background:#f6fbff url(var(--login-bg)) center/cover no-repeat;filter:blur(2px) saturate(1.05)}
+.fade-in{animation:fadeIn .5s ease-out both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.nav-links .btn-login{color:#fff !important}
+.hero{background:url("../src/background.jpg") no-repeat center center;background-size: cover;align-items: center;display:flex;margin:0;position: relative;border-radius:0;min-height:500px;padding:60px 0}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;max-width:1000px;margin:0 auto}
+
+@media (max-width: 768px){
+  .hero .container{transform:translateX(-32px)}
+  .hero-text{margin-left:-16px}
+}
+.hero-text h1{font-size:36px;margin:0 0 16px;color:#fbc02d;line-height:1.2}
+.hero-text p{font-size:18px;color: #fff;;opacity:.95;line-height:1.6}
+.hero-text .flex{justify-content:flex-start}
+.hero h1{font-size:40px;margin:0 0 12px}
+.hero p{font-size:16px;opacity:.85}
+.card{background:#fff;border:1px solid #eef;border-radius:16px;padding:20px;box-shadow:0 12px 30px rgba(0,0,0,.06)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px}
+.grid-2 .card{display:flex;gap:18px;align-items:flex-start;padding:24px;border-radius:16px;box-shadow:0 10px 24px rgba(0,0,0,.05)}
+.card-feature .card-icon-img{flex:0 0 56px;width:56px;height:56px;border-radius:14px;object-fit:contain;padding:0;background:none;border:none;box-shadow:none}
+.card-feature .card-body{display:block}
+.card-feature h3{margin:0;color:#1449A5;font-weight:800;font-size:22px}
+.card-feature p{margin:8px 0 0;color:#1f2937;opacity:.9;line-height:1.8;font-size:16px}
+.section h2{color:#1449A5;font-weight:800;font-size:32px;margin:0 0 12px}
+/* Khusus ukuran judul paket pembelajaran diperbesar lagi */
+#paket-labirin h2{font-size:36px}
+.section.container > p{line-height:1.8;margin-top:10px}
+.section{padding:40px 20px}
+.footer{padding:32px 20px;border-top:1px solid #eef;background:#365788}
+.input, input, select, textarea{width:100%;padding:12px 14px;border:1px solid #dde6f1;border-radius:12px;background:#fff;outline:none}
+.input:focus, input:focus, select:focus, textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(30,136,229,.12)}
+.form{display:grid;gap:12px}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--yellow);color:#1f2937;font-weight:600}
+.tag:empty{display:none}
+.card-3d{transform-style:preserve-3d;perspective:900px}
+.card-3d:hover{transform:rotateX(1deg) rotateY(-1deg);transition:.25s}
+.avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.kpi{display:flex;gap:12px;align-items:center}
+.kpi .num{font-size:28px;font-weight:800}
+.alert{padding:12px 14px;border:1px solid #fee2; background:#fff7cc; border-radius:12px}
+.tag{padding:6px 10px;border:1px dashed #cbd5e1;border-radius:10px}
+.table{width:100%;border-collapse:separate;border-spacing:0 8px}
+.table th,.table td{padding:10px 12px;background:#fff;border:1px solid #eef}
+.table th{background:#f8fafc;text-align:left}
+.flex{display:flex;gap:12px;align-items:center}
+.right{margin-left:auto}
+.mt-16{margin-top:16px}
+.hidden{display:none}
+.card-icon{flex:0 0 56px;width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:#fff7cc;border:2px solid #f6e08a;box-shadow:0 6px 16px rgba(0,0,0,.06);font-size:26px;margin-bottom:0;color:#1449A5}
+
+/* Courses section */
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+.course-card{position:relative;background:#fff;border:3px solid #FBBF48;border-radius:22px;padding:28px;box-shadow:12px 12px 0 #0d5dc0;transition:transform .2s ease, box-shadow .2s ease}
+.course-card:hover{transform:translateY(-6px);box-shadow:16px 16px 0 #0d5dc0}
+.course-card:active{transform:translateY(-2px);box-shadow:10px 10px 0 #0b4aa0}
+.course-header{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.badge-icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;background:#fff7cc;border:2px solid #f6e08a;box-shadow:0 6px 16px rgba(0,0,0,.06);font-weight:800;color:#1449A5}
+.badge-icon-img{flex:0 0 56px;width:56px;height:56px;border-radius:14px;object-fit:contain;padding:0;background:none;border:none;box-shadow:none}
+.course-card h3{margin:0;color:#1449A5;font-size:22px}
+.course-card p{color:#1f2937;opacity:.9;line-height:1.7}
+.course-note{font-size:13px;color:#707a8a;margin:8px 0 16px}
+.course-btn{display:block;text-align:center;margin:18px auto 0;width:72%;padding:16px 0;border-radius:16px;background:#0079c0;color:#fff;font-weight:800;font-size:20px}
+
+@media (max-width: 980px){
+  .course-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 640px){
+  .course-grid{grid-template-columns:1fr}
+}
+
+/* Therapist section */
+.therapist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+.therapist-card{display:flex;flex-direction:column;align-items:center;text-align:center}
+.therapist-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--accent);box-shadow:0 10px 20px rgba(0,0,0,.1);margin:8px 0 12px}
+.therapist-name{margin:0;color:#1449A5;font-size:20px}
+
+@media (max-width: 980px){
+  .therapist-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 640px){
+  .therapist-grid{grid-template-columns:1fr}
+}
+
+.therapist-cta{display:flex;justify-content:center;margin-top:40px}
+.therapist-cta .btn{background:#0079c0;color:#fff;padding:12px 20px;border-radius:14px}
+
+/* About section */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin-top:0}
+.about-text p{line-height:1.8;margin-left: 16px;}
+.about-images{display:grid;gap:16px;justify-items:end}
+.about-img{width:100%;max-width:460px;border-radius:16px;border:4px solid #eef;box-shadow:0 16px 40px rgba(0,0,0,.12);background:#fff;object-fit:cover}
+.about-img.small{max-width:460px;justify-self:end}
+
+@media (max-width: 900px){
+  .about{grid-template-columns:1fr}
+  .about-images{justify-items:center}
+}
+
+
+/* ===== Section Style ===== */
+.testimonial-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Subtitle ===== */
+.testimonial-subtitle {
+  color: #fbc02d; /* Kuning gelap */
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ===== Title ===== */
+.testimonial-title {
+  color: #2c2c54;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+/* ===== Container ===== */
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* ===== Card Style ===== */
+.testimonial-card {
+  background: #fff9e6; /* Kuning pastel */
+  border-radius: 20px 60px 20px 20px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(251, 192, 45, 0.3); /* Bayangan kuning */
+}
+
+/* ===== Profile Section ===== */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #fdd835; /* Border kuning */
+  object-fit: cover;
+}
+.client-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2c2c54;
+  font-weight: 600;
+}
+
+.client-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #777;
+}
+
+/* ===== Divider Line ===== */
+.testimonial-card hr {
+  border: none;
+  border-top: 1px solid #fdd835; /* Garis kuning */
+  margin: 10px 0 15px;
+}
+
+/* ===== Testimonial Text ===== */
+.testimonial-text {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* ===== Slider Dots ===== */
+.slider-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.slider-dots .dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dots .dot.active {
+  background-color: #fdd835; /* Dot aktif kuning */
+}
+
+/* Section Container */
+.fasilitas-section {
+  background: #fff;
+  padding: 60px 20px;
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-header .subtitle {
+  color: #f7c600;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.section-header .title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c2c54;
+}
+
+.section-header .description {
+  font-size: 16px;
+  color: #555;
+  max-width: 650px;
+  margin: 10px auto 0;
+}
+
+/* Wrapper for Cards */
+.fasilitas-wrapper {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Individual Card */
+.fasilitas-card {
+  background: #fff6e5;
+  padding: 25px 20px;
+  border-radius: 50px 50px 50px 20px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.fasilitas-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.fasilitas-card .icon img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.fasilitas-card .card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f7c600;
+  margin-bottom: 8px;
+}
+
+.fasilitas-card .card-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.fasilitas-card .card-text {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ==== Terapis Yellow Layout (dashboard seperti contoh) ==== */
+.topbar{position:sticky;top:0;z-index:40}
+.topbar-yellow{background:#f6b73f;border-bottom:1px solid #eab34a}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 32px 12px 32px;}
+.topbar-left{display:flex;align-items:center;gap:12px}
+.topbar-logo{width:56px;height:56px;object-fit:contain}
+.topbar-title{font-weight:800;color:#1f2937}
+.topbar-center{display:flex;align-items:center;gap:12px;justify-content:center}
+.topbar-right{display:flex;align-items:center;gap:12px;justify-content:flex-end;}
+
+.app-shell{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 80px)}
+.sidebar{background:#fff;border-right:1px solid #eaeaea;padding:12px;display:flex;flex-direction:column;transition:transform .25s ease}
+.sidebar.collapsed{transform:translateX(-290px)}
+.sidebar-profile{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 8px}
+.avatar{width:72px;height:72px;border-radius:50%;background:#e5e7eb center/cover no-repeat;border:2px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,.05);background-repeat:no-repeat;background-position:center center !important;background-size:150% !important}
+
+/* Fallback background image so avatar shows even before JS sets inline style */
+.sidebar-profile .avatar,
+.card .avatar,
+.profile .avatar {
+  background-position: center center !important;
+  background-size: 150% !important;
+  background-repeat: no-repeat;
+  background-image: url('../src/profil_terapis.jpeg') !important;
+}
+.sidebar-name{font-weight:700}
+.sidebar-nav{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.side-item{display:block;padding:10px 12px;border:1px solid #ddd;border-radius:8px;color:#111827;background:#fff}
+.side-item.active,.side-item:hover{background:#eaf2ff;border-color:#cfe0ff}
+.content{padding:20px}
+.welcome.card{background:#fff;border:1px solid #eee;border-radius:16px;padding:18px;box-shadow:0 10px 24px rgba(0,0,0,.06)}
+
+.hamburger{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:6px 10px;font-size:18px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.search{border:1px solid #ddd;border-radius:999px;padding:8px 14px;width:200px;transition:width .2s ease}
+.search.expanded{width:360px}
+.icon-btn{background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+
+/* Search results, dropdown notif, breadcrumbs, page title */
+.search-wrap{position:relative}
+.search-results{position:absolute;left:0;top:36px;min-width:300px;max-width:420px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:8px;box-shadow:0 10px 24px rgba(0,0,0,.1)}
+.result-item{display:block;padding:8px 10px;border-radius:8px;color:#0b65c2}
+.result-item:hover{background:#f1f5ff}
+.result-empty{padding:8px 10px;color:#64748b}
+.loader{width:22px;height:22px;border:3px solid #e5e7eb;border-top-color:#0b65c2;border-radius:50%;animation:spin .7s linear infinite;margin:6px auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.dropdown{position:absolute;right:20px;top:64px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;min-width:280px;box-shadow:0 14px 28px rgba(0,0,0,.12)}
+.dropdown-title{font-weight:700;padding:10px 12px;border-bottom:1px solid #eef}
+.dropdown-body{max-height:300px;overflow:auto}
+.dropdown-item{padding:10px 12px;border-bottom:1px solid #f1f5f9}
+.dropdown-item:last-child{border-bottom:none}
+
+.page-head{display:flex;flex-direction:column;gap:4px;margin:12px 0 16px}
+.page-title{font-weight:800;font-size:28px;color:#111827}
+.breadcrumbs{color:#6b7280}
+.bc-sep{margin:0 6px}
+
+/* ========================================
+   TABLE STYLING - Styling tabel
+   ======================================== */
+.table{width:100%;border-collapse:separate;border-spacing:0 8px}
+.table th,.table td{padding:10px 12px;background:#fff;border:1px solid #eef}
+.table th{background:#f8fafc;text-align:left}
+
+
+
+
+
+
+
+
+
+
+/* =======================
+   MODE KHUSUS TAMPILAN MOBILE
+   ======================= */
+   @media (max-width: 768px) {
+
+    /* TAMPILKAN KEMBALI LOGO DI MOBILE */
+    .topbar-logo {
+      display: block !important;
+      width: 40px !important;
+      height: 40px !important;
+      object-fit: contain;
+      order: 0; /* Logo di paling kiri */
+    }
+  
+    /* Sembunyikan hanya nama Labirin */
+    .topbar-title {
+      display: none !important;
+    }
+  
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 15px;
+      gap: 8px;
+      height: 60px;
+    }
+  
+    /* SUSUNAN BARU UNTUK MOBILE DENGAN LOGO */
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+  
+    /* Logo di kiri */
+    .topbar-logo {
+      order: 0;
+    }
+  
+    .search-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      order: 1; /* Search setelah logo */
+    }
+  
+    .search {
+      flex: 1;
+      max-width: 120px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      background: white;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    }
+  
+    /* Ikon lonceng dan profil di sebelah kanan search */
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      order: 2; /* Notif & profile di tengah */
+    }
+  
+    .icon-btn {
+      background: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+  
+    /* Tombol hamburger di kanan ujung - DIPERBAIKI */
+    .hamburger {
+      background: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+      z-index: 10000;
+      width: 40px;
+      height: 40px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      order: 3; /* Hamburger di paling kanan */
+      position: relative;
+    }
+  
+    /* Sidebar & animasi - DIPERBAIKI */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 280px;
+      height: 100%;
+      background: #fff;
+      z-index: 9000;
+      transition: left 0.3s ease;
+      padding: 70px 20px 20px 20px;
+      overflow-y: auto;
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+    }
+  
+    .sidebar.active {
+      left: 0;
+    }
+  
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 8000;
+      display: none;
+    }
+  
+    .sidebar-overlay.active {
+      display: block;
+    }
+  
+    /* Konten utama agar full tengah */
+    .app-shell {
+      position: relative;
+    }
+    
+    .content {
+      padding: 15px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: left;
+    }
+  
+    .card {
+      width: 100%;
+      margin: 10px 0;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      background: white;
+      box-sizing: border-box;
+    }
+    
+    .main-content {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 15px;
+    }
+    
+    /* Perbaikan posisi topbar */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 7000;
+    }
+    
+    /* Beri margin atas pada app-shell agar konten tidak tertutup topbar */
+    .app-shell {
+      margin-top: 60px;
+    }
+  }
+
+
+
+
+
+  /* ======================= */
+/* PERBAIKAN DASHBOARD UNTUK MOBILE */
+/* ======================= */
+
+@media (max-width: 768px) {
+  /* Geser semua konten dashboard ke kiri */
+  .page-head {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 12px 0 16px;
+    text-align: left; /* Rata kiri */
+    width: 100%;
+    padding-left: 0; /* Pastikan tidak ada padding kiri */
+  }
+  
+  .page-title {
+    font-weight: 800;
+    font-size: 28px;
+    color: #111827;
+    text-align: left; /* Rata kiri */
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  
+  .breadcrumbs {
+    color: #6b7280;
+    text-align: left; /* Rata kiri */
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  /* Atur card agar di tengah dengan jarak dari pinggir */
+  .content {
+    padding: 15px 10px; /* 1cm kiri-kanan (sekitar 10px) */
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .main-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px 10px; /* 1cm kiri-kanan */
+    text-align: center;
+  }
+
+  /* Card welcome dengan jarak dari pinggir */
+  @media (max-width: 768px) {
+    .welcome.card {
+      width: 100% !important;          /* Panjang penuh ke kanan */
+      margin: 10px 0 !important;       /* Hilangkan jarak samping */
+      border-radius: 0 !important;     /* (opsional) biar sejajar tepi layar */
+      padding: 20px 16px !important;   /* Spasi dalam card */
+      box-sizing: border-box;
+      text-align: left !important;     /* Rata kiri */
+    }
+  
+    .welcome.card h1,
+    .welcome.card p {
+      text-align: left !important;     /* Pastikan teksnya rata kiri */
+      width: 100% !important;
+      margin: 0;
+    }
+  
+  /* Paragraf Selamat Datang dalam card */
+  .welcome.card p {
+    text-align: left; /* Rata kiri */
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 0;
+  }
+
+  /* Semua card lainnya dengan jarak dari pinggir */
+  .card {
+    width: calc(100% - 20px); /* Kurangi 20px untuk jarak kiri-kanan */
+    margin: 10px auto; /* Tengah secara horizontal */
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: white;
+    box-sizing: border-box;
+    text-align: left; /* Tulisan dalam card rata kiri-kanan */
+  }
+
+  /* Pastikan semua teks dalam card rata kiri */
+  .card h1,
+  .card h2,
+  .card h3,
+  .card h4,
+  .card h5,
+  .card h6,
+  .card p,
+  .card span,
+  .card div {
+    text-align: left;
+  }
+
+  /* Perbaikan untuk grid card di dashboard */
+  .grid,
+  .grid-2,
+  .course-grid,
+  .therapist-grid {
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .grid .card,
+  .grid-2 .card,
+  .course-grid .card,
+  .therapist-grid .card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* ======================= */
+/* PERBAIKAN TAMBAHAN UNTUK KONTEN DASHBOARD */
+/* ======================= */
+
+/* Untuk desktop - pastikan konsisten */
+.content {
+  padding: 20px;
+}
+
+/* Pastikan breadcrumbs dan judul rata kiri di semua ukuran */
+.page-head {
+  text-align: left;
+}
+
+.page-title {
+  text-align: left;
+}
+
+.breadcrumbs {
+  text-align: left;
+}
+
+/* Untuk card di desktop */
+.card {
+  text-align: left;
+}
+}
+
+
+/* =======================
+   PERBAIKAN AKHIR CARD SELAMAT DATANG (KHUSUS MOBILE)
+   ======================= */
+   @media (max-width: 768px) {
+    .main-content .welcome.card {
+      width: calc(100vw - 32px) !important; /* Kurangi 16px di kiri & kanan */
+      margin: 10px auto !important;         /* Tengah otomatis di layar */
+      border-radius: 12px !important;
+      box-sizing: border-box;
+      text-align: left !important;
+      padding: 20px 16px !important;
+    }
+  
+    .main-content .welcome.card h1,
+    .main-content .welcome.card p {
+      text-align: left !important;
+      width: 100% !important;
+      margin: 0;
+    }
+  }
+
+  
+
+
+
+
+
+  /* ========================================
+   PERBAIKAN NAVIGASI & CARD (KHUSUS MOBILE)
+   ======================================== */
+@media (max-width: 768px) {
+
+  /* ======= sejajarkan tombol hamburger ======= */
+  .topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .topbar-left .hamburger {
+    order: 2; /* pindah di sebelah kanan logo/title */
+    margin-left: auto;
+  }
+
+  .search-wrap {
+    flex: 1;
+    max-width: 150px;
+  }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* ======= buat card evaluasi selebar card selamat datang ======= */
+  #form-staff.card,
+  main.content .card {
+    width: calc(100vw - 32px) !important;
+    margin: 10px auto !important;
+    border-radius: 12px !important;
+    box-sizing: border-box;
+    text-align: left !important;
+    padding: 20px 16px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ===========================
+   PERBAIKAN HAMBURGER + TOMBOL PDF + CARD
+   =========================== */
+
+/* --- 1. Perbaiki posisi hamburger & topbar (semua ukuran) --- */
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.hambburger,
+.hamburger {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* --- 2. Sesuaikan tampilan mobile --- */
+@media (max-width: 768px) {
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .search-wrap {
+    flex: 1;
+    max-width: 150px;
+  }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Card evaluasi = full width (seperti Selamat Datang) */
+  #form-staff.card,
+  .content .card {
+    width: calc(100vw - 32px) !important;
+    margin: 10px auto !important;
+    border-radius: 12px !important;
+    padding: 20px 16px !important;
+    box-sizing: border-box;
+  }
+
+  /* Table styling agar tombol PDF rapi */
+  .table td a.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff !important;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+/* --- 3. Desktop: pastikan hamburger tetap tampil --- */
+@media (min-width: 769px) {
+  .hamburger {
+    display: inline-flex !important;
+  }
+}
+
+  
+  
+
+/* === PERBAIKAN TOMBOL HAMBURGER (KHUSUS MOBILE) === */
+@media (max-width: 768px) {
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Susunan: logo – search – notif/profil – hamburger */
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    order: 2;
+  }
+
+  .hamburger {
+    display: flex !important;
+    align-items: center;
+    justifyment: center;
+    background: #fff !important; /* warna putih */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 18px;
+    margin-left: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    order: 3; /* muncul setelah notifikasi & profil */
+    z-index: 9999;
+  }
+}
+
+
+
+/* ========================================
+   PERBAIKAN SEARCH BAR MOBILE SEPERTI SCREENSHOT
+   ======================================== */
+   @media (max-width: 768px) {
+    /* Search bar styling seperti screenshot */
+    .search-wrap {
+      order: 1;
+      flex: 1;
+      max-width: 200px;
+      margin: 0 8px;
+    }
+  
+    .search {
+      width: 100%;
+      max-width: 180px;
+      padding: 8px 12px;
+      border-radius: 20px;
+      border: 1px solid #ddd;
+      background: white;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+  
+    .search:focus {
+      border-color: #1e88e5;
+      box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.1);
+    }
+  
+    /* Susunan topbar untuk mobile */
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+  
+    /* Logo di kiri */
+    .topbar-logo {
+      order: 0;
+      width: 40px !important;
+      height: 40px !important;
+    }
+  
+    /* Search di tengah */
+    .search-wrap {
+      order: 1;
+    }
+  
+    /* Notifikasi & profil */
+    .topbar-right {
+      order: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  
+    /* Hamburger di kanan */
+    .hamburger {
+      order: 3;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-left: 8px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* ========================================
+     PERBAIKAN SIDEBAR MOBILE
+     ======================================== */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 280px;
+      height: 100%;
+      background: #fff;
+      z-index: 10000;
+      transition: left 0.3s ease;
+      padding: 70px 20px 20px 20px;
+      overflow-y: auto;
+      box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+    }
+  
+    .sidebar.active {
+      left: 0;
+    }
+  
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      display: none;
+    }
+  
+    .sidebar-overlay.active {
+      display: block;
+    }
+  }
+
+
+  /* PERBAIKAN ALIGNMENT TOMPOL */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hamburger {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+}
+
+/* Desktop alignment */
+@media (min-width: 769px) {
+  .topbar-right {
+    gap: 12px;
+  }
+  
+  .hamburger, .icon-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+
+
+
+
+/* ========================================
+   DESKTOP HAMBURGER STYLING
+   ======================================== */
+   @media (min-width: 769px) {
+    .hamburger {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      width: 44px;
+      height: 44px;
+      margin: 0;
+      transition: all 0.2s ease;
+    }
+  
+    .hamburger:hover {
+      background: #f8fafc;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  
+    /* Sidebar collapsed state untuk desktop */
+    .sidebar.collapsed {
+      transform: translateX(-290px);
+    }
+  
+    .sidebar {
+      transition: transform 0.3s ease;
+    }
+  }
+
+
+
+
+
+
+
+  /* ========================================
+   CONSISTENT BUTTON ALIGNMENT
+   ======================================== */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+}
+
+/* Desktop layout */
+@media (min-width: 769px) {
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 32px;
+  }
+
+  .topbar-left {
+    flex: 1;
+  }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Pastikan semua tombol di topbar-right memiliki ukuran sama */
+  .icon-btn, .hamburger {
+    width: 44px;
+    height: 44px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+  }
+
+  /* Susunan mobile: logo - search - notif/profil - hamburger */
+  .topbar-logo { order: 0; }
+  .search-wrap { order: 1; }
+  .topbar-right { order: 2; }
+  .hamburger { order: 3; }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .icon-btn, .hamburger {
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+/* ========================================
+   HAMBURGER VISIBILITY - Sembunyikan di desktop
+   ======================================== */
+
+/* Desktop - sembunyikan hamburger */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+  
+  /* Pastikan sidebar selalu terbuka di desktop */
+  .sidebar {
+    transform: translateX(0) !important;
+    position: static !important;
+    height: auto !important;
+  }
+  
+  /* Hilangkan overlay di desktop */
+  .sidebar-overlay {
+    display: none !important;
+  }
+}
+
+/* Mobile - tampilkan hamburger */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    order: 3;
+    z-index: 10000;
+  }
+}
+
+
+
+
+
+/* ========================================
+   PERBAIKAN ALIGNMENT KHUSUS UNTUK MOBILE
+   ======================================== */
+   @media (max-width: 768px) {
+    /* Pastikan semua tombol di topbar memiliki tinggi yang sama */
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 40px; /* Tinggi tetap */
+    }
+    
+    .icon-btn, .hamburger {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+    }
+    
+    /* Pastikan hamburger sejajar dengan icon lainnya */
+    .hamburger {
+      order: 3;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 0;
+      font-size: 18px;
+    }
+    
+    /* Topbar layout mobile yang konsisten */
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      height: 60px;
+    }
+    
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      height: 100%;
+    }
+    
+    /* Susunan yang konsisten di semua halaman */
+    .topbar-logo { order: 0; }
+    .search-wrap { order: 1; }
+    .topbar-right { order: 2; }
+    .hamburger { order: 3; }
+  }
+
+
+
+
+  /* ========================================
+   KONSISTENSI VERTICAL ALIGNMENT
+   ======================================== */
+.topbar-inner {
+  align-items: center;
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Desktop alignment */
+@media (min-width: 769px) {
+  .topbar-inner {
+    height: 80px;
+  }
+  
+  .icon-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Mobile alignment */
+@media (max-width: 768px) {
+  .topbar-inner {
+    height: 60px;
+  }
+  
+  .icon-btn,
+  .hamburger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+/* ========================================
+   PERBAIKAN POSISI HAMBURGER MOBILE - Geser ke kanan
+   ======================================== */
+   @media (max-width: 768px) {
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      height: 60px;
+    }
+  
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+    }
+  
+    /* Susunan: logo - search - [spacer] - notif/profil - hamburger */
+    .topbar-logo { order: 0; }
+    .search-wrap { 
+      order: 1; 
+      flex: 1;
+      max-width: 150px;
+      margin: 0 8px;
+    }
+    
+    /* Spacer untuk mendorong tombol ke kanan */
+    .topbar-left::after {
+      content: '';
+      flex: 1;
+      order: 2;
+    }
+    
+    .topbar-right {
+      order: 3;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .hamburger {
+      order: 4;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 0;
+      font-size: 18px;
+      width: 40px;
+      height: 40px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+  
+    /* Pastikan semua tombol sejajar */
+    .icon-btn, .hamburger {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  
+
+
+
+  /* ========================================
+   PERBAIKAN POSISI HAMBURGER MOBILE - Geser ke kanan mendekati tombol lonceng
+   ======================================== */
+@media (max-width: 768px) {
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    height: 60px;
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+  }
+
+  /* Susunan yang benar: logo - search - [spacer] - notif/profil - hamburger */
+  .topbar-logo { 
+    order: 0; 
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .search-wrap { 
+    order: 1; 
+    flex: 1;
+    max-width: 150px;
+    margin: 0 8px;
+  }
+  
+  .topbar-right {
+    order: 2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .hamburger {
+    order: 3;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-left: 8px;
+  }
+
+  /* Pastikan semua tombol sejajar */
+  .icon-btn, .hamburger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Sembunyikan title di mobile */
+  .topbar-title {
+    display: none !important;
+  }
+}
+
+/* ========================================
+   PERBAIKAN POSISI HAMBURGER MOBILE - Geser ke kanan mendekati tombol notifikasi
+   ======================================== */
+@media (max-width: 768px) {
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    order: 2;
+  }
+
+  .hamburger {
+    order: 3;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-left: 0;
+  }
+
+  /* Pastikan semua tombol sejajar */
+  .icon-btn, .hamburger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+/* ========================================
+   PERBAIKAN POSISI HAMBURGER MOBILE - Geser ke kanan mendekati tombol notifikasi
+   ======================================== */
+   @media (max-width: 768px) {
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      order: 2;
+    }
+  
+    .hamburger {
+      order: 3;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 0;
+      font-size: 18px;
+      width: 40px;
+      height: 40px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      margin-left: 0;
+    }
+  
+    /* Pastikan semua tombol sejajar */
+    .icon-btn, .hamburger {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+
+
+
+  /* ========================================
+   PERBAIKAN POSISI TOMBOL DI MOBILE - Evaluasi.html
+   ======================================== */
+@media (max-width: 768px) {
+  /* Perbaikan khusus untuk evaluasi.html */
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Tambah jarak antar tombol */
+    order: 2;
+  }
+
+  .hamburger {
+    order: 3;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  /* Pastikan semua tombol sejajar */
+  .icon-btn, .hamburger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Perpanjang search bar di semua halaman */
+  .search-wrap {
+    max-width: 180px; /* Lebarkan search */
+    flex: 1;
+  }
+  
+  .search {
+    max-width: 100%; /* Gunakan full width available */
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+/* ========================================
+   PERBAIKAN FINAL - Hamburger & Search Box Mobile
+   ======================================== */
+   @media (max-width: 768px) {
+    /* Perbaikan search box - lebih panjang seperti desktop tapi sedikit lebih pendek */
+    .search-wrap {
+      max-width: 220px !important; /* Lebarkan search seperti desktop tapi sedikit lebih pendek */
+      flex: 1;
+      margin: 0 12px;
+    }
+    
+    .search {
+      max-width: 100% !important;
+      width: 100% !important;
+      padding: 10px 16px !important;
+      font-size: 14px;
+    }
+    
+    /* Pastikan tombol hamburger di evaluasi.html sama seperti halaman lain */
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      order: 2;
+    }
+    
+    .hamburger {
+      order: 3;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 0;
+      font-size: 18px;
+      width: 40px;
+      height: 40px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+    
+    /* Pastikan semua tombol konsisten */
+    .icon-btn, .hamburger {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+  /* ========================================
+   FORCE PERBAIKAN UNTUK EVALUASI.HTML
+   ======================================== */
+@media (max-width: 768px) {
+  /* Force search box lebih panjang */
+  .search-wrap {
+    max-width: 120px !important;
+    min-width: 100px !important;
+  }
+  
+  /* Force tombol hamburger sama seperti halaman lain */
+  body .hamburger {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+
+/* ========================================
+   PERBAIKAN FINAL - Hamburger Evaluasi.html
+   ======================================== */
+   @media (max-width: 768px) {
+    /* Force perbaikan untuk evaluasi.html - sama seperti halaman lain */
+    .topbar-right {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      order: 2 !important;
+    }
+    
+    .hamburger {
+      order: 3 !important;
+      background: white !important;
+      border: 1px solid #ddd !important;
+      border-radius: 8px !important;
+      padding: 0 !important;
+      font-size: 18px !important;
+      width: 40px !important;
+      height: 40px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin: 0 !important;
+      margin-left: 0 !important;
+    }
+    
+    /* Pastikan semua tombol sama persis */
+    .icon-btn, .hamburger {
+      width: 40px !important;
+      height: 40px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    /* Hapus semua style inline yang mungkin mengganggu */
+    body .hamburger[style] {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+
+  
+
+
+/* ========================================
+   FIX KHUSUS UNTUK EVALUASI.HTML SAJA
+   ======================================== */
+   @media (max-width: 768px) {
+    /* Hanya untuk halaman evaluasi */
+    .page-evaluasi .topbar-right {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin-left: auto !important;
+    }
+    
+    .page-evaluasi .topbar-right {
+      margin-left: 30px !important;
+    }
+    .page-evaluasi .hamburger {
+      margin-left: 20px !important;
+      margin-right: 0 !important;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
