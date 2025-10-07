@@ -9,7 +9,7 @@ if (is_parent_role($user)) {
     if (!$childId) {
         json_response(200, ['ok' => true, 'items' => []]);
     }
-    $stmt = $pdo->prepare('SELECT laporan_id as id, judul as caption, file_path, uploaded_at as meeting_date, uploaded_at as created_at FROM laporan WHERE anak_id = ? ORDER BY uploaded_at DESC');
+    $stmt = $pdo->prepare('SELECT laporan_id as id, anak_id as child_id, (SELECT nama_anak FROM anak WHERE anak_id = laporan.anak_id LIMIT 1) as child_name, judul as caption, file_path, uploaded_at as meeting_date, uploaded_at as created_at FROM laporan WHERE anak_id = ? ORDER BY uploaded_at DESC');
     $stmt->execute([$childId]);
     json_response(200, ['ok' => true, 'items' => $stmt->fetchAll()]);
 }
