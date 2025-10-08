@@ -72,7 +72,7 @@
     <div class="card">
       <h2>Daftar Evaluasi</h2>
       <table class="table" id="tbl">
-        <thead><tr><th>Tanggal</th><th>Caption</th><th>File</th></tr></thead>
+       <thead><tr><th>Tanggal</th><th>Anak</th><th>Caption</th><th>File</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -112,7 +112,8 @@
       (r.items||[]).forEach(it=>{
         const tr=document.createElement('tr');
         const url = `../backend/uploads/${it.file_path}`;
-        tr.innerHTML = `<td>${it.meeting_date||''}</td><td>${(it.caption||'')}</td><td><a class='btn' href='${url}' target='_blank'>Lihat PDF</a></td>`;
+        const childLabel = it.child_name ? `${it.child_name} (id:${it.child_id||'-'})` : (it.child_id ? `id:${it.child_id}` : '-');
+        tr.innerHTML = `<td>${it.meeting_date||''}</td><td>${childLabel}</td><td>${(it.caption||'')}</td><td><a class='btn' href='${url}' target='_blank'>Lihat PDF</a></td>`;
         tb.appendChild(tr);
       });
     }
