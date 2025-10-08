@@ -79,7 +79,7 @@
     <div class="card">
       <h2>Riwayat Kehadiran Anak</h2>
       <table class="table" id="tbl">
-        <thead><tr><th>Tanggal</th><th>Status</th><th>Catatan</th></tr></thead>
+        <thead><tr><th>Tanggal</th><th>Anak</th><th>Status</th><th>Catatan</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -116,7 +116,8 @@
       tb.innerHTML = '';
       (r.items||[]).forEach(it=>{
         const tr=document.createElement('tr');
-        tr.innerHTML = `<td>${new Date(it.created_at).toLocaleString()}</td><td>${it.status}</td><td>${it.note||''}</td>`;
+        const childLabel = it.child_name ? `${it.child_name} (id:${it.child_id||'-'})` : (it.child_id ? `id:${it.child_id}` : '-');
+        tr.innerHTML = `<td>${new Date(it.created_at).toLocaleString()}</td><td>${childLabel}</td><td>${it.status}</td><td>${it.note||''}</td>`;
         tb.appendChild(tr);
       });
       
