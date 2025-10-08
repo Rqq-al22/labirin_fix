@@ -1848,7 +1848,7 @@ a{text-decoration:none;color:var(--primary)}
     }
     
     .page-evaluasi .topbar-right {
-      margin-left: 30px !important;
+      margin-left: 10px !important;
     }
     .page-evaluasi .hamburger {
       margin-left: 20px !important;
@@ -1863,6 +1863,351 @@ a{text-decoration:none;color:var(--primary)}
 
 
 
+
+
+
+/* ========================================
+   PERBAIKAN TABEL EVALUASI & ABSENSI (MOBILE + TABLET)
+   ======================================== */
+
+/* Bungkus tabel di dalam container scroll jika konten kepanjangan */
+.card table.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    overflow-x: auto; /* Biar tabel tidak keluar dari card */
+  }
+
+  .card table {
+    min-width: 600px; /* Biar kolom tetap rapi walau caption panjang */
+  }
+}
+
+/* Pastikan caption panjang wrap ke bawah, bukan keluar */
+.table td,
+.table th {
+  white-space: normal !important;
+  word-wrap: break-word;
+  word-break: break-word;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* ========================================
+   TOMBOL PDF & RESPONSIVE LAYOUT
+   ======================================== */
+.table td a.btn {
+  display: inline-block;
+  background-color: #1e88e5;
+  color: #fff !important;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  /* Mobile — card tabel evaluasi & absen penuh lebar layar */
+  .card {
+    width: calc(100vw - 32px) !important;
+    margin: 10px auto !important;
+    border-radius: 12px !important;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .card table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .table td a.btn {
+    padding: 6px 8px;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Tablet — tombol PDF biar tidak tabrakan */
+  .table td a.btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 4px 0;
+  }
+}
+
+
+/* ========================================
+   PERBAIKAN TABEL RESPONSIF — EVALUASI & ABSENSI
+   ======================================== */
+
+/* Bungkus tabel dalam container scroll */
+.card {
+  overflow-x: auto;
+}
+
+/* Pastikan tabel tidak melewati batas card */
+.card .table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+.card .table th,
+.card .table td {
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .card {
+    width: calc(100vw - 32px) !important;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  .card .table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .table td a.btn {
+    padding: 6px 8px;
+    font-size: 13px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+}
+
+/* ================= TABLET (iPad) ================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .table td a.btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 4px 0;
+  }
+
+  .card .table {
+    min-width: 650px;
+  }
+}
+
+.page-evaluasi table.table,
+.page-absensi table.table {
+  width: 100% !important;
+  min-width: 600px !important;
+  table-layout: auto !important;
+  border-collapse: collapse !important;
+}
+
+.page-evaluasi table.table th,
+.page-evaluasi table.table td,
+.page-absensi table.table th,
+.page-absensi table.table td {
+  white-space: normal !important;
+  word-break: break-word !important;
+  word-wrap: break-word !important;
+  text-align: left !important;
+  vertical-align: top !important;
+  padding: 8px !important;
+}
+
+/* Container card responsif */
+.page-evaluasi .card,
+.page-absensi .card {
+  overflow-x: auto !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Tombol PDF */
+.page-evaluasi .table td a.btn,
+.page-absensi .table td a.btn {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  padding: 6px 8px !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-evaluasi .card,
+  .page-absensi .card {
+    width: calc(100vw - 32px) !important;
+    margin: 10px auto !important;
+    border-radius: 12px;
+    padding: 15px !important;
+  }
+
+  .page-evaluasi table.table,
+  .page-absensi table.table {
+    display: block !important;
+    overflow-x: auto !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page-evaluasi .table td a.btn,
+  .page-absensi .table td a.btn {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 4px 0 !important;
+  }
+}
+
+
+
+
+
+/* ===============================
+   PERBAIKAN KHUSUS TABEL EVALUASI & ABSENSI (FINAL)
+   =============================== */
+
+/* === Card Container === */
+.page-evaluasi .card,
+.page-absensi .card {
+  overflow-x: auto !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* === Table Styling === */
+.page-evaluasi .card .table,
+.page-absensi .card .table {
+  width: 100% !important;
+  min-width: 600px !important;
+  border-collapse: collapse !important;
+  table-layout: auto !important;
+}
+
+.page-evaluasi .card .table th,
+.page-absensi .card .table th,
+.page-evaluasi .card .table td,
+.page-absensi .card .table td {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  text-align: left !important;
+  vertical-align: top !important;
+  padding: 8px;
+}
+
+/* === Mobile === */
+@media (max-width: 768px) {
+  .page-evaluasi .card,
+  .page-absensi .card {
+    width: calc(100vw - 32px) !important;
+    margin: 10px auto !important;
+    border-radius: 12px;
+    padding: 15px !important;
+  }
+
+  .page-evaluasi .card .table,
+  .page-absensi .card .table {
+    display: block !important;
+    overflow-x: auto !important;
+  }
+
+  .page-evaluasi .card .table td a.btn,
+  .page-absensi .card .table td a.btn {
+    padding: 6px 8px !important;
+    font-size: 13px !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* === Tablet === */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page-evaluasi .card .table td a.btn,
+  .page-absensi .card .table td a.btn {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 4px 0 !important;
+  }
+
+  .page-evaluasi .card .table,
+  .page-absensi .card .table {
+    min-width: 650px !important;
+  }
+}
+
+
+
+
+  
+  /* =============================
+     FIX 2: Layout Children Page di Tablet
+     ============================= */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+      gap: 20px !important;
+      justify-items: center !important;
+      align-items: start !important;
+    }
+  
+    .grid .card {
+      width: 100% !important;
+      max-width: 360px !important;
+      margin: 0 auto !important;
+    }
+  }
+  
+  /* =============================
+     FIX 3: Layout Children di Mobile (biar rapi juga)
+     ============================= */
+  @media (max-width: 767px) {
+    .grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+      padding: 10px !important;
+    }
+  
+    .grid .card {
+      width: 100% !important;
+      margin: 0 auto !important;
+    }
+  }
+  
+
+/* =============================
+   PERBAIKAN CARD CHILDREN UNTUK TABLET (FULL WIDTH)
+   ============================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* satu kolom penuh */
+    gap: 24px !important;
+    width: 100% !important;
+  }
+
+  .grid .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
 
 
 
