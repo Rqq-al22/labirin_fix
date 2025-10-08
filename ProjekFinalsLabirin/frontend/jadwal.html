@@ -102,8 +102,8 @@ async function ensure(){
     }
   }
   const av = document.getElementById('avatar');
-  if (gUser.role === 'terapis') av.style.backgroundImage = "url('../src/profil_terapis.jpeg')";
-  else av.style.backgroundImage = "url('../src/profile_ortu.png')";
+  if (gUser.role === 'terapis') av.style.backgroundImage = "url('../src/profil_terapis.png')";
+  else av.style.backgroundImage = "url('../src/profil_ortu.png')";
   const bc = document.querySelector('.bc-role');
   if (bc) bc.textContent = (gUser.role === 'terapis') ? 'Terapis' : 'Orang Tua';
   
